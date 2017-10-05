@@ -16,6 +16,11 @@ $request = $_POST;
 $myClient = new rabbitClient();
 $response = $myClient->make_request($request);
 
+/*if($response == "LoginSuccess")
+{
+	header('Location: main.php'); 
+	exit(0);
+}*/
 echo json_encode($response);
 exit(0);
 ?>

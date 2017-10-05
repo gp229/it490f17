@@ -54,6 +54,10 @@ function HandleLoginResponse(response)
 {
 	var text = JSON.parse(response);
 	document.getElementById("output").innerHTML = "response: "+text+"<p>";
+	if(text === "User Registered")
+	{
+		window.location = "main.php";
+	}	
 }
 function sendRegisterRequest(username,password)
 {

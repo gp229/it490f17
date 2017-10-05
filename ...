@@ -20,7 +20,7 @@ public function validateLogin($username,$password)
 {
 	$un = $this->logindb->real_escape_string($username);
 	$pw = $this->logindb->real_escape_string($password);
-	$statement = "select * from users where screenname = '$un';";
+	$statement = "select * from users where username = '$un';";
 	$response = $this->logindb->query($statement);
 
 	while ($row = $response->fetch_assoc())
@@ -29,26 +29,11 @@ public function validateLogin($username,$password)
 		if ($row["password"] == $pw)
 		{
 			echo "passwords match for $username".PHP_EOL;
-			return "LoginSuccess";// password match
+			return 1;// password match
 		}
 		echo "passwords did not match for $username".PHP_EOL;
 	}
-	return "LoginFailed";//no users matched username
-}
-public function registerUser($username,$password)
-{
-	$un = $this->logindb->real_escape_string($username);
-	$pw = $this->logindb->real_escape_string($password);
-	$statement = "select * from users where screenname = '$un';";
-	$response = $this->logindb->query($statement);
-	$row = $response->fetch_assoc();
-	if($row > 0)
-	{
-		return "User already in database.";
-	}
-	$statement = "insert into users(screenname, password) Values('$un', '$pw');";
-	$response = $this->logindb->query($statement);
-	return "User Registered";
+	return 0;//no users matched username
 }
 }
 ?>

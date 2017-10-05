@@ -49,17 +49,20 @@
 	<script>
 function submitLogin()
 {
-
 	var uname = document.getElementById("inputName").value;
 	var pword = document.getElementById("inputPassword").value;
 	document.getElementById("output").innerHTML = "username: " + uname + "<p>password: "+pword+"<p>";	
-	sendLoginRequest(uname,pword);
+	sendLoginRequest(uname,pword);	
 	return 0;
 }
 function HandleLoginResponse(response)
 {
 	var text = JSON.parse(response);
 	document.getElementById("output").innerHTML = "response: "+text+"<p>";
+	if(text === "LoginSuccess")
+	{
+		window.location = "main.php";
+	}	
 }
 function sendLoginRequest(username,password)
 {

@@ -3,14 +3,21 @@
 require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
+require_once('login.php.inc');
 
 function doLogin($username,$password)
 {
-	return "I logged in";  
+	$dbConn = new loginDB();
+	$response = $dbConn->validateLogin($username,$password);
+	echo $response.PHP_EOL;
+	return $response;
 }
 function doRegister($username,$password)
 {
-	return "New Account";   //return false if not valid
+	$dbConn = new loginDB();
+	$response = $dbConn->registerUser($username,$password);
+	echo $response.PHP_EOL;
+	return $response;
 }
 
 
@@ -27,13 +34,20 @@ function requestProcessor($request)
     case "login":
 	if(empty($request['uname']) || empty($request['pword']))
 	{
+		echo "Username or Password not given.";
 		return "Username or Password not given.";
 	}
 	return doLogin($request['uname'],$request['pword']);
     case "register":
 	if(empty($request['uname']) || empty($request['pword']))
 	{
+		echo "Username or Password not given.";
 		return "Username or Password not given.";
+	}
+	if(strlen($request['uname']) < 5 || strlen($request['pword']) < 5)
+	{	
+		echo "Username or Password too short.";
+		return "Username or Password too short.";
 	}
 	return doRegister($request['uname'],$request['pword']);
     case "validate_session":
