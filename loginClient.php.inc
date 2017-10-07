@@ -5,7 +5,7 @@ require_once('rabbitMQLib.inc');
 
 class rabbitClient
 {
-	public $client;
+	private $client;
 	public function __construct()
 	{
 		$this->client = new rabbitMQClient("testRabbitMQ.ini","testServer");
