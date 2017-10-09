@@ -1,17 +1,17 @@
 <?php
-require_once("logger.php.inc");
+require_once("loggerClient.php.inc");
 
 class loginDB
 {
 private $logindb;
-private $myLogger;
+private $myloggerClient;
 public function __construct()
 {
-	$this->myLogger = new logger("database.log");
-	$this->logindb = new mysqli("127.0.0.1","root","password","login");
+	$this->myLoggerClient = new loggerClient();
+	$this->logindb = new mysqli("127.0.0.1","root22","password","login");
 	if ($this->logindb->connect_errno != 0)
 	{
-		$this->myLogger->writeLog("Error connecting to database: ".$this->logindb->connect_error." in ".__FILE__." on line ".__LINE__);
+		$this->myLoggerClient->sendLog("database.log", 2,"Error connecting to database: ".$this->logindb->connect_error." in ".__FILE__." on line ".__LINE__);
 		echo "Error connecting to database: ".$this->logindb->connect_error.PHP_EOL;
 		exit(1);
 	}
