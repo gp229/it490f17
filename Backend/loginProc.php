@@ -34,14 +34,14 @@ function requestProcessor($request)
     case "login":
 	if(empty($request['uname']) || empty($request['pword']))
 	{
-		echo "Username or Password not given.";
+		echo "Username or Password not given.".PHP_EOL;
 		return "Username or Password not given.";
 	}
 	return doLogin($request['uname'],$request['pword']);
     case "register":
 	if(empty($request['uname']) || empty($request['pword']))
 	{
-		echo "Username or Password not given.";
+		echo "Username or Password not given.".PHP_EOL;
 		return "Username or Password not given.";
 	}
 	if(strlen($request['uname']) < 5 || strlen($request['pword']) < 5)

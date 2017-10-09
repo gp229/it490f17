@@ -5,7 +5,11 @@ class logger
 	
 	public function __construct($logfile)
 	{
-		$logdirectory = "/var/log/stocks/";
+		$logdirectory = "../logging/";
+		if(!file_exists($logdirectory))
+		{
+			mkdir($logdirectory, 0775, true);
+		}	
 		$this->filestream = fopen($logdirectory.$logfile,"a") or exit("Can't open log file ".$logfile.PHP_EOL);
 	}
 	

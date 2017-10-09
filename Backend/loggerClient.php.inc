@@ -8,7 +8,7 @@ class loggerClient
         private $client;
         public function __construct()
         {
-                $this->client = new rabbitMQClient("testRabbitMQ.ini","testServer");
+                $this->client = new rabbitMQClient("testRabbitMQ.ini","loggingServer");
         }
         public function sendLog($logfile, int $level, $message)
         {
@@ -17,8 +17,8 @@ class loggerClient
 			echo "Logfile, level, or message not set for log.";
 			exit(1);
 		}
-		$machine = "";
-		$machine = getHostInfo(array($machine));	
+		$machine = "BackendServer";
+		//$machine = getHostInfo(array($machine));	
 		$request = array("type" => "log", "logfile" => $logfile, "machine" => $machine, "level" => $level, "message"=> $message);
 		var_dump($request);
                	$this->client->publish($request);

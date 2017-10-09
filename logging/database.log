@@ -1,0 +1,12 @@
+[2017-10-09 14:42:39] ==MEDIUM== Server BackendServer
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 14:42:59] ==MEDIUM== Server BackendServer
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 14:46:40] ==MEDIUM== Server BackendServer
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 14:49:16] ==MEDIUM== Server BackendServer
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 14:51:24] ==MEDIUM== Server BackendServer
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 14:51:34] ==MEDIUM== Server BackendServer
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15

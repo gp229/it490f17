@@ -8,11 +8,11 @@ private $myloggerClient;
 public function __construct()
 {
 	$this->myLoggerClient = new loggerClient();
-	$this->logindb = new mysqli("127.0.0.1","root22","password","login");
+	$this->logindb = new mysqli("127.0.0.1","root2","password","login");
 	if ($this->logindb->connect_errno != 0)
 	{
+		echo "Sending error message to logger".PHP_EOL;
 		$this->myLoggerClient->sendLog("database.log", 2,"Error connecting to database: ".$this->logindb->connect_error." in ".__FILE__." on line ".__LINE__);
-		echo "Error connecting to database: ".$this->logindb->connect_error.PHP_EOL;
 		exit(1);
 	}
 	echo "correctly connected to database".PHP_EOL;

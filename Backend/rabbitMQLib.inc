@@ -19,7 +19,6 @@ class rabbitMQServer
 	function __construct($machine, $server = "rabbitMQ")
 	{
 		$this->machine = getHostInfo(array($machine));
-		var_dump($this->machine);
 		$this->BROKER_HOST   = $this->machine[$server]["BROKER_HOST"];
 		$this->BROKER_PORT   = $this->machine[$server]["BROKER_PORT"];
 		$this->USER     = $this->machine[$server]["USER"];
