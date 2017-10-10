@@ -10,3 +10,49 @@ Error connecting to database: Access denied for user 'root2'@'localhost' (using 
 Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
 [2017-10-09 14:51:34] ==MEDIUM== Server BackendServer
 Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 18:31:46] ==MEDIUM== Server BackendServer
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 22:12:01] ==MEDIUM== Server Backend 127.0.1.1
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 22:15:18] ==MEDIUM== Server Backend 127.0.1.1
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 22:16:48] ==MEDIUM== Server Backend 127.0.1.1
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 22:16:53] ==MEDIUM== Server Backend 127.0.1.1
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 22:18:24] ==MEDIUM== Server Backend 127.0.1.1
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 22:19:23] ==MEDIUM== Server Backend 127.0.1.1
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 22:42:14] ==MEDIUM== Server Backend 127.0.1.1
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 22:45:51] ==MEDIUM== Server Backend 127.0.1.1
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 22:52:20] ==MEDIUM== Server Backend 127.0.1.1
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 22:59:24] ==MEDIUM== Backend - 127.0.1.1
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 22:59:24] ==MEDIUM== Backend - 127.0.1.1
+Error connecting to database: Access denied for user 'root2'@'localhost' (using password: YES) in /home/gabriel/git/it490f17/Backend/login.php.inc on line 15
+[2017-10-09 23:15:49] ==MEDIUM== Backend - 127.0.1.1
+Error connecting to database:  in /home/gabriel/git/it490f17/Backend/login.php.inc on line 42
+[2017-10-09 23:16:36] ==MEDIUM== Backend - 127.0.1.1
+Error connecting to database: Error: Call to a member function fetch_assoc() on boolean in /home/gabriel/git/it490f17/Backend/login.php.inc:28
+Stack trace:
+#0 /home/gabriel/git/it490f17/Backend/loginProc.php(11): loginDB->validateLogin('aasdasd', 'asdasd')
+#1 /home/gabriel/git/it490f17/Backend/loginProc.php(40): doLogin('aasdasd', 'asdasd')
+#2 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(58): requestProcessor(Array)
+#3 [internal function]: rabbitMQServer->process_message(Object(AMQPEnvelope), Object(AMQPQueue))
+#4 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
+#5 /home/gabriel/git/it490f17/Backend/loginProc.php(61): rabbitMQServer->process_requests('requestProcesso...')
+#6 {main} in /home/gabriel/git/it490f17/Backend/login.php.inc on line 42
+[2017-10-09 23:23:04] ==SEVERE== Backend - 127.0.1.1
+Fatal Error connecting to database: Error: Call to a member function fetch_assoc() on boolean in /home/gabriel/git/it490f17/Backend/login.php.inc:28
+Stack trace:
+#0 /home/gabriel/git/it490f17/Backend/loginProc.php(11): loginDB->validateLogin('aasdasd', 'asdasd')
+#1 /home/gabriel/git/it490f17/Backend/loginProc.php(40): doLogin('aasdasd', 'asdasd')
+#2 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(58): requestProcessor(Array)
+#3 [internal function]: rabbitMQServer->process_message(Object(AMQPEnvelope), Object(AMQPQueue))
+#4 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
+#5 /home/gabriel/git/it490f17/Backend/loginProc.php(61): rabbitMQServer->process_requests('requestProcesso...')
+#6 {main} in /home/gabriel/git/it490f17/Backend/login.php.inc on line 42

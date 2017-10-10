@@ -1,0 +1,48 @@
+[2017-10-10 00:05:28] ==MEDIUM== Backend - 127.0.1.1
+Error with user authentication: Exception: something bad in /home/gabriel/git/it490f17/Backend/loginProc.php:30
+Stack trace:
+#0 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(58): requestProcessor(Array)
+#1 [internal function]: rabbitMQServer->process_message(Object(AMQPEnvelope), Object(AMQPQueue))
+#2 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
+#3 /home/gabriel/git/it490f17/Backend/loginProc.php(72): rabbitMQServer->process_requests('requestProcesso...')
+#4 {main} in /home/gabriel/git/it490f17/Backend/loginProc.php on line 65
+[2017-10-10 00:07:20] ==MEDIUM== Backend - 127.0.1.1
+Error with user authentication: Exception: something bad in /home/gabriel/git/it490f17/Backend/loginProc.php:30
+Stack trace:
+#0 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(58): requestProcessor(Array)
+#1 [internal function]: rabbitMQServer->process_message(Object(AMQPEnvelope), Object(AMQPQueue))
+#2 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
+#3 /home/gabriel/git/it490f17/Backend/loginProc.php(72): rabbitMQServer->process_requests('requestProcesso...')
+#4 {main} in /home/gabriel/git/it490f17/Backend/loginProc.php on line 65
+[2017-10-10 00:07:23] ==MEDIUM== Backend - 127.0.1.1
+Error with user authentication: Exception: something bad in /home/gabriel/git/it490f17/Backend/loginProc.php:30
+Stack trace:
+#0 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(58): requestProcessor(Array)
+#1 [internal function]: rabbitMQServer->process_message(Object(AMQPEnvelope), Object(AMQPQueue))
+#2 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
+#3 /home/gabriel/git/it490f17/Backend/loginProc.php(72): rabbitMQServer->process_requests('requestProcesso...')
+#4 {main} in /home/gabriel/git/it490f17/Backend/loginProc.php on line 65
+[2017-10-10 00:07:49] ==MEDIUM== Backend - 127.0.1.1
+Error with user authentication: Exception: something bad in /home/gabriel/git/it490f17/Backend/loginProc.php:30
+Stack trace:
+#0 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(58): requestProcessor(Array)
+#1 [internal function]: rabbitMQServer->process_message(Object(AMQPEnvelope), Object(AMQPQueue))
+#2 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
+#3 /home/gabriel/git/it490f17/Backend/loginProc.php(72): rabbitMQServer->process_requests('requestProcesso...')
+#4 {main} in /home/gabriel/git/it490f17/Backend/loginProc.php on line 65
+[2017-10-10 00:08:55] ==MEDIUM== Backend - 127.0.1.1
+Error with user authentication: Exception: something bad in /home/gabriel/git/it490f17/Backend/loginProc.php:30
+Stack trace:
+#0 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(58): requestProcessor(Array)
+#1 [internal function]: rabbitMQServer->process_message(Object(AMQPEnvelope), Object(AMQPQueue))
+#2 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
+#3 /home/gabriel/git/it490f17/Backend/loginProc.php(72): rabbitMQServer->process_requests('requestProcesso...')
+#4 {main} in /home/gabriel/git/it490f17/Backend/loginProc.php on line 64
+[2017-10-10 00:24:59] ==MEDIUM== Backend - 127.0.1.1
+Error with user authentication: Exception: something bad in /home/gabriel/git/it490f17/Backend/loginProc.php:30
+Stack trace:
+#0 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(58): requestProcessor(Array)
+#1 [internal function]: rabbitMQServer->process_message(Object(AMQPEnvelope), Object(AMQPQueue))
+#2 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
+#3 /home/gabriel/git/it490f17/Backend/loginProc.php(71): rabbitMQServer->process_requests('requestProcesso...')
+#4 {main} in /home/gabriel/git/it490f17/Backend/loginProc.php on line 64

@@ -3,8 +3,7 @@ $path = '/usr/local/lib/system_libs';
     if (file_exists('local.ini'))
     {
         $parse = parse_ini_file('local.ini',true);
-      	var_dump($parse);
-	  if (isset($parse['paths']))
+        if (isset($parse['paths']))
         {
             $path = $parse['paths']['libraries'];
         }
@@ -13,6 +12,5 @@ $path = '/usr/local/lib/system_libs';
            trigger_error("local.ini missing paths field\n",E_USER_NOTICE); 
         }
     }
-	var_dump($path);
     set_include_path(get_include_path().PATH_SEPARATOR.$path);
 ?>

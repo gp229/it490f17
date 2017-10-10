@@ -17,9 +17,10 @@ class loggerClient
 			echo "Logfile, level, or message not set for log.";
 			exit(1);
 		}
-		$machine = "BackendServer";
-		//$machine = getHostInfo(array($machine));	
-		$request = array("type" => "log", "logfile" => $logfile, "machine" => $machine, "level" => $level, "message"=> $message);
+		$machine = getHostInfo();
+		$machine = $machine['server']['serverName'];	
+		$localip = getHostByName(getHostName());
+		$request = array("type" => "log", "logfile" => $logfile, "machine" => $machine, "ip" => $localip, "level" => $level, "message"=> $message);
 		var_dump($request);
                	$this->client->publish($request);
         }
