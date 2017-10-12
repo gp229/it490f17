@@ -21,6 +21,10 @@ try{
 	{
 		$_SESSION['loginUser'] = $request['uname'];
 	}
+	else if($response == "User Registered")
+	{
+		$_SESSION['loginUser'] = $request['uname'];
+	}
 }
 catch(Error $e)
 {

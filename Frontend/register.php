@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(isset($_SESSION['loginUser']))
+{
+	header('Location: main.php');
+	exit(0);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,24 +26,19 @@
   </head>
 
   <body>
+
     <div id = "output">
 	status<p>
     </div>
     <div class="container">
 
       <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">Please enter a username and password</h2>
         <label for="inputName" class="sr-only">Username</label>
         <input type="username" id="inputName" class="form-control" placeholder="Username" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="submitLogin()">Sign in</button>
-        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="location.href = 'register.html';">Register</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="submitRegister()">Create Account</button>
       </form>
 
     </div> <!-- /container -->
@@ -46,37 +50,38 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 	<script>
-function submitLogin()
+function submitRegister()
 {
+
 	var uname = document.getElementById("inputName").value;
 	var pword = document.getElementById("inputPassword").value;
 	document.getElementById("output").innerHTML = "username: " + uname + "<p>password: "+pword+"<p>";	
-	sendLoginRequest(uname,pword);	
+	sendRegisterRequest(uname,pword);
 	return 0;
 }
 function HandleLoginResponse(response)
 {
 	var text = JSON.parse(response);
 	document.getElementById("output").innerHTML = "response: "+text+"<p>";
-	if(text === "LoginSuccess")
+	if(text === "User Registered")
 	{
-		location.href = "main.php";
-	}
+		window.location = "main.php";
+	}	
 }
-function sendLoginRequest(username,password)
+function sendRegisterRequest(username,password)
 {
 	var request = new XMLHttpRequest();
 	request.open("POST","login.php",true);
 	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	request.onreadystatechange= function ()
 	{
+		
 		if ((this.readyState == 4)&&(this.status == 200))
 		{
 			HandleLoginResponse(this.responseText);
-				
 		}		
 	}
-	request.send("type=login&uname="+username+"&pword="+password);
+	request.send("type=register&uname="+username+"&pword="+password);
 }
 
 </script>
