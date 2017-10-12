@@ -7,9 +7,9 @@ require_once('loggerClient.php.inc');
 class rabbitClient
 {
 	private $client;
-	public function __construct()
+	public function __construct($ini, $server)
 	{
-		$this->client = new rabbitMQClient("testRabbitMQ.ini","testServer");
+		$this->client = new rabbitMQClient($ini, $server);
 	}
 	public function make_request($request)
 	{
