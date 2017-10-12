@@ -1,4 +1,5 @@
 <?php
+require_once('path.inc');
 require_once('requestClient.php.inc');
 require_once('loggerClient.php.inc');
 session_start();
