@@ -1,6 +1,7 @@
 <?php
 require_once('loginClient.php.inc');
 require_once('loggerClient.php.inc');
+session_start();
 
 try{
 	if (empty($_POST))
@@ -13,18 +14,15 @@ try{
 
 	//POST returns keys: login or register, uname, and pword.
 	$request = $_POST;
-	
 	//Calls that functions to make the Client
 	$myClient = new rabbitClient();
 	$response = $myClient->make_request($request);
-
-	/*if($response == "LoginSuccess")
-	  {
-	  header('Location: main.php'); 
-	  exit(0);
-	  }*/
+	if($response == "LoginSuccess")
+	{
+		$_SESSION['loginUser'] = $request['uname'];
+	}
 }
-catch(Exception $e)
+catch(Error $e)
 {
 	$mylogger = new loggerClient();
 	$mylogger->sendLog("userauth.log",2,"Error with user authentication: ".$e." in ".__FILE__." on line ".__LINE__);

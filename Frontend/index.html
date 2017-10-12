@@ -17,7 +17,6 @@
   </head>
 
   <body>
-
     <div id = "output">
 	status<p>
     </div>
@@ -61,8 +60,8 @@ function HandleLoginResponse(response)
 	document.getElementById("output").innerHTML = "response: "+text+"<p>";
 	if(text === "LoginSuccess")
 	{
-		window.location = "main.php";
-	}	
+		location.href = "main.php";
+	}
 }
 function sendLoginRequest(username,password)
 {
@@ -71,10 +70,10 @@ function sendLoginRequest(username,password)
 	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	request.onreadystatechange= function ()
 	{
-		
 		if ((this.readyState == 4)&&(this.status == 200))
 		{
 			HandleLoginResponse(this.responseText);
+				
 		}		
 	}
 	request.send("type=login&uname="+username+"&pword="+password);
