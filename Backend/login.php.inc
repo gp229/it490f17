@@ -55,6 +55,40 @@ class loginDB
 			{
 				return "User already in database.";
 			}
+			$statement = "select  into users(screenname, password) Values('$un', '$pw');";
+			$response = $this->logindb->query($statement);
+			return "User Registered";
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+			exit(1);
+		}
+	}
+	public function getUserStocks($username)
+	{
+		try{
+			$un = $this->logindb->real_escape_string($username);
+
+			$statement = "select top 1 timestamp from stocks order by timestamp DESC";
+			$response = $this->logindb->query($statement);
+			$row = $response->fetch_assoc();
+			if($row == 0)
+			{
+				//Pull all stock data
+				//return "No stock data found.";
+			}
+			echo "Timestamp: ".$row;
+			$date = time();
+			$row = strtotime($row);
+			if($row 
+			$statement = "select stocks from userStocks where username = '$un';";	
+			$response = $this->logindb->query($statement);
+			$row = $response->fetch_assoc();
+			if($row == 0)
+			{
+				return "User not found in database.";
+			}
 			$statement = "insert into users(screenname, password) Values('$un', '$pw');";
 			$response = $this->logindb->query($statement);
 			return "User Registered";
