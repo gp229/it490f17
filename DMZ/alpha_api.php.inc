@@ -1,12 +1,12 @@
 #!/usr/bin/php
 <?php
 
-$request = array('GOOG', 'AMZN');
-$stuff = getAPIdata($request, '2017-10-18 14:10:00');
-var_dump($stuff);
-
 function getAPIdata($symbols, $latestTime)
 {
+if(!isset($latestTime))
+{
+	$latestTime = '2015-01-10 14:10:00';
+}
 $dataParsed = array();
 error_reporting(E_ALL ^ E_NOTICE);
 foreach($symbols as $mySymbol)
@@ -16,7 +16,7 @@ $alpha_key = 'N7B9EMN3F2CHEW75';
 $now = date('Y-m-d H:i:00',time());
 $tempTime = $now;
 echo $tempTime.PHP_EOL;
-$url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&interval=1min&symbol='.$mySymbol.'&outputsize=compact&apikey='.$alpha_key;
+$url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&interval=1min&symbol='.$mySymbol.'&outputsize=full&apikey='.$alpha_key;
 
 $json_obj = file_get_contents($url);
 if(!isset($json_obj) || isset($json_obj["Error Message"]))
@@ -25,8 +25,15 @@ if(!isset($json_obj) || isset($json_obj["Error Message"]))
 }
 $data = json_decode($json_obj, true);
 $arrayLength = count($data['Time Series (1min)']);
-echo $arrayLength.PHP_EOL;
-if(date('Hi',strtoTime($tempTime)) > '1600')
+if(date('N',strtoTime($tempTime)) == '6')
+{	
+	$tempTime = date('Y-m-d 16:00:00', strtotime($tempTime.'-1 day'));
+}
+elseif(date('N',strtoTime($tempTime)) == '7')
+{	
+	$tempTime = date('Y-m-d 16:00:00', strtotime($tempTime.'-2 day'));
+}
+elseif(date('Hi',strtoTime($tempTime)) > '1600')
 {	
 	$tempTime = date('Y-m-d 16:00:00', strtotime($tempTime));
 }
@@ -55,7 +62,15 @@ while(($i < $arrayLength))
 	{
 		break;
 	}
-	if(date('Hi',strtoTime($tempTime)) > '1600')
+	if(date('N',strtoTime($tempTime)) == '6')
+	{	
+		$tempTime = date('Y-m-d 16:00:00', strtotime($tempTime.'-1 day'));
+	}
+	elseif(date('N',strtoTime($tempTime)) == '7')
+	{	
+		$tempTime = date('Y-m-d 16:00:00', strtotime($tempTime.'-2 day'));
+	}
+	elseif(date('Hi',strtoTime($tempTime)) > '1600')
 	{	
 		$tempTime = date('Y-m-d 16:00:00', strtotime($tempTime));
 	}
