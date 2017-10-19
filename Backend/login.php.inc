@@ -25,7 +25,7 @@ class loginDB
 		try{
 			$un = $this->logindb->real_escape_string($username);
 			$pw = $this->logindb->real_escape_string($password);
-			$statement = "select * from users where screenname = '$un';";
+			$statement = "select * from userlogin where username = '$un';";
 			$response = $this->logindb->query($statement);
 			while ($row = $response->fetch_assoc())
 			{
@@ -50,14 +50,14 @@ class loginDB
 		try{
 			$un = $this->logindb->real_escape_string($username);
 			$pw = $this->logindb->real_escape_string($password);
-			$statement = "select * from users where screenname = '$un';";
+			$statement = "select * from userlogin where username = '$un';";
 			$response = $this->logindb->query($statement);
 			$row = $response->fetch_assoc();
 			if($row > 0)
 			{
 				return "User already in database.";
 			}
-			$statement = "select  into users(screenname, password) Values('$un', '$pw');";
+			$statement = "select  into userlogin(username, password) Values('$un', '$pw');";
 			$response = $this->logindb->query($statement);
 			return "User Registered";
 		}
@@ -90,7 +90,7 @@ class loginDB
 			{
 				return "User not found in database.";
 			}
-			$statement = "insert into users(screenname, password) Values('$un', '$pw');";
+			$statement = "insert into users(username, password) Values('$un', '$pw');";
 			$response = $this->logindb->query($statement);
 			return "User Registered";
 		}

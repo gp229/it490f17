@@ -18,7 +18,7 @@ class stocksDB
 	{
 		$this->myLoggerClient = new loggerClient();
 		$this->requestClient = new rabbitClient("testRabbitMQ.ini", 'DMZServer');
-		$this->logindb = new mysqli("127.0.0.1","root","password","login");
+		$this->logindb = new mysqli("127.0.0.1","root","password","stocksdb");
 		if ($this->logindb->connect_errno != 0)
 		{
 			echo "Sending error message to logger".PHP_EOL;
