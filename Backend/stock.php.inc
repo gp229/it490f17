@@ -3,14 +3,14 @@
 require_once('loggerClient.php.inc');
 class stocksDB
 {
-	private $stocksdb;
+	private $logindb;
 	private $myloggerClient;
 	private $stockClient;
 	public function __construct()
 	{
 		$this->myLoggerClient = new loggerClient();
 		$this->logindb = new mysqli("127.0.0.1","root","password","login");
-		if ($this->stocksdb->connect_errno != 0)
+		if ($this->logindb->connect_errno != 0)
 		{
 			echo "Sending error message to logger".PHP_EOL;
 			$this->myLoggerClient->sendLog("database.log", 3,"Error connecting to database: ".$this->logindb->connect_error." in ".__FILE__." on line ".__LINE__);
@@ -24,14 +24,14 @@ class stocksDB
 		try{
 			$symbol = $this->logindb->real_escape_string($symbol);
 			$s1 = "select price from stocks where symbol = '$symbol';";
-			$marketPrice = $this->stocksdb->query($s1);
+			$marketPrice = $this->logindb->query($s1);
 			$totalPrice = $marketPrice * $quantity;
 			$s2 = "select stockName from stocks where symbol = '$symbol';";
-			$stockName = $this->stocksdb->query($s2);
+			$stockName = $this->logindb->query($s2);
 			$statement1 = "insert into userStocks(symbol,stockName,quantity,purchasePrice,totalPrice) values('$symbol','$stockName','$quantity','$marketPrice','$totalPrice')";
 			$statement2 = "update userInfo set balance -= $totalPrice where ID = $id;";
-			$response = $this->stocksdb->query($statement1);
-			$response = $this->stocksdb->query($statement2);
+			$response = $this->logindb->query($statement1);
+			$response = $this->logindb->query($statement2);
 			return "You have bought "+ $quantity +"stocks of "+ $stockName;
 		}
 		catch(Error $e)
@@ -44,17 +44,17 @@ class stocksDB
 	{
 		try{
 			$s = "select quantity from userStocks where symbol = '$symbol'";
-			$currentquantity = $this->stocksdb->query($s);
+			$currentquantity = $this->logindb->query($s);
 			if ($currentquantity < $quantity)
 			{
 				return "Attempted to sell more stocks than currently owned. Nice try.";
 			}
 			$symbol = $this->logindb->real_escape_string($symbol);
 			$s1 = "select price from stocks where symbol = '$symbol';";
-			$marketPrice = $this->stocksdb->query($s1);
+			$marketPrice = $this->logindb->query($s1);
 			$totalPrice = $marketPrice * $quantity;
 			$s2 = "select stockName from stocks where symbol = '$symbol';";
-			$stockName = $this->stocksdb->query($s2);
+			$stockName = $this->logindb->query($s2);
 			$statement2 = "update userInfo set balance += $totalPrice where ID = $id;";
 			if ($currentquantity == $quantity)
 			{
@@ -62,8 +62,8 @@ class stocksDB
 				return "Successfully sold all stocks of "+ $stockName;
 			}
 			$statement1 = "update userStocks set quantity-=$quantity,totalvalue-=$totalPrice where username ='$username'";
-			$response = $this->stocksdb->query($statement1);
-			$response = $this->stocksdb->query($statement2);
+			$response = $this->logindb->query($statement1);
+			$response = $this->logindb->query($statement2);
 			return "Successfully sold "+ $quantity + "shares of "+ $stockName;
 		}
 		catch(Error $e)
@@ -80,7 +80,7 @@ class stocksDB
 		{
 			$un = $this->logindb->real_escape_string($username);
 			$statement1 = "select * from userStocks where username = '$username';";
-			$response = $this->stocksdb->query($statement1);
+			$response = $this->logindb->query($statement1);
 			return $response;
 		}
 		catch(Error $e)
