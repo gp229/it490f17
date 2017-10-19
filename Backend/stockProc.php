@@ -61,6 +61,13 @@ function requestProcessor($request)
 					return "Stock symbol or Quantity not given.";
 				}
 				return sellStocks($request['symbol'],$request['quantity']);
+			case "getUserStocks":
+				if(empty($request['username']))
+				{
+					echo "Username not given.".PHP_EOL;
+					return "Username not given.";
+				}
+				return checkUserStocks($request['username']);
 		}
 	
 		return array("returnCode" => '0', 'message'=>"Server received request and processed");
@@ -69,12 +76,12 @@ function requestProcessor($request)
 	catch(Exception $e)
 	{
 		$mylogger = new loggerClient();
-		$mylogger->sendLog("userauth.log",2,"Error with user authentication: ".$e." in ".__FILE__." on line ".__LINE__);
+		$mylogger->sendLog("stocksProc.log",2,"Error with getting stocks: ".$e." in ".__FILE__." on line ".__LINE__);
 		exit(1);
 	}
 }
 
-$server = new rabbitMQServer("testRabbitMQ.ini","testServer");
+$server = new rabbitMQServer("testRabbitMQ.ini","stockServer");
 
 $server->process_requests('requestProcessor');
 exit();
