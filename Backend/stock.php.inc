@@ -1,14 +1,16 @@
 <?php
-
+require_once('path.inc');
 require_once('loggerClient.php.inc');
+require_once('requestClient.php.inc');
 class stocksDB
 {
 	private $stocksdb;
 	private $myloggerClient;
-	private $stockClient;
+	private $requestClient;
 	public function __construct()
 	{
 		$this->myLoggerClient = new loggerClient();
+		$this->requestClient = new rabbitClient("testRabbitMQ.ini", 'DMZServer');
 		$this->logindb = new mysqli("127.0.0.1","root","password","login");
 		if ($this->stocksdb->connect_errno != 0)
 		{
@@ -79,8 +81,12 @@ class stocksDB
 		try
 		{
 			$un = $this->logindb->real_escape_string($username);
-			$statement1 = "select * from userStocks where username = '$username';";
-			$response = $this->stocksdb->query($statement1);
+			
+			$statement = "select timeStamp from stockInfo order by timeStamp DESC Limit 1';";
+			
+			$response = $this->stocksdb->query($statement);
+			$statement = "select * from userStocks where username = '$username';";
+			$response = $this->stocksdb->query($statement);
 			return $response;
 		}
 		catch(Error $e)

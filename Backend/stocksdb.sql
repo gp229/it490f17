@@ -53,16 +53,15 @@ DROP TABLE IF EXISTS `stockInfo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `stockInfo` (
-  `symbol` char(20) NOT NULL,
-  `marketPrice` int(10) NOT NULL,
-  `open` int(10) NOT NULL,
-  `close` int(20) NOT NULL,
-  `high` int(20) NOT NULL,
-  `low` int(20) NOT NULL,
-  `volume` int(10) NOT NULL,
-  `stockName` char(20) DEFAULT NULL,
-  `timeStamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`symbol`)
+  `symbol` char(20),
+  `marketPrice` int(40) ,
+  `open` int(40) ,
+  `close` int(40) ,
+  `high` int(20) ,
+  `low` int(20) ,
+  `volume` int(10) ,
+  `stockName` char(20) ,
+  `timeStamp` timestamp 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -114,9 +113,7 @@ CREATE TABLE `userStocks` (
   `stockName` char(20) NOT NULL,
   `quantity` int(5) NOT NULL,
   KEY `ID` (`ID`),
-  KEY `symbol` (`symbol`),
-  CONSTRAINT `userStocks_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `userInfo` (`ID`),
-  CONSTRAINT `userStocks_ibfk_2` FOREIGN KEY (`symbol`) REFERENCES `stockInfo` (`symbol`)
+  CONSTRAINT `userStocks_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `userInfo` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
