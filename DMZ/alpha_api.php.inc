@@ -3,7 +3,7 @@
 
 function getAPIdata($symbols, $latestTime)
 {
-if(!isset($latestTime))
+if($latestTime == "FALSE")
 {
 	$latestTime = '2015-01-10 14:10:00';
 }

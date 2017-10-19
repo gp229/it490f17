@@ -6,13 +6,6 @@ require_once('rabbitMQLib.inc');
 require_once('alpha_api.php.inc');
 require_once('loggerClient.php.inc');
 
-
-$request['type'] = "updateData";
-$request['symbols'] =  array('GOOG', 'AMZN');
- 
-
-
-requestProcessor($request);
 function getStockData($symbols, $latestTime)
 {
 	var_dump($symbols);
@@ -53,7 +46,7 @@ function requestProcessor($request)
 	}
 }
 
-$server = new rabbitMQServer("testRabbitMQ.ini","testServer");
+$server = new rabbitMQServer("testRabbitMQ.ini","DMZServer");
 
 $server->process_requests('requestProcessor');
 exit();

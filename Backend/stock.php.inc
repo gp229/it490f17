@@ -4,6 +4,11 @@ require_once('get_host_info.inc');
 require_once('loggerClient.php.inc');
 require_once('requestClient.php.inc');
 
+$mytest = new stocksDB();
+$username = "joe";
+$mytest->checkUserStock($username);
+
+
 class stocksDB
 {
 	private $logindb;
@@ -84,17 +89,17 @@ class stocksDB
 		{
 			$un = $this->logindb->real_escape_string($username);
 			
-<<<<<<< HEAD
-			$statement1 = "select * from userStocks where username = '$username';";
-			$response = $this->logindb->query($statement1);
-			$response = "aa";
-=======
 			$statement = "select timeStamp from stockInfo order by timeStamp DESC Limit 1';";
+			$response = $this->logindb->query($statement);
 			
-			$response = $this->stocksdb->query($statement);
-			$statement = "select * from userStocks where username = '$username';";
-			$response = $this->stocksdb->query($statement);
->>>>>>> usersessions
+			$request['type'] = 'updateData';
+			$request['symbols'] = array('GOOG', 'AMZN');
+			$request['latestTime'] = $response;
+			var_dump($request);
+			$response = $this->requestClient->make_request($request);
+			//loop through array and instert
+			//$statement = "select * from userStocks where username = '$username';";
+			//$response = $this->stocksdb->query($statement);
 			return $response;
 		}
 		catch(Error $e)
