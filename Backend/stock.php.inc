@@ -1,6 +1,10 @@
 <?php
-
+require_once('path.inc');
+require_once('get_host_info.inc');
 require_once('loggerClient.php.inc');
+
+$dbConn	= new stocksDB();
+
 class stocksDB
 {
 	private $logindb;
@@ -79,8 +83,10 @@ class stocksDB
 		try
 		{
 			$un = $this->logindb->real_escape_string($username);
+			
 			$statement1 = "select * from userStocks where username = '$username';";
 			$response = $this->logindb->query($statement1);
+			$response = "aa";
 			return $response;
 		}
 		catch(Error $e)

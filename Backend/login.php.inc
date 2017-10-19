@@ -1,6 +1,8 @@
 <?php
-
+require_once('path.inc');
+require_once('get_host_info.inc');
 require_once('loggerClient.php.inc');
+
 class loginDB
 {
 	private $logindb;
@@ -80,8 +82,7 @@ class loginDB
 			}
 			echo "Timestamp: ".$row;
 			$date = time();
-			$row = strtotime($row);
-			if($row 
+			$row = strtotime($row); 
 			$statement = "select stocks from userStocks where username = '$un';";	
 			$response = $this->logindb->query($statement);
 			$row = $response->fetch_assoc();
