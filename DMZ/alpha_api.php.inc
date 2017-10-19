@@ -2,11 +2,12 @@
 <?php
 
 $request = array('GOOG', 'AMZN');
-$stuff = getAPIdata($request, '2017-10-18 14:10:30');
+$stuff = getAPIdata($request, '2017-10-18 14:10:00');
 var_dump($stuff);
 
 function getAPIdata($symbols, $latestTime)
 {
+$dataParsed = array();
 error_reporting(E_ALL ^ E_NOTICE);
 foreach($symbols as $mySymbol)
 {
@@ -24,6 +25,7 @@ if(!isset($json_obj) || isset($json_obj["Error Message"]))
 }
 $data = json_decode($json_obj, true);
 $arrayLength = count($data['Time Series (1min)']);
+echo $arrayLength.PHP_EOL;
 if(date('Hi',strtoTime($tempTime)) > '1600')
 {	
 	$tempTime = date('Y-m-d 16:00:00', strtotime($tempTime));
@@ -46,10 +48,13 @@ else
 	break;
 }
 }
-$dataParsed = array();
-
-while($tempTime != $latestTime)
+$i = 0;
+while(($i < $arrayLength))
 {
+	if($tempTime == $latestTime)
+	{
+		break;
+	}
 	if(date('Hi',strtoTime($tempTime)) > '1600')
 	{	
 		$tempTime = date('Y-m-d 16:00:00', strtotime($tempTime));
@@ -57,10 +62,6 @@ while($tempTime != $latestTime)
 	elseif(date('Hi',strtoTime($tempTime)) < '0930')
 	{
 		$tempTime = date('Y-m-d 16:00:00', strtotime($tempTime.'-1 day'));
-	}
-	if($i > 1000) 
-	{
-		break;
 	}
 	$dataParsed['stocks'][$mySymbol][$tempTime] = $data['Time Series (1min)'][$tempTime]['1. open'];
 
