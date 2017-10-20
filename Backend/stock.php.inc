@@ -96,12 +96,12 @@ class stocksDB
 			$request['symbols'] = array('GOOG', 'AMZN');
 			$request['latestTime'] = $response;
 			$response = $this->requestClient->make_request($request);
-			$statment = $this->logindb->prepare('insert into stockInfo ('
+	//		$statment = $this->logindb->prepare('insert into stockInfo ('
 			foreach($symbols as $mySymbol)
 			{
-				foreach($i = 0; $i <= $arrayLength; $i++)
+				foreach($response['stocks'][$mySymbol] as $time => $price;
 				{
-					echo $response['stocks'][$myWymgol][
+					echo $time.$price.PHP_EOL;
 				}
 			}
 
