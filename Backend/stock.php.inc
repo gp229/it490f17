@@ -96,10 +96,10 @@ class stocksDB
 			$request['symbols'] = array('GOOG', 'AMZN');
 			$request['latestTime'] = $response;
 			$response = $this->requestClient->make_request($request);
-	//		$statment = $this->logindb->prepare('insert into stockInfo ('
+	//		$statement = $this->logindb->prepare('insert into stockInfo ('
 			foreach($symbols as $mySymbol)
 			{
-				foreach($response['stocks'][$mySymbol] as $time => $price;
+				foreach($response['stocks'][$mySymbol] as $time => $price)
 				{
 					echo $time.$price.PHP_EOL;
 				}

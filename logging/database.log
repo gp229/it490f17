@@ -56,3 +56,5 @@ Stack trace:
 #4 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
 #5 /home/gabriel/git/it490f17/Backend/loginProc.php(61): rabbitMQServer->process_requests('requestProcesso...')
 #6 {main} in /home/gabriel/git/it490f17/Backend/login.php.inc on line 42
+[2017-10-20 13:14:21] ==HIGH== Backend - 127.0.1.1
+Error connecting to database: Unknown database 'login' in /home/gabriel/git/it490f17/Backend/login.php.inc on line 17
