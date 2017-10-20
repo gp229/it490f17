@@ -53,15 +53,15 @@ DROP TABLE IF EXISTS `stockInfo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `stockInfo` (
-  `symbol` char(20),
-  `marketPrice` int(40) ,
-  `open` int(40) ,
-  `close` int(40) ,
-  `high` int(20) ,
-  `low` int(20) ,
-  `volume` int(10) ,
-  `stockName` char(20) ,
-  `timeStamp` timestamp 
+  `id` int NOT NULL AUTO_INCREMENT,
+  `symbol` char(20) NOT NULL,
+  `marketPrice` int(10) DEFAULT NULL,
+  `open` int(10) DEFAULT NULL,
+  `close` int(20) DEFAULT NULL,
+  `high` int(20) DEFAULT NULL,
+  `low` int(20) DEFAULT NULL,
+  `volume` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -135,4 +135,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-18 19:16:04
+-- Dump completed on 2017-10-18 21:21:37

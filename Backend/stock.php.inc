@@ -95,8 +95,16 @@ class stocksDB
 			$request['type'] = 'updateData';
 			$request['symbols'] = array('GOOG', 'AMZN');
 			$request['latestTime'] = $response;
-			var_dump($request);
 			$response = $this->requestClient->make_request($request);
+			$statment = $this->logindb->prepare('insert into stockInfo ('
+			foreach($symbols as $mySymbol)
+			{
+				foreach($i = 0; $i <= $arrayLength; $i++)
+				{
+					echo $response['stocks'][$myWymgol][
+				}
+			}
+
 			//loop through array and instert
 			//$statement = "select * from userStocks where username = '$username';";
 			//$response = $this->stocksdb->query($statement);
