@@ -88,24 +88,27 @@ class stocksDB
 		try
 		{
 			$un = $this->logindb->real_escape_string($username);
-			
+
 			$statement = "select timeStamp from stockInfo order by timeStamp DESC Limit 1';";
 			$response = $this->logindb->query($statement);
-			
+
 			$request['type'] = 'updateData';
 			$request['symbols'] = array('GOOG', 'AMZN');
 			$request['latestTime'] = $response;
 			$response = $this->requestClient->make_request($request);
-	//		$statement = $this->logindb->prepare('insert into stockInfo ('
-			foreach($symbols as $mySymbol)
-			{
-				foreach($response['stocks'][$mySymbol] as $time => $price)
+			if($response != "Error getting data from API")			      {		
+				$statement = $this->logindb->prepare('insert into stockInfo (`id`, `
+				foreach($request['symbols'] as $mySymbol)
 				{
-					echo $time.$price.PHP_EOL;
+					foreach($response['stocks'][$mySymbol] as $time => $price)
+					{
+						
+					}
 				}
-			}
 
-			//loop through array and instert
+				//loop through array and instert
+			}
+			//if stocks is not empty
 			//$statement = "select * from userStocks where username = '$username';";
 			//$response = $this->stocksdb->query($statement);
 			return $response;
