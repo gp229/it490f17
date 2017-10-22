@@ -2,6 +2,14 @@
 <?php
 include('header.php');
 include('getUserStocks.php');
+
+session_start();
+
+if(isset($_SESSION['loginUser']))
+{
+	header('Location: main.php');
+	exit(0);
+}
 ?>
 <html>
 
@@ -35,12 +43,12 @@ include('getUserStocks.php');
 
 <div class="container">
   <div class="jumbotron">
-    <h1>Welcome "Insert User Name Here"</h1>      
+    <h1>Welcome <div id="name_output"></div>!</h1>      
     <p>This is Stocks R Us, where you can fufill you stock market needs</p>
-  </div>
-  <p style="text-align: right;">You currently have $ "Insert user money here"</p>      
-  <p>Happy Trading</p>  
 
+      <p>Happy Trading</p>  
+  </div>
+  <p style="text-align: right;">You currently have $<div id="money_output"></div></p>      
 <!-- 
 The Chart script for implementing the actual chart
 -->
