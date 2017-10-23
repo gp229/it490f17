@@ -14,6 +14,7 @@ class stocksDB
 	private $logindb;
 	private $myloggerClient;
 	private $requestClient;
+	private $listofsymbols = array('GOOG', 'AMZN');
 	public function __construct()
 	{
 		$this->myLoggerClient = new loggerClient();
@@ -88,22 +89,44 @@ class stocksDB
 		try
 		{
 			$un = $this->logindb->real_escape_string($username);
+			$response = $this->updateStocks();
+			if($response != "Error getting data from API")
+			{
+				$statement = "select * from userStocks where username = '$username';";
+				$response = $this->logindb->query($statement);
+				$response = $response->fetch_assoc();
+
+			}
+			
+			return $response;
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+			exit(1);
+		}
+	}
+	public function updateStocks()
+	{
+		try
+		{
 
 			$statement = "select timestamp from stockInfo order by timestamp DESC Limit 1;";
 			$response = $this->logindb->query($statement);
 			$response = $response->fetch_assoc();
 			$request['type'] = 'updateData';
-			$request['symbols'] = array('GOOG', 'AMZN');
+			$request['symbols'] = $this->listofsymbols;	
 			$request['latestTime'] = $response['timestamp'];
 			echo "Pulling data from API".PHP_EOL;
 			$response = $this->requestClient->make_request($request);
 			if($response == "Latest data already in database")
 			{
-				echo "Latest data already in database".PHP_EOL;
+				return "Latest data already in database".PHP_EOL;
 			} 
 			elseif($response == "Error getting data from API")
 			{
 				echo "Error getting data from API".PHP_EOL;
+				return "Error getting data from API".PHP_EOL;
 			}		
 			else
 			{		
@@ -125,13 +148,7 @@ class stocksDB
 					}
 				}
 			}
-			if($response != "Error getting data from API")
-			{
-				$statement = "select * from userStocks where username = '$username';";
-				$response = $this->logindb->query($statement);
-				$response = $response->fetch_assoc();
-
-			}
+			return "Inserted new data into table";
 			
 			return $response;
 		}
@@ -141,5 +158,6 @@ class stocksDB
 			exit(1);
 		}
 	}
+	
 }
 ?>

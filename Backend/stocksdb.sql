@@ -15,6 +15,16 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+DROP TABLE IF EXISTS `userlogin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `userlogin` (
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 --
 -- Table structure for table `orderHistory`
 --
@@ -31,8 +41,7 @@ CREATE TABLE `orderHistory` (
   `ID` int(11) DEFAULT NULL,
   `stockName` char(1) NOT NULL,
   PRIMARY KEY (`orderNumber`),
-  KEY `ID` (`ID`),
-  CONSTRAINT `orderHistory_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `userInfo` (`ID`)
+  KEY `ID` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -81,10 +90,9 @@ DROP TABLE IF EXISTS `userInfo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `userInfo` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `balance` int(10) NOT NULL,
-  `password` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+  `username` varchar(255) NOT NULL,
+ `balance` decimal(9,4) Default 1000.00 NOT NULL,
+  CONSTRAINT `userInfo_ibfk_1` FOREIGN KEY (`username`) REFERENCES `userlogin` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -105,14 +113,14 @@ DROP TABLE IF EXISTS `userStocks`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `userStocks` (
-  `ID` int(11) NOT NULL,
-  `symbol` char(20) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `symbol` varchar(10) NOT NULL,
   `purchasePrice` int(10) NOT NULL,
   `totalValue` int(20) NOT NULL,
-  `stockName` char(20) NOT NULL,
   `quantity` int(5) NOT NULL,
-  KEY `ID` (`ID`),
-  CONSTRAINT `userStocks_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `userInfo` (`ID`)
+  Primary KEY `ID` (`ID`),
+  CONSTRAINT `userStocks_ibfk_1` FOREIGN KEY (`username`) REFERENCES `userlogin` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
