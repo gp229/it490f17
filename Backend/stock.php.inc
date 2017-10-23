@@ -89,28 +89,50 @@ class stocksDB
 		{
 			$un = $this->logindb->real_escape_string($username);
 
-			$statement = "select timeStamp from stockInfo order by timeStamp DESC Limit 1';";
+			$statement = "select timestamp from stockInfo order by timestamp DESC Limit 1;";
 			$response = $this->logindb->query($statement);
-
+			$response = $response->fetch_assoc();
 			$request['type'] = 'updateData';
 			$request['symbols'] = array('GOOG', 'AMZN');
-			$request['latestTime'] = $response;
+			$request['latestTime'] = $response['timestamp'];
+			echo "Pulling data from API".PHP_EOL;
 			$response = $this->requestClient->make_request($request);
-			if($response != "Error getting data from API")			      {		
-				$statement = $this->logindb->prepare('insert into stockInfo (`id`, `
-				foreach($request['symbols'] as $mySymbol)
+			if($response == "Latest data already in database")
+			{
+				echo "Latest data already in database".PHP_EOL;
+			} 
+			elseif($response == "Error getting data from API")
+			{
+				echo "Error getting data from API".PHP_EOL;
+			}		
+			else
+			{		
+				var_dump($response);
+				$statement = $this->logindb->prepare('insert into stockInfo (`symbol`, `timestamp`, `open`, `close`, `high`, `low`, `volume`) values(?, ?, ?, ?, ?, ?, ?);');
+				$statement->bind_param("ssddddi",$symbol, $timestamp,$open,$close,$high,$low,$volume);
+				foreach($response as $mySymbol => $data)
 				{
-					foreach($response['stocks'][$mySymbol] as $time => $price)
+					$symbol = $mySymbol;
+					foreach($response[$mySymbol] as $time => $values)
 					{
-						
+						$timestamp = $time;
+					 	$open = $values['open'];
+						$close = $values['close'];
+						$high = $values['high'];
+						$low = $values['low'];
+						$volume = $values['volume']; 		
+						$statement->execute();
 					}
 				}
-
-				//loop through array and instert
 			}
-			//if stocks is not empty
-			//$statement = "select * from userStocks where username = '$username';";
-			//$response = $this->stocksdb->query($statement);
+			if($response != "Error getting data from API")
+			{
+				$statement = "select * from userStocks where username = '$username';";
+				$response = $this->logindb->query($statement);
+				$response = $response->fetch_assoc();
+
+			}
+			
 			return $response;
 		}
 		catch(Error $e)

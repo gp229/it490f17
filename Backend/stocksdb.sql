@@ -53,15 +53,14 @@ DROP TABLE IF EXISTS `stockInfo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `stockInfo` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `symbol` char(20) NOT NULL,
-  `marketPrice` int(10) DEFAULT NULL,
-  `open` int(10) DEFAULT NULL,
-  `close` int(20) DEFAULT NULL,
-  `high` int(20) DEFAULT NULL,
-  `low` int(20) DEFAULT NULL,
+  `symbol` varchar(10) NOT NULL,
+  `timestamp` datetime NOT NULL,
+  `open` decimal(9,5) DEFAULT NULL,
+  `close` decimal(9,5) DEFAULT NULL,
+  `high` decimal(9,5) DEFAULT NULL,
+  `low` decimal(9,5) DEFAULT NULL,
   `volume` int(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`symbol`,`timestamp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
