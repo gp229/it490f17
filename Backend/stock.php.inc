@@ -6,7 +6,9 @@ require_once('requestClient.php.inc');
 
 $mytest = new stocksDB();
 $username = "joe";
-$mytest->checkUserStock($username);
+$symbol = "MSFT";
+$quantity = 5;
+$mytest->buyStock($symbol,$quantity,$username);
 
 
 class stocksDB
@@ -29,21 +31,22 @@ class stocksDB
 		echo "correctly connected to database".PHP_EOL;
 	}
 
-	public function buyStock($symbol,$quantity)
+	public function buyStock($symbol,$quantity,$username)
 	{
 		try{
 			$sym = $this->logindb->real_escape_string($symbol);
-			$q1 = "select marketprice from stockInfo where symbol = '$sym';";
+			$un = $this->logindb->real_escape_string($username);
+			$q1 = "select marketPrice from stockInfo where symbol = '$sym';";
 			$r1 = $this->logindb->query($q1);
 			$price = $r1->fetch_assoc();
-			$marketPrice = $price["marketPrice"];
+			$marketPrice = $price['marketPrice'];
 			$totalPrice = $marketPrice * $quantity;
 			$q2 = "select stockName from stockInfo where symbol = '$sym';";
 			$r2 = $this->logindb->query($q2);
 			$name = $r2->fetch_assoc();
-			$stockName = $name["stockName"];
-			$q3 = "insert into userStocks(symbol,stockName,quantity,purchasePrice,totalPrice) values('$sym','$stockName','$quantity','$marketPrice','$totalPrice')";
-			$q4 = "update userInfo set balance = balance - '$totalPrice' where ID = '$id';";
+			echo $name['stockName'];
+			$q3 = "insert into userStocks(symbol,stockName,quantity,purchasePrice,totalPrice) values('$sym','$stockName','$quantity','$marketPrice','$totalPrice') where username = '$un';";
+			$q4 = "update userInfo set balance = balance - '$totalPrice' where username = '$un';";
 			$r3 = $this->logindb->query($q3);
 			$r4 = $this->logindb->query($q4);
 			return "You have bought "+ $quantity +"stocks of "+ $stockName;
@@ -54,11 +57,12 @@ class stocksDB
 			exit(1);
 		}
 	}
-	public function sellStock($symbol,$quantity)
+	public function sellStock($symbol,$quantity,$username)
 	{
 		try{
+			$un = $this->logindb->real_escape_string($username);
 			$sym = $this->logindb->real_escape_string($symbol);
-			$q1 = "select quantity from userStocks where symbol = '$symbol'";
+			$q1 = "select quantity from userStocks where symbol = '$symbol' where username = '$un';";
 			$r1 = $this->logindb->query($s);
 			$currentQuantity = $r1->fetch_assoc();
 			if ($currentQuantity < $quantity)
@@ -74,13 +78,13 @@ class stocksDB
 			$r3 = $this->logindb->query($q3);
 			$name = $r3->fetch_assoc();
 			$stockName = $name["stockName"];
-			$q4 = "update userInfo set balance = balance + $totalPrice where ID = $id;";
+			$q4 = "update userInfo set balance = balance + '$totalPrice' where username = '$un';";
 			if ($currentquantity == $quantity)
 			{
-				$q = "delete from userStocks where symbol = '$sym';";
+				$q = "delete from userStocks where symbol = '$sym' where username = '$un';";
 				return "Successfully sold all stocks of "+ $stockName;
 			}
-			$q5 = "update userStocks set quantity-=$quantity,totalvalue-=$totalPrice where username ='$username'";
+			$q5 = "update userStocks set quantity = quantity - '$quantity',totalValue = totalValue + '$totalPrice' where username ='$un';";
 			$r4 = $this->logindb->query($q4);
 			$r5 = $this->logindb->query($q5);
 			return "Successfully sold "+ $quantity + "shares of "+ $stockName;
@@ -91,7 +95,7 @@ class stocksDB
 			exit(1);
 		}
 		}
-	
+	public function 
 
 	public function checkUserStock($username)
 	{
@@ -101,7 +105,7 @@ class stocksDB
 			$response = $this->updateStocks();
 			if($response != "Error getting data from API")
 			{
-				$statement = "select * from userStocks where username = '$username';";
+				$statement = "select * from userStocks where username = '$un';";
 				$response = $this->logindb->query($statement);
 				$response = $response->fetch_assoc();
 
@@ -115,6 +119,8 @@ class stocksDB
 			exit(1);
 		}
 	}
+
+
 	public function updateStocks()
 	{
 		try
