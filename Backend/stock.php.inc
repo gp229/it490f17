@@ -32,16 +32,20 @@ class stocksDB
 	public function buyStock($symbol,$quantity)
 	{
 		try{
-			$symbol = $this->logindb->real_escape_string($symbol);
-			$s1 = "select price from stocks where symbol = '$symbol';";
-			$marketPrice = $this->logindb->query($s1);
+			$sym = $this->logindb->real_escape_string($symbol);
+			$q1 = "select marketprice from stockInfo where symbol = '$sym';";
+			$r1 = $this->logindb->query($q1);
+			$price = $r1->fetch_assoc();
+			$marketPrice = $price["marketPrice"];
 			$totalPrice = $marketPrice * $quantity;
-			$s2 = "select stockName from stocks where symbol = '$symbol';";
-			$stockName = $this->logindb->query($s2);
-			$statement1 = "insert into userStocks(symbol,stockName,quantity,purchasePrice,totalPrice) values('$symbol','$stockName','$quantity','$marketPrice','$totalPrice')";
-			$statement2 = "update userInfo set balance -= $totalPrice where ID = $id;";
-			$response = $this->logindb->query($statement1);
-			$response = $this->logindb->query($statement2);
+			$q2 = "select stockName from stockInfo where symbol = '$sym';";
+			$r2 = $this->logindb->query($q2);
+			$name = $r2->fetch_assoc();
+			$stockName = $name["stockName"];
+			$q3 = "insert into userStocks(symbol,stockName,quantity,purchasePrice,totalPrice) values('$sym','$stockName','$quantity','$marketPrice','$totalPrice')";
+			$q4 = "update userInfo set balance = balance - '$totalPrice' where ID = '$id';";
+			$r3 = $this->logindb->query($q3);
+			$r4 = $this->logindb->query($q4);
 			return "You have bought "+ $quantity +"stocks of "+ $stockName;
 		}
 		catch(Error $e)
@@ -53,27 +57,32 @@ class stocksDB
 	public function sellStock($symbol,$quantity)
 	{
 		try{
-			$s = "select quantity from userStocks where symbol = '$symbol'";
-			$currentquantity = $this->logindb->query($s);
-			if ($currentquantity < $quantity)
+			$sym = $this->logindb->real_escape_string($symbol);
+			$q1 = "select quantity from userStocks where symbol = '$symbol'";
+			$r1 = $this->logindb->query($s);
+			$currentQuantity = $r1->fetch_assoc();
+			if ($currentQuantity < $quantity)
 			{
 				return "Attempted to sell more stocks than currently owned. Nice try.";
 			}
-			$symbol = $this->logindb->real_escape_string($symbol);
-			$s1 = "select price from stocks where symbol = '$symbol';";
-			$marketPrice = $this->logindb->query($s1);
+			$q2 = "select price from stocks where symbol = '$symbol';";
+			$r2 = $this->logindb->query($q2);
+			$price = $r2->fetch_assoc();
+			$marketPrice = $price["marketPrice"];
 			$totalPrice = $marketPrice * $quantity;
-			$s2 = "select stockName from stocks where symbol = '$symbol';";
-			$stockName = $this->logindb->query($s2);
-			$statement2 = "update userInfo set balance += $totalPrice where ID = $id;";
+			$q3 = "select stockName from stocks where symbol = '$sym';";
+			$r3 = $this->logindb->query($q3);
+			$name = $r3->fetch_assoc();
+			$stockName = $name["stockName"];
+			$q4 = "update userInfo set balance = balance + $totalPrice where ID = $id;";
 			if ($currentquantity == $quantity)
 			{
-				$d1 = "delete from userStocks where symbol = '$symbol';";
+				$q = "delete from userStocks where symbol = '$sym';";
 				return "Successfully sold all stocks of "+ $stockName;
 			}
-			$statement1 = "update userStocks set quantity-=$quantity,totalvalue-=$totalPrice where username ='$username'";
-			$response = $this->logindb->query($statement1);
-			$response = $this->logindb->query($statement2);
+			$q5 = "update userStocks set quantity-=$quantity,totalvalue-=$totalPrice where username ='$username'";
+			$r4 = $this->logindb->query($q4);
+			$r5 = $this->logindb->query($q5);
 			return "Successfully sold "+ $quantity + "shares of "+ $stockName;
 		}
 		catch(Error $e)
