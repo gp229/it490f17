@@ -18,7 +18,7 @@ try{
 	//Calls that functions to make the Client
 	$myClient = new rabbitClient("testRabbitMQ.ini","testServer");
 	$response = $myClient->make_request($request);
-			$_SESSION['loginUser'] = $response['balance'];
+
 
 	if(isset($response['balance']))
 	{

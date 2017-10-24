@@ -13,8 +13,8 @@ $username = $_SESSION['loginUser'];
   </div>
 
   <form class="navbar-form navbar" style="margin-top: -20px; margin-left: -10px; width: 100%;">
-    <button type="buy" class="btn btn-default">Buy</button>
-    <button type="sell" class="btn btn-default">Sell</button>
+    <button type="button" class="btn btn-default" onclick="submitBuy()">Buy</button>
+    <button type="button" class="btn btn-default" onclick="submitSell()">Sell</button>
     <input type="num" id="inputNum" class="form-control" placeholder="Amount">
       <div class="form-group">
         <input type="text" id="inputSymbol" class="form-control" placeholder="Search For Stocks">

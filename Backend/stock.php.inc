@@ -48,7 +48,7 @@ class stocksDB
 			$q4 = "update userInfo set balance = balance - '$totalPrice' where username = '$un';";
 			$r3 = $this->logindb->query($q3);
 			$r4 = $this->logindb->query($q4);
-			return "You have bought ".$quantity."stocks of ".$symbol;
+			return "BuySuccessful";
 		}
 		catch(Error $e)
 		{
@@ -81,7 +81,7 @@ class stocksDB
 				$q4= "delete from userStocks where symbol = '$sym' and username = '$un';";
 				$r4 = $this->logindb->query($q4);
 				echo "Successfully sold all stocks of ".$symbol;
-				return "Successfully sold all stocks of ".$symbol;
+				return "SellSuccessful";
 			}
 			else
 			{
@@ -106,7 +106,7 @@ class stocksDB
 					echo $quantity;			
 				}
 			}
-			return "Successfully sold ".$myQuantity." shares of ".$sym;
+			return "SellSuccessful";
 		}
 		catch(Error $e)
 		{
