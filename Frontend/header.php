@@ -8,27 +8,16 @@ if(!isset($_SESSION['loginUser']))
 	exit(0);
 }
 ?>
+<html>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
-
-    <!-- Bootstrap core CSS -->
-
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<head>
+<title>Stocks-R-Us</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-  </head>
-
-  <body>
+<body>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -37,28 +26,18 @@ if(!isset($_SESSION['loginUser']))
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Account</a></li>
+      <li><a href="portfolio.php">Account</a></li>
     </ul>
-    <form class="navbar-form navbar-right">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search For Stocks">
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" id="username"><?php echo $_SESSION['loginUser'];?></a></li>
+       <li><a href="#" id="user_balance" style="color: #5cb85c;"><?php echo $_SESSION['balance'];?><span class="glyphicon glyphicon-usd"></span></a></li>
+      <li><a href="login.php" id="username">Logout</a></li>
+    </ul>
+    
   </div>
 </nav>
 
 
-    <div id = "output">
-	status<p>
-    </div>
-    <div class="container">
-
-      <form class="form-signin">
-        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="location.href = 'logout.php';">Logout</button>
-      </form>
-
-    </div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript
