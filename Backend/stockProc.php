@@ -41,7 +41,13 @@ function searchStock()
 	echo $response.PHP_EOl;
 	return $response;
 }
-
+function graphData()
+{
+	$dbConn = new stocksDB();
+	$response = $dbConn->graphData();
+	echo $response.PHP_EOL;
+	return $response;
+}
 function requestProcessor($request)
 {
 	try
@@ -79,7 +85,13 @@ function requestProcessor($request)
 				if(empty($request['stockName']))
 				{
 					echo "Stock Name not given".PHP_EOL;
-					return"Stock Name not given.";
+					return "Stock Name not given.";
+				}
+			case "graphData":
+				if(empty($request['symbol']) || empty($request['type'] ))
+				{
+					echo "Stock symbol or requested data not given".PHP_EOL;
+					return "Stock symbol or requested data not given".PHP_EOL;
 				}
 		}
 	
