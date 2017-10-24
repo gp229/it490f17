@@ -158,3 +158,13 @@ Fatal Error connecting to database: Error: Call to a member function fetch_assoc
 Stack trace:
 #0 /home/gabriel/git/it490f17/Backend/stock.php.inc(11): stocksDB->buyStock('MSFT', 5, 'joe')
 #1 {main} in /home/gabriel/git/it490f17/Backend/stock.php.inc on line 56
+[2017-10-24 01:42:34] ==SEVERE== Backend - 127.0.1.1
+Fatal Error connecting to database: Error: Call to undefined method mysqli::fetchAll() in /home/gabriel/git/it490f17/Backend/stock.php.inc:176
+Stack trace:
+#0 /home/gabriel/git/it490f17/Backend/stock.php.inc(8): stocksDB->checkStocks()
+#1 {main} in /home/gabriel/git/it490f17/Backend/stock.php.inc on line 183
+[2017-10-24 01:49:11] ==SEVERE== Backend - 127.0.1.1
+Fatal Error connecting to database: Error: Cannot use object of type mysqli_result as array in /home/gabriel/git/it490f17/Backend/stock.php.inc:180
+Stack trace:
+#0 /home/gabriel/git/it490f17/Backend/stock.php.inc(8): stocksDB->checkStocks()
+#1 {main} in /home/gabriel/git/it490f17/Backend/stock.php.inc on line 189

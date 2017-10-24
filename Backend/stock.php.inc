@@ -161,6 +161,33 @@ class stocksDB
 			exit(1);
 		}
 	}
+	public function checkStocks()
+	{
+		try
+		{
+			$response = $this->updateStocks();
+			if($response != "Error getting data from API")
+			{
+				$statement = "select * from stockInfo where timestamp = (select max(timestamp) from stockInfo);";
+				$response = $this->logindb->query($statement);
+				
+				$i = 0;
+				while ($row = $response->fetch_assoc())
+				{
+					$myArray[$i] = $row;
+					$i++;
+				}
+				$response = $myArray;
+			}
+			
+			return $response;
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+			exit(1);
+		}
+	}
 	public function checkUserStock($username)
 	{
 		try
@@ -170,8 +197,7 @@ class stocksDB
 			if($response != "Error getting data from API")
 			{
 				$statement = "select * from userStocks where username = '$un';";
-				$response = $this->logindb->query($statement);
-				$response = $response->fetch_assoc();
+				$response = $this->logindb->query($statement);	
 
 			}
 			

@@ -20,10 +20,10 @@ function sellStock($symbol,$quantity,$username)
 	echo $response.PHP_EOL;
 	return $response;
 }
-function checkUserStocks($username)
+function checkUserStock($username)
 {
 	$dbConn = new stocksDB();
-	$response = $dbConn->checkUserStocks($username);
+	$response = $dbConn->checkUserStock($username);
 	echo $response.PHP_EOL;
 	return $response;
 }
@@ -31,7 +31,7 @@ function checkStocks()
 {
 	$dbConn = new stocksDB();
 	$response = $dbConn->checkStocks();
-	echo $response.PHP_EOL;
+	var_dump($response);
 	return $response;
 }
 function searchStock()
@@ -80,7 +80,9 @@ function requestProcessor($request)
 					echo "Username not given.".PHP_EOL;
 					return "Username not given.";
 				}
-				return checkUserStocks($request['username']);
+				return checkUserStock($request['username']);
+			case "list":
+				return checkStocks();
 			case "search":
 				if(empty($request['stockName']))
 				{
