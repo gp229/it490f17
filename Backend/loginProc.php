@@ -10,14 +10,14 @@ function doLogin($username,$password)
 {
 	$dbConn = new loginDB();
 	$response = $dbConn->validateLogin($username,$password);
-	echo $response.PHP_EOL;
+	var_dump($response);
 	return $response;
 }
 function doRegister($username,$password)
 {
 	$dbConn = new loginDB();
 	$response = $dbConn->registerUser($username,$password);
-	echo $response.PHP_EOL;
+	var_dump($response);
 	return $response;
 }
 

@@ -168,3 +168,23 @@ Fatal Error connecting to database: Error: Cannot use object of type mysqli_resu
 Stack trace:
 #0 /home/gabriel/git/it490f17/Backend/stock.php.inc(8): stocksDB->checkStocks()
 #1 {main} in /home/gabriel/git/it490f17/Backend/stock.php.inc on line 189
+[2017-10-24 02:33:30] ==SEVERE== Backend - 127.0.1.1
+Fatal Error connecting to database: Error: Cannot use object of type mysqli_result as array in /home/gabriel/git/it490f17/Backend/login.php.inc:40
+Stack trace:
+#0 /home/gabriel/git/it490f17/Backend/loginProc.php(12): loginDB->validateLogin('gabriel', '12345')
+#1 /home/gabriel/git/it490f17/Backend/loginProc.php(42): doLogin('gabriel', '12345')
+#2 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(58): requestProcessor(Array)
+#3 [internal function]: rabbitMQServer->process_message(Object(AMQPEnvelope), Object(AMQPQueue))
+#4 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
+#5 /home/gabriel/git/it490f17/Backend/loginProc.php(70): rabbitMQServer->process_requests('requestProcesso...')
+#6 {main} in /home/gabriel/git/it490f17/Backend/login.php.inc on line 50
+[2017-10-24 02:34:59] ==SEVERE== Backend - 127.0.1.1
+Fatal Error connecting to database: Error: Cannot use object of type mysqli_result as array in /home/gabriel/git/it490f17/Backend/login.php.inc:38
+Stack trace:
+#0 /home/gabriel/git/it490f17/Backend/loginProc.php(12): loginDB->validateLogin('gabriel', '12345')
+#1 /home/gabriel/git/it490f17/Backend/loginProc.php(42): doLogin('gabriel', '12345')
+#2 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(58): requestProcessor(Array)
+#3 [internal function]: rabbitMQServer->process_message(Object(AMQPEnvelope), Object(AMQPQueue))
+#4 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
+#5 /home/gabriel/git/it490f17/Backend/loginProc.php(70): rabbitMQServer->process_requests('requestProcesso...')
+#6 {main} in /home/gabriel/git/it490f17/Backend/login.php.inc on line 48

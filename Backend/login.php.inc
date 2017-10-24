@@ -33,7 +33,14 @@ class loginDB
 				if ($row["password"] == $pw)
 				{
 					echo "passwords match for $username".PHP_EOL;
-					return "LoginSuccess";// password match
+					
+					$statement = "select balance from userInfo where username = '$un';";
+					$balanceresponse = $this->logindb->query($statement);
+					$response = $balanceresponse->fetch_assoc();
+
+					$response['balance'] = 	$response['balance'];
+					$response['login'] = "LoginSuccess";
+					return $response;// password match
 				}
 				echo "passwords did not match for $username".PHP_EOL;
 			}
@@ -65,7 +72,12 @@ class loginDB
 				$response = $this->logindb->query($statement);
 				if($this->logindb->affected_rows == 1)
 				{
-					return "User Registered";
+					$statement = "select balance from userInfo where username = '$un';";
+					$balanceresponse = $this->logindb->query($statement);
+					$response = $balanceresponse->fetch_assoc();
+					$response['balance'] = 	$response['balance'];
+					$response['login'] = "LoginSuccess";
+					return $response;// password match
 				}
 			}
 			return "Error registering user";

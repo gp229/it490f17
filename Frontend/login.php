@@ -18,13 +18,23 @@ try{
 	//Calls that functions to make the Client
 	$myClient = new rabbitClient("testRabbitMQ.ini","testServer");
 	$response = $myClient->make_request($request);
-	if($response == "LoginSuccess")
+			$_SESSION['loginUser'] = $response['balance'];
+
+	if(isset($response['balance']))
 	{
-		$_SESSION['loginUser'] = $request['uname'];
-	}
-	else if($response == "User Registered")
-	{
-		$_SESSION['loginUser'] = $request['uname'];
+		$response['balance'] = substr($response['balance'], 0, -2);
+		if($response['login'] == "LoginSuccess")
+		{
+			$_SESSION['loginUser'] = $request['uname'];
+			$_SESSION['balance'] = $response['balance'];
+			$response = "LoginSuccess";
+		}
+		else if($response['login']  == "User Registered")
+		{
+			$_SESSION['loginUser'] = $request['uname'];
+			$_SESSION['balance'] = $response['balance'];
+			$response = "User Registered";
+		}
 	}
 }
 catch(Error $e)

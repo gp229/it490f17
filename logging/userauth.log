@@ -90,3 +90,11 @@ Stack trace:
 Error with user authentication: Error: Function name must be a string in /home/gabriel/git/it490f17/Frontend/login.php:22
 Stack trace:
 #0 {main} in /home/gabriel/git/it490f17/Frontend/login.php on line 31
+[2017-10-24 02:48:54] ==MEDIUM== Frontend - 127.0.1.1
+Error with user authentication: Error: Call to undefined function sub_str() in /home/gabriel/git/it490f17/Frontend/login.php:25
+Stack trace:
+#0 {main} in /home/gabriel/git/it490f17/Frontend/login.php on line 43
+[2017-10-24 02:48:57] ==MEDIUM== Frontend - 127.0.1.1
+Error with user authentication: Error: Call to undefined function sub_str() in /home/gabriel/git/it490f17/Frontend/login.php:25
+Stack trace:
+#0 {main} in /home/gabriel/git/it490f17/Frontend/login.php on line 43
