@@ -93,15 +93,16 @@ class stocksDB
 			exit(1);
 		}
 	}
-	public function mainGraphData($symbol,$type)
+	public function graphData($symbol,$type)
 	{
 		try
 		{
 			$sym = $this->logindb->real_escape_string($symbol);
-			$query = "select * stockInfo ";
-			
-
-
+			$typ = $this->logindb->real_escape_string($symbol);
+			$query = "select '$typ' from stockInfo where symbol = '$sym' order by timeStamp DESC;";
+			$response = $this->logindb->query($query);
+			$result = $response->fetchAll();
+			return var_dump($result);
 		}
 		catch(Error $e)
 		{
@@ -115,9 +116,14 @@ class stocksDB
 	{
 		try
 		{
+			$row = array();
 			$sn = $this->logindb->real_escape_string($stockName);
 			$q1 = "select * from stockInfo where stockName = '$sn';";
 			$r1 = $this->logindb->query($q1);
+			while($row = $r1->fetch_assoc())
+			{
+				echo $row['stockName'];
+			}
 			if(!$r1)
 			{
 				return 0;

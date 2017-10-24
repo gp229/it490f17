@@ -37,8 +37,8 @@ function checkStocks()
 function searchStock()
 {
 	$dbConn = new stocksDB();
-	$response = $dbConn->searchStock
-	$echo $response.PHP_EOl;
+	$response = $dbConn->searchStock;
+	echo $response.PHP_EOl;
 	return $response;
 }
 
@@ -76,7 +76,7 @@ function requestProcessor($request)
 				}
 				return checkUserStocks($request['username']);
 			case "search":
-				if(empty$(request['stockName']))
+				if(empty($request['stockName']))
 				{
 					echo "Stock Name not given".PHP_EOL;
 					return"Stock Name not given.";
