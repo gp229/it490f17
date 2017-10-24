@@ -10,6 +10,7 @@ function getStockData($symbols, $latestTime)
 {
 	var_dump($symbols);
 	$response = getAPIdata($symbols, $latestTime);
+	echo "Sending response: ".PHP_EOL;
 	var_dump($response);
 	return $response;
 }

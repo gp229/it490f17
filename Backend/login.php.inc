@@ -10,7 +10,7 @@ class loginDB
 	public function __construct()
 	{
 		$this->myLoggerClient = new loggerClient();
-		$this->logindb = new mysqli("127.0.0.1","root","password","login");
+		$this->logindb = new mysqli("127.0.0.1","root","password","stocksdb");
 		if ($this->logindb->connect_errno != 0)
 		{
 			echo "Sending error message to logger".PHP_EOL;
@@ -57,42 +57,18 @@ class loginDB
 			{
 				return "User already in database.";
 			}
-			$statement = "select  into userlogin(username, password) Values('$un', '$pw');";
+			$statement = "insert into userlogin(username, password) Values('$un', '$pw');";
 			$response = $this->logindb->query($statement);
-			return "User Registered";
-		}
-		catch(Error $e)
-		{
-			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
-			exit(1);
-		}
-	}
-	public function getUserStocks($username)
-	{
-		try{
-			$un = $this->logindb->real_escape_string($username);
-
-			$statement = "select top 1 timestamp from stocks order by timestamp DESC";
-			$response = $this->logindb->query($statement);
-			$row = $response->fetch_assoc();
-			if($row == 0)
+			if($this->logindb->affected_rows == 1)
 			{
-				//Pull all stock data
-				//return "No stock data found.";
+				$statement = "insert into userInfo(username, balance) Values('$un', 10000);";
+				$response = $this->logindb->query($statement);
+				if($this->logindb->affected_rows == 1)
+				{
+					return "User Registered";
+				}
 			}
-			echo "Timestamp: ".$row;
-			$date = time();
-			$row = strtotime($row); 
-			$statement = "select stocks from userStocks where username = '$un';";	
-			$response = $this->logindb->query($statement);
-			$row = $response->fetch_assoc();
-			if($row == 0)
-			{
-				return "User not found in database.";
-			}
-			$statement = "insert into users(username, password) Values('$un', '$pw');";
-			$response = $this->logindb->query($statement);
-			return "User Registered";
+			return "Error registering user";
 		}
 		catch(Error $e)
 		{

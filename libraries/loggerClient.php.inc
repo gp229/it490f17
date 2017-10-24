@@ -8,7 +8,7 @@ class loggerClient
         private $client;
         public function __construct()
         {
-                $this->client = new rabbitMQClient("testRabbitMQ.ini","testServer");
+                $this->client = new rabbitMQClient("testRabbitMQ.ini","loggingServer");
         }
         public function sendLog($logfile, int $level, $message)
         {
