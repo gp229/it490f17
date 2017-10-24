@@ -80,7 +80,7 @@ function sendBuyRequest(symbol,num)
       HandleResponse(this.responseText);
     }   
   }
-  request.send("type=buy&symbol="+text+"&num="+num+"&user="+user);
+  request.send("type=buy&symbol="+text+"&quantity="+num+"&username="+user);
 }
 
 function submitSell()
@@ -103,7 +103,7 @@ function sendSellRequest(symbol,num)
       HandleResponse(this.responseText);
     }   
   }
-  request.send("type=sell&symbol="+text+"&num="+num+"&user="+user);
+  request.send("type=sell&symbol="+text+"&quantity="+num+"&username="+user);
 }
 
 
