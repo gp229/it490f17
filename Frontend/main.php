@@ -31,7 +31,7 @@ $username = $_SESSION['loginUser'];
 function HandleResponse(response)
 {
 	var text = JSON.parse(response);
-	document.getElementById("output").innerHTML = "response: "+text+"<p>";
+	//document.getElementById("buysell_output").innerHTML = "response: "+text+"<p>";
 	if(text === "SearchSuccessful")
 	{
 		location.href = "main.php";
@@ -64,7 +64,7 @@ function submitBuy()
 {
   var symbol = document.getElementById("inputSymbol").value;
   var num = document.getElementById("inputNum").value;
-  document.getElementById("buysell_output").innerHTML = "Buying<p>stock: " + symbol + "<p>amount: " + num + "<p>";
+  //document.getElementById("buysell_output").innerHTML = "Buying<p>stock: " + symbol + "<p>amount: " + num + "<p>";
   sendBuyRequest(symbol,num);
   return 0;
 }
@@ -80,7 +80,7 @@ function sendBuyRequest(symbol,num)
       HandleResponse(this.responseText);
     }   
   }
-  request.send("type=buy&symbol="+text+"&quantity="+num+"&username="+user);
+  request.send("type=buy&symbol="+symbol+"&quantity="+num+"&username="+user);
 }
 
 function submitSell()

@@ -1,0 +1,231 @@
+Gabriel moved Create backend functions for buy/sell stocks. from To Do to Finished & Pushed
+
+7 hours ago
+Gabriel on Create backend functions for buy/sell stocks.
+
+Fixed a bunch of bug fixes to make it work.
+
+7 hours ago
+Gabriel joined Create backend functions for buy/sell stocks.
+
+7 hours ago
+Julio Torres deleted card #21 from To Do
+
+17 hours ago
+Julio Torres moved Create searchable stocks from To Do to In Progress
+
+yesterday at 12:44 AM
+Gabriel joined Check User stocks
+
+Oct 21 at 2:50 PM
+Gabriel added Check User stocks to In Progress
+
+Oct 21 at 2:47 PM
+Gabriel added Julio Torres to Create searchable stocks
+
+Oct 21 at 2:47 PM
+Gabriel added Create searchable stocks to To Do
+
+Oct 21 at 2:43 PM
+Gabriel deleted card #17 from To Do
+
+Oct 21 at 2:43 PM
+Gabriel on Create stock portfolio
+
+Create testcase that displays user's stocks in a table format. Along with quantity of stocks owned and price difference from when first bought. And a sell button to let users sell their stocks with quantity.
+
+Oct 21 at 2:42 PM
+Gabriel deleted card #7 from To Do
+
+Oct 21 at 2:39 PM
+Gabriel on Create backend functions for buy/sell stocks.
+
+Functional test cases between stockProc.php and stock.php.inc.
+
+Oct 21 at 2:38 PM
+Gabriel on Pulling 3rd Party Data
+
+Converted Julio's script to php. Parsed the return array to output what we need and made it take parameters.
+
+Oct 18 at 8:21 PM
+Gabriel joined Pulling 3rd Party Data
+
+Oct 18 at 8:17 PM
+Gabriel joined User Sessions: Login, logout, page redirects.
+
+Oct 13 at 1:11 PM
+Gabriel added User Sessions: Login, logout, page redirects. to Finished & Pushed
+
+Oct 13 at 1:11 PM
+John Paulo Laggui removed Checklist from Database Layout and Design
+
+Oct 12 at 8:50 PM
+Julio Torres added Amanbir Singh to Create stock portfolio
+
+Oct 12 at 11:31 AM
+Julio Torres added Create stock portfolio to To Do
+
+Oct 12 at 11:30 AM
+Julio Torres moved Create functions for different uses for retrieving 3rd party data. from To Do to In Progress
+
+Oct 11 at 9:46 PM
+Gabriel added John Paulo Laggui to Create backend functions for buy/sell stocks.
+
+Oct 10 at 11:36 AM
+Gabriel added Create backend functions for buy/sell stocks. to To Do
+
+Oct 10 at 11:36 AM
+Gabriel added Julio Torres to Create functions for different uses for retrieving 3rd party data.
+
+Oct 10 at 11:21 AM
+Gabriel added Create functions for different uses for retrieving 3rd party data. to To Do
+
+Oct 10 at 11:20 AM
+Gabriel moved Central Error Logging from Testing to Finished & Pushed
+
+Oct 10 at 11:20 AM
+Gabriel moved Pulling 3rd Party Data from In Progress to Finished & Pushed
+
+Oct 10 at 11:20 AM
+Gabriel added Deliverables to The Work Load
+
+Oct 10 at 11:19 AM
+John Paulo Laggui added Checklist to Database Layout and Design
+
+Oct 10 at 11:13 AM
+Gabriel moved Database Layout and Design from To Do to In Progress
+
+Oct 10 at 10:34 AM
+Gabriel moved Layout and Design from To Do to In Progress
+
+Oct 10 at 10:34 AM
+Gabriel moved Central Error Logging from To Do to Testing
+
+Oct 10 at 10:34 AM
+Julio Torres moved Pulling 3rd Party Data from To Do to In Progress
+
+Oct 8 at 6:51 PM
+Gabriel archived Sending Parse-able Code through RabbitMQ
+
+Oct 7 at 3:17 PM
+Gabriel archived User Authentication
+
+Oct 7 at 3:17 PM
+Gabriel moved Back-end Functionality with logging/registering user. from Review to Finished & Pushed
+
+Oct 7 at 3:16 PM
+Gabriel joined Central Error Logging
+
+Oct 7 at 3:15 PM
+Gabriel added Central Error Logging to To Do
+
+Oct 7 at 3:13 PM
+Gabriel added John Paulo Laggui to Database Layout and Design
+
+Oct 7 at 3:02 PM
+Gabriel on Pulling 3rd Party Data
+
+API Key = N7B9EMN3F2CHEW75
+
+Oct 7 at 2:45 PM
+Gabriel added Julio Torres to Pulling 3rd Party Data
+
+Oct 7 at 2:44 PM
+Gabriel added Amanbir Singh to Layout and Design
+
+Oct 7 at 2:04 PM
+Julio Torres moved User Authentication from Testing to Finished & Pushed
+
+Oct 4 at 10:21 PM
+Julio Torres on Back-end Functionality with logging/registering user.
+
+Adding Gabe to this since he made it work
+
+Oct 4 at 10:20 PM
+Julio Torres added Gabriel to Back-end Functionality with logging/registering user.
+
+Oct 4 at 10:20 PM
+Julio Torres moved Back-end Functionality with logging/registering user. from Testing to Review
+
+Oct 4 at 10:20 PM
+Julio Torres moved Sending Parse-able Code through RabbitMQ from To Do to Testing
+
+Oct 4 at 10:19 PM
+Julio Torres moved User Authentication from To Do to Testing
+
+Oct 4 at 10:19 PM
+Julio Torres moved Back-end Functionality with logging/registering user. from Review to Testing
+
+Oct 4 at 10:19 PM
+Julio Torres moved Back-end Functionality with logging/registering user. from To Do to Review
+
+Oct 4 at 10:19 PM
+Julio Torres added Back End/Data Base: John Paulo Laggui to The Work Load
+
+Oct 3 at 12:32 AM
+Julio Torres added Back End: Julio Torres, Gabriel Plewa to The Work Load
+
+Oct 3 at 12:32 AM
+Julio Torres added Front End/Back End: Amanbir Singh to The Work Load
+
+Oct 3 at 12:31 AM
+Julio Torres added The Work Load to this board
+
+Oct 3 at 12:30 AM
+Gabriel added Checklist to User Authentication
+
+Oct 2 at 9:58 PM
+Julio Torres added Pulling 3rd Party Data to To Do
+
+Sep 28 at 11:18 AM
+Julio Torres added Sending Parse-able Code through RabbitMQ to To Do
+
+Sep 28 at 11:16 AM
+Julio Torres added Back-end Functionality with logging/registering user. to To Do
+
+Sep 28 at 11:16 AM
+Julio Torres added Database Layout and Design to To Do
+
+Sep 28 at 11:15 AM
+Julio Torres added User Authentication to To Do
+
+Sep 28 at 11:14 AM
+Julio Torres added Layout and Design to To Do
+
+Sep 28 at 11:14 AM
+Julio Torres deleted card #1 from To Do
+
+Sep 28 at 11:13 AM
+Julio Torres added Finished & Pushed to this board
+
+Sep 28 at 11:12 AM
+Julio Torres added Review to this board
+
+Sep 28 at 11:12 AM
+Julio Torres added Testing to this board
+
+Sep 28 at 11:12 AM
+Julio Torres added In Progress to this board
+
+Sep 28 at 11:12 AM
+Julio Torres added Amanbir Singh to this board
+
+Sep 28 at 11:11 AM
+Gabriel joined this board
+
+Sep 18 at 2:22 PM
+Julio Torres changed the background of this board
+
+Sep 14 at 10:49 PM
+Julio Torres added Figure out something for out project to this board
+
+Sep 7 at 11:11 AM
+John Paulo Laggui joined this board
+
+Sep 7 at 10:49 AM
+Julio Torres added this board to Team IDC
+
+Sep 7 at 10:30 AM
+Julio Torres created this board
+
+Sep 7 at 10:30 AM

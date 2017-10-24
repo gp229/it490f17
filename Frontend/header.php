@@ -30,8 +30,8 @@ if(!isset($_SESSION['loginUser']))
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#" id="username"><?php echo $_SESSION['loginUser'];?></a></li>
-       <li><a href="#" id="user_balance" style="color: #5cb85c;"><?php echo $_SESSION['balance'];?><span class="glyphicon glyphicon-usd"></span></a></li>
-      <li><a href="login.php" id="username">Logout</a></li>
+       <li><a href="#" id="user_balance" style="color: #5cb85c;"><span class="glyphicon glyphicon-usd"><?php echo $_SESSION['balance'];?></span></a></li>
+      <li><a href="logout.php" id="username">Logout</a></li>
     </ul>
     
   </div>

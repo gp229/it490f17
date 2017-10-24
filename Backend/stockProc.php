@@ -66,7 +66,7 @@ function requestProcessor($request)
 					echo "Stock symbol or Quantity not given.".PHP_EOL;
 					return "Stock symbol or Quantity not given.";
 				}
-				return buyStocks($request['symbol'],$request['quantity'],$request['username']);
+				return buyStock($request['symbol'],$request['quantity'],$request['username']);
 			case "sell":
 				if(empty($request['symbol']) || empty($request['quantity']))
 				{
