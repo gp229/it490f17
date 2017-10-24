@@ -208,7 +208,7 @@ function submitBuy()
   sendBuyRequest(symbol,num);
   return 0;
 }
-function sendBuyRequest(symbol,num,user)
+function sendBuyRequest(symbol,num)
 {
   var request = new XMLHttpRequest();
   request.open("POST","buysell.php",true);
@@ -228,7 +228,7 @@ function submitSell()
   var symbol = document.getElementById("inputSymbol").value;
   var num = document.getElementById("inputNum").value;
   document.getElementById("buysell_output").innerHTML = "Selling<p>stock: " + symbol + "<p>amount: " + num + "<p>";
-  sendBuyRequest(symbol,num,user);
+  sendSellRequest(symbol,num);
   return 0;
 }
 function sendSellRequest(symbol,num)
@@ -243,7 +243,7 @@ function sendSellRequest(symbol,num)
       HandleResponse(this.responseText);
     }   
   }
-  request.send("type=sell&symbol="+text+"&num="+num);
+  request.send("type=sell&symbol="+text+"&num="+num+"&user="+user);
 }
 
 
