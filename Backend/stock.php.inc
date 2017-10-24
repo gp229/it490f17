@@ -5,10 +5,8 @@ require_once('loggerClient.php.inc');
 require_once('requestClient.php.inc');
 
 $mytest = new stocksDB();
-$username = "joe";
-$symbol = "MSFT";
-$quantity = 5;
-$mytest->buyStock($symbol,$quantity,$username);
+$stockName = 'Microsoft';
+$mytest->searchStock($stockName);
 
 
 class stocksDB
@@ -94,9 +92,48 @@ class stocksDB
 			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
 			exit(1);
 		}
-		}
-	public function 
+	}
+	public function mainGraphData($symbol,$type)
+	{
+		try
+		{
+			$sym = $this->logindb->real_escape_string($symbol);
+			$query = "select * stockInfo ";
+			
 
+
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+			exit(1);
+		}
+
+	}
+
+	public function searchStock($stockName)
+	{
+		try
+		{
+			$sn = $this->logindb->real_escape_string($stockName);
+			$q1 = "select * from stockInfo where stockName = '$sn';";
+			$r1 = $this->logindb->query($q1);
+			if(!$r1)
+			{
+				return 0;
+			}
+			$result = $r1->fetch_assoc();
+			if(isset($result['stockName']))
+			{
+				return $result;
+			}
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+			exit(1);
+		}
+	}
 	public function checkUserStock($username)
 	{
 		try

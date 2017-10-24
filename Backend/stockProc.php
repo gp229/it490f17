@@ -34,6 +34,13 @@ function checkStocks()
 	echo $response.PHP_EOL;
 	return $response;
 }
+function searchStock()
+{
+	$dbConn = new stocksDB();
+	$response = $dbConn->searchStock
+	$echo $response.PHP_EOl;
+	return $response;
+}
 
 function requestProcessor($request)
 {
@@ -68,6 +75,12 @@ function requestProcessor($request)
 					return "Username not given.";
 				}
 				return checkUserStocks($request['username']);
+			case "search":
+				if(empty$(request['stockName']))
+				{
+					echo "Stock Name not given".PHP_EOL;
+					return"Stock Name not given.";
+				}
 		}
 	
 		return array("returnCode" => '0', 'message'=>"Server received request and processed");
