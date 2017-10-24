@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+session_start();
 include('getUserStocks.php');
 
 if(!isset($_SESSION['loginUser']))
@@ -8,6 +9,7 @@ if(!isset($_SESSION['loginUser']))
 	exit(0);
 }
 include('header.php');
+$username = $_SESSION['loginUser'];
 ?>
 <html>
 
@@ -162,8 +164,11 @@ The Chart script for implementing the actual chart
 
 </div>
 
-<script>
-function HandleSearchResponse(response)
+<script = type="text/javascript">
+//This is the code that stores the usernames from the session
+<?php echo "var user = '" .$username. "'"; ?>
+
+function HandleResponse(response)
 {
 	var text = JSON.parse(response);
 	document.getElementById("output").innerHTML = "response: "+text+"<p>";
@@ -171,6 +176,14 @@ function HandleSearchResponse(response)
 	{
 		location.href = "main.php";
 	}
+  else if (text === "BuySuccessful")
+  {
+    document.getElementById("buysell_output").innerHTML = "<p>Purchase Complete";
+  }
+  else if (text === "SellSuccessful")
+  {
+    document.getElementById("buysell_output").innerHTML = "<p>Sale Complete";
+  }
 }
 function sendSearchRequest(text)
 {
@@ -181,7 +194,7 @@ function sendSearchRequest(text)
 	{
 		if ((this.readyState == 4)&&(this.status == 200))
 		{
-			HandleLoginResponse(this.responseText);
+			HandleResponse(this.responseText);
 		}		
 	}
 	request.send("type=search&symbol="+text);
@@ -191,11 +204,11 @@ function submitBuy()
 {
   var symbol = document.getElementById("inputSymbol").value;
   var num = document.getElementById("inputNum").value;
-  document.getElementById("buysell_output").innerHTML = "stock: " + symbol + "<p>amount: " + num + "<p>";
+  document.getElementById("buysell_output").innerHTML = "Buying<p>stock: " + symbol + "<p>amount: " + num + "<p>";
   sendBuyRequest(symbol,num);
   return 0;
 }
-function sendBuyRequest(symbol,num)
+function sendBuyRequest(symbol,num,user)
 {
   var request = new XMLHttpRequest();
   request.open("POST","buysell.php",true);
@@ -204,20 +217,35 @@ function sendBuyRequest(symbol,num)
   {
     if ((this.readyState == 4)&&(this.status == 200))
     {
-      HandleLoginResponse(this.responseText);
+      HandleResponse(this.responseText);
     }   
   }
-  request.send("type=buy&symbol="+text+"&num="+num);
+  request.send("type=buy&symbol="+text+"&num="+num+"&user="+user);
 }
 
 function submitSell()
 {
   var symbol = document.getElementById("inputSymbol").value;
   var num = document.getElementById("inputNum").value;
-  document.getElementById("buysell_output").innerHTML = "stock: " + symbol + "<p>amount: " + num + "<p>";
-  sendBuyRequest(symbol,num);
+  document.getElementById("buysell_output").innerHTML = "Selling<p>stock: " + symbol + "<p>amount: " + num + "<p>";
+  sendBuyRequest(symbol,num,user);
   return 0;
 }
+function sendSellRequest(symbol,num)
+{
+  var request = new XMLHttpRequest();
+  request.open("POST","buysell.php",true);
+  request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  request.onreadystatechange= function ()
+  {
+    if ((this.readyState == 4)&&(this.status == 200))
+    {
+      HandleResponse(this.responseText);
+    }   
+  }
+  request.send("type=sell&symbol="+text+"&num="+num);
+}
+
 
 </script>
 
