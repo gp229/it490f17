@@ -26,35 +26,6 @@ CREATE TABLE `userlogin` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `orderHistory`
---
-
-DROP TABLE IF EXISTS `orderHistory`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `orderHistory` (
-  `symbol` char(1) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `purchasePrice` int(11) NOT NULL,
-  `totalPrice` int(11) NOT NULL,
-  `orderNumber` int(11) NOT NULL AUTO_INCREMENT,
-  `ID` int(11) DEFAULT NULL,
-  `stockName` char(1) NOT NULL,
-  PRIMARY KEY (`orderNumber`),
-  KEY `ID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `orderHistory`
---
-
-LOCK TABLES `orderHistory` WRITE;
-/*!40000 ALTER TABLE `orderHistory` DISABLE KEYS */;
-/*!40000 ALTER TABLE `orderHistory` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `stockInfo`
 --
 
@@ -115,9 +86,10 @@ DROP TABLE IF EXISTS `userStocks`;
 CREATE TABLE `userStocks` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
+  `timestamp` datetime NOT NULL,
   `symbol` varchar(10) NOT NULL,
-  `purchasePrice` int(10) NOT NULL,
-  `totalValue` int(20) NOT NULL,
+  `purchasePrice` decimal(9,5) NOT NULL,
+  `totalValue` decimal(10,5) NOT NULL,
   `quantity` int(5) NOT NULL,
   Primary KEY `ID` (`ID`),
   CONSTRAINT `userStocks_ibfk_1` FOREIGN KEY (`username`) REFERENCES `userlogin` (`username`)

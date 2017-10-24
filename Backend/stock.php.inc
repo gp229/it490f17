@@ -4,13 +4,6 @@ require_once('get_host_info.inc');
 require_once('loggerClient.php.inc');
 require_once('requestClient.php.inc');
 
-$mytest = new stocksDB();
-$username = "joe";
-$symbol = "MSFT";
-$quantity = 5;
-$mytest->buyStock($symbol,$quantity,$username);
-
-
 class stocksDB
 {
 	private $logindb;
@@ -36,20 +29,26 @@ class stocksDB
 		try{
 			$sym = $this->logindb->real_escape_string($symbol);
 			$un = $this->logindb->real_escape_string($username);
-			$q1 = "select marketPrice from stockInfo where symbol = '$sym';";
+			$q1 = "select close, timestamp from stockInfo where symbol = '$sym' and timestamp = (select max(timestamp) from stockInfo where symbol = '$sym');";
 			$r1 = $this->logindb->query($q1);
 			$price = $r1->fetch_assoc();
-			$marketPrice = $price['marketPrice'];
+			$marketPrice = $price['close'];
+			$timestamp = $price['timestamp'];
 			$totalPrice = $marketPrice * $quantity;
-			$q2 = "select stockName from stockInfo where symbol = '$sym';";
-			$r2 = $this->logindb->query($q2);
-			$name = $r2->fetch_assoc();
-			echo $name['stockName'];
-			$q3 = "insert into userStocks(symbol,stockName,quantity,purchasePrice,totalPrice) values('$sym','$stockName','$quantity','$marketPrice','$totalPrice') where username = '$un';";
+			$q1 = "select balance from userInfo where username = '$un';";
+			$r1 = $this->logindb->query($q1);
+			$price = $r1->fetch_assoc();
+			$balance = $price['balance'];
+			if($balance < $totalPrice)
+			{
+				echo "Not enough money to purchase stocks.";
+				return "Not enough money to purchase stocks.";
+			}
+			$q3 = "insert into userStocks(symbol,timestamp, username, quantity,purchasePrice,totalValue) values('$sym','$timestamp','$un','$quantity','$marketPrice','$totalPrice');";
 			$q4 = "update userInfo set balance = balance - '$totalPrice' where username = '$un';";
 			$r3 = $this->logindb->query($q3);
 			$r4 = $this->logindb->query($q4);
-			return "You have bought "+ $quantity +"stocks of "+ $stockName;
+			return "You have bought ".$quantity."stocks of ".$symbol;
 		}
 		catch(Error $e)
 		{
@@ -62,41 +61,59 @@ class stocksDB
 		try{
 			$un = $this->logindb->real_escape_string($username);
 			$sym = $this->logindb->real_escape_string($symbol);
-			$q1 = "select quantity from userStocks where symbol = '$symbol' where username = '$un';";
-			$r1 = $this->logindb->query($s);
+			$q1 = "select sum(quantity) from userStocks where symbol = '$symbol' and username = '$un';";
+			$r1 = $this->logindb->query($q1);
 			$currentQuantity = $r1->fetch_assoc();
+			$currentQuantity= $currentQuantity['sum(quantity)'];
 			if ($currentQuantity < $quantity)
 			{
 				return "Attempted to sell more stocks than currently owned. Nice try.";
 			}
-			$q2 = "select price from stocks where symbol = '$symbol';";
+			$q2 = "select close from stockInfo where symbol = '$sym' and timestamp = (select max(timestamp) from stockInfo where symbol = '$sym');";
 			$r2 = $this->logindb->query($q2);
 			$price = $r2->fetch_assoc();
-			$marketPrice = $price["marketPrice"];
+			$marketPrice = $price['close'];
 			$totalPrice = $marketPrice * $quantity;
-			$q3 = "select stockName from stocks where symbol = '$sym';";
-			$r3 = $this->logindb->query($q3);
-			$name = $r3->fetch_assoc();
-			$stockName = $name["stockName"];
 			$q4 = "update userInfo set balance = balance + '$totalPrice' where username = '$un';";
-			if ($currentquantity == $quantity)
-			{
-				$q = "delete from userStocks where symbol = '$sym' where username = '$un';";
-				return "Successfully sold all stocks of "+ $stockName;
-			}
-			$q5 = "update userStocks set quantity = quantity - '$quantity',totalValue = totalValue + '$totalPrice' where username ='$un';";
 			$r4 = $this->logindb->query($q4);
-			$r5 = $this->logindb->query($q5);
-			return "Successfully sold "+ $quantity + "shares of "+ $stockName;
+			if ($currentQuantity == $quantity)
+			{
+				$q4= "delete from userStocks where symbol = '$sym' and username = '$un';";
+				$r4 = $this->logindb->query($q4);
+				echo "Successfully sold all stocks of ".$symbol;
+				return "Successfully sold all stocks of ".$symbol;
+			}
+			else
+			{
+				$myQuantity = $quantity;
+				while($quantity > 0)
+				{
+					$q5 = "select ID, quantity from userStocks where ID = (select Max(ID) from userStocks where symbol = '$sym' and username = '$username');";
+					$r5 = $this->logindb->query($q5);
+					$values = $r5->fetch_assoc();
+					$id = $values['ID'];
+					$currentQuantity = $values['quantity'];
+					if($quantity >= $currentQuantity)
+					{
+						$q5= "delete from userStocks where id = '$id';";
+					}
+					else
+					{
+						$q5 = "update userStocks set quantity = quantity - '$quantity' where id ='$id';";
+					}
+					$r5 = $this->logindb->query($q5);
+					$quantity -= $currentQuantity;	
+					echo $quantity;			
+				}
+			}
+			return "Successfully sold ".$myQuantity." shares of ".$sym;
 		}
 		catch(Error $e)
 		{
 			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
 			exit(1);
 		}
-		}
-	public function 
-
+	}
 	public function checkUserStock($username)
 	{
 		try
