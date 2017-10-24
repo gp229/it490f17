@@ -11,7 +11,7 @@ if(!isset($_SESSION['loginUser']))
 <html>
 
 <head>
-<title>Stocks-R-Us</title>
+<title>Portfolio</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -25,8 +25,8 @@ if(!isset($_SESSION['loginUser']))
       <a class="navbar-brand" href="#">Stocks-R-Us</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="portfolio.php">Account</a></li>
+      <li><a href="main.php">Home</a></li>
+      <li class="active"><a href="#">Account</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#" id="username"></a></li>
@@ -39,19 +39,10 @@ if(!isset($_SESSION['loginUser']))
 
 <div class="container">
   <div class="jumbotron">
-    <h1>Welcome!</h1>      
-    <p>This is Stocks R Us, where you can fufill you stock market needs</p>
+    <h1>Hello!</h1>     
+    <p>Lets see how you have been doing</p><p id="username"></p>
   </div>
-
-  <form class="navbar-form navbar" style="margin-top: -20px; margin-left: -10px; width: 100%;">
-    <button type="buy" class="btn btn-default">Buy</button>
-    <button type="sell" class="btn btn-default">Sell</button>
-    <input type="num" class="form-control" placeholder="Amount">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search For Stocks">
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>    
+   
 <!-- 
 The Chart script for implementing the actual chart
 -->
@@ -153,8 +144,6 @@ The Chart script for implementing the actual chart
 
     }
 	</script>
-
-<button id="change-chart">Change to Classic</button>
 
 
 </div>
