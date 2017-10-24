@@ -114,6 +114,53 @@ class stocksDB
 			exit(1);
 		}
 	}
+	public function graphData($symbol,$type)
+	{
+		try
+		{
+			$sym = $this->logindb->real_escape_string($symbol);
+			$typ = $this->logindb->real_escape_string($symbol);
+			$query = "select '$typ' from stockInfo where symbol = '$sym' order by timeStamp DESC;";
+			$response = $this->logindb->query($query);
+			$result = $response->fetchAll();
+			return var_dump($result);
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+			exit(1);
+		}
+
+	}
+
+	public function searchStock($stockName)
+	{
+		try
+		{
+			$row = array();
+			$sn = $this->logindb->real_escape_string($stockName);
+			$q1 = "select * from stockInfo where stockName = '$sn';";
+			$r1 = $this->logindb->query($q1);
+			while($row = $r1->fetch_assoc())
+			{
+				echo $row['stockName'];
+			}
+			if(!$r1)
+			{
+				return 0;
+			}
+			$result = $r1->fetch_assoc();
+			if(isset($result['stockName']))
+			{
+				return $result;
+			}
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+			exit(1);
+		}
+	}
 	public function checkUserStock($username)
 	{
 		try
@@ -138,7 +185,7 @@ class stocksDB
 	}
 
 
-	public function updateStocks()
+	private function updateStocks()
 	{
 		try
 		{
