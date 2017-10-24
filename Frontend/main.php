@@ -46,12 +46,14 @@ if(!isset($_SESSION['loginUser']))
   <form class="navbar-form navbar" style="margin-top: -20px; margin-left: -10px; width: 100%;">
     <button type="buy" class="btn btn-default">Buy</button>
     <button type="sell" class="btn btn-default">Sell</button>
-    <input type="num" class="form-control" placeholder="Amount">
+    <input type="num" id="inputNum" class="form-control" placeholder="Amount">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search For Stocks">
+        <input type="text" id="inputSymbol" class="form-control" placeholder="Search For Stocks">
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
-    </form>    
+    </form>
+
+    <div class="buysell_output"></div>    
 <!-- 
 The Chart script for implementing the actual chart
 -->
@@ -183,6 +185,39 @@ function sendSearchRequest(text)
 	}
 	request.send("type=search&symbol="+text);
 }
+
+function submitBuy()
+{
+  var symbol = document.getElementById("inputSymbol").value;
+  var num = document.getElementById("inputNum").value;
+  document.getElementById("buysell_output").innerHTML = "stock: " + symbol + "<p>amount: " + num + "<p>";
+  sendBuyRequest(symbol,num);
+  return 0;
+}
+function sendBuyRequest(symbol,num)
+{
+  var request = new XMLHttpRequest();
+  request.open("POST","buysell.php",true);
+  request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  request.onreadystatechange= function ()
+  {
+    if ((this.readyState == 4)&&(this.status == 200))
+    {
+      HandleLoginResponse(this.responseText);
+    }   
+  }
+  request.send("type=buy&symbol="+text+"&num="+num);
+}
+
+function submitSell()
+{
+  var symbol = document.getElementById("inputSymbol").value;
+  var num = document.getElementById("inputNum").value;
+  document.getElementById("buysell_output").innerHTML = "stock: " + symbol + "<p>amount: " + num + "<p>";
+  sendBuyRequest(symbol,num);
+  return 0;
+}
+
 </script>
 
 </body>
