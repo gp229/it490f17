@@ -1,0 +1,4905 @@
+{
+	"id": "59b157f14dae94acc5428db3",
+	"name": "Our Main Project Deliverables",
+	"desc": "",
+	"descData": null,
+	"closed": false,
+	"idOrganization": "59b157cd07accc560e4a1cd1",
+	"invited": false,
+	"limits": {
+		"boards": {
+			"totalMembersPerBoard": {
+				"status": "ok",
+				"disableAt": 1520,
+				"warnAt": 1440
+			}
+		},
+		"cards": {
+			"openPerBoard": {
+				"status": "ok",
+				"disableAt": 4750,
+				"warnAt": 4500
+			},
+			"totalPerBoard": {
+				"status": "ok",
+				"disableAt": 1900000,
+				"warnAt": 1800000
+			}
+		},
+		"checklists": {
+			"perBoard": {
+				"status": "ok",
+				"disableAt": 15200,
+				"warnAt": 14400
+			}
+		},
+		"labels": {
+			"perBoard": {
+				"status": "ok",
+				"disableAt": 950,
+				"warnAt": 900
+			}
+		},
+		"lists": {
+			"openPerBoard": {
+				"status": "ok",
+				"disableAt": 475,
+				"warnAt": 450
+			},
+			"totalPerBoard": {
+				"status": "ok",
+				"disableAt": 2850,
+				"warnAt": 2700
+			}
+		}
+	},
+	"pinned": false,
+	"starred": false,
+	"url": "https://trello.com/b/ccSWaByx/our-main-project-deliverables",
+	"prefs": {
+		"permissionLevel": "org",
+		"voting": "disabled",
+		"comments": "members",
+		"invitations": "members",
+		"selfJoin": true,
+		"cardCovers": true,
+		"cardAging": "regular",
+		"calendarFeedEnabled": false,
+		"background": "grey",
+		"backgroundImage": null,
+		"backgroundImageScaled": null,
+		"backgroundTile": false,
+		"backgroundBrightness": "dark",
+		"backgroundColor": "#838C91",
+		"backgroundBottomColor": "#838C91",
+		"backgroundTopColor": "#838C91",
+		"canBePublic": true,
+		"canBeOrg": true,
+		"canBePrivate": true,
+		"canInvite": true
+	},
+	"invitations": [],
+	"shortLink": "ccSWaByx",
+	"subscribed": false,
+	"labelNames": {
+		"green": "",
+		"yellow": "",
+		"orange": "",
+		"red": "",
+		"purple": "",
+		"blue": "",
+		"sky": "",
+		"lime": "",
+		"pink": "",
+		"black": ""
+	},
+	"powerUps": [],
+	"dateLastActivity": "2017-10-24T14:21:10.617Z",
+	"dateLastView": "2017-10-25T02:02:08.267Z",
+	"shortUrl": "https://trello.com/b/ccSWaByx",
+	"idTags": [],
+	"datePluginDisable": null,
+	"actions": [
+		{
+			"id": "59ef4c56085a4c29e23525cc",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "Finished & Pushed",
+					"id": "59cd116ef873dbae0787d9d0"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "Dg2qwLpl",
+					"idShort": 15,
+					"name": "Create backend functions for buy/sell stocks.",
+					"id": "59dce90768868d6f5b5e393b",
+					"pos": 360447
+				},
+				"old": {
+					"pos": 524287
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-24T14:21:10.634Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59ef4c56085a4c29e23525cb",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"listAfter": {
+					"name": "Finished & Pushed",
+					"id": "59cd116ef873dbae0787d9d0"
+				},
+				"listBefore": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "Dg2qwLpl",
+					"idShort": 15,
+					"name": "Create backend functions for buy/sell stocks.",
+					"id": "59dce90768868d6f5b5e393b",
+					"idList": "59cd116ef873dbae0787d9d0"
+				},
+				"old": {
+					"idList": "59b1618aa08ccd69482180a7"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-24T14:21:10.606Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59ef4c50224de9be42b964fd",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "Dg2qwLpl",
+					"idShort": 15,
+					"name": "Create backend functions for buy/sell stocks.",
+					"id": "59dce90768868d6f5b5e393b"
+				},
+				"text": "Fixed a bunch of bug fixes to make it work."
+			},
+			"type": "commentCard",
+			"date": "2017-10-24T14:21:04.555Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59ef4bdc6ff75fee876e8856",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "Dg2qwLpl",
+					"idShort": 15,
+					"name": "Create backend functions for buy/sell stocks.",
+					"id": "59dce90768868d6f5b5e393b"
+				},
+				"idMember": "59b1598f09ad03facc0122e5"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-24T14:19:08.376Z",
+			"member": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eec3052cfa5d17a8cde190",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "Uw2ovYfk",
+					"idShort": 21,
+					"id": "59eec2f344dd90148da70d76"
+				}
+			},
+			"type": "deleteCard",
+			"date": "2017-10-24T04:35:17.784Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59ed738fbd4718d15d6c8ee3",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"list": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "ArATqioP",
+					"idShort": 19,
+					"name": "Create searchable stocks",
+					"id": "59eb9564331ec4f7c9d33e0a",
+					"pos": 786431
+				},
+				"old": {
+					"pos": 720895
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-23T04:43:59.433Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59ed738fbd4718d15d6c8ee2",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"listAfter": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				},
+				"listBefore": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "ArATqioP",
+					"idShort": 19,
+					"name": "Create searchable stocks",
+					"id": "59eb9564331ec4f7c9d33e0a",
+					"idList": "59cd1156b7daa00caedfc144"
+				},
+				"old": {
+					"idList": "59b1618aa08ccd69482180a7"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-23T04:43:59.412Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59eb96fd56584c9e19b6224f",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "zO1mCeNB",
+					"idShort": 20,
+					"name": "Check User stocks",
+					"id": "59eb964be3eece731c167bdf"
+				},
+				"idMember": "59b1598f09ad03facc0122e5"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-21T18:50:37.755Z",
+			"member": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eb96fc1af10f6534062657",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "zO1mCeNB",
+					"idShort": 20,
+					"name": "Check User stocks",
+					"id": "59eb964be3eece731c167bdf",
+					"desc": "Creating backend functionality for retrieving user stocks, for use in portfolio and graph. Calls to api to get most updated data which can then be used in other cases. "
+				},
+				"old": {
+					"desc": ""
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-21T18:50:36.083Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eb964be3eece731c167be0",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				},
+				"card": {
+					"shortLink": "zO1mCeNB",
+					"idShort": 20,
+					"name": "Check User stocks",
+					"id": "59eb964be3eece731c167bdf"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-10-21T18:47:39.103Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eb9639d93cd121d42646fa",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "ArATqioP",
+					"idShort": 19,
+					"name": "Create searchable stocks",
+					"id": "59eb9564331ec4f7c9d33e0a"
+				},
+				"idMember": "57d837147f9a3e864436c1d8"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-21T18:47:21.454Z",
+			"member": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eb9633b32117116ddbb312",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "ArATqioP",
+					"idShort": 19,
+					"name": "Create searchable stocks",
+					"id": "59eb9564331ec4f7c9d33e0a",
+					"desc": "Create a page to display all available stocks, price, quantity available.And a button to buy stocks with quantity. Only needs to be a a testcase of a small subset of made up stocks."
+				},
+				"old": {
+					"desc": ""
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-21T18:47:15.071Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eb9564331ec4f7c9d33e0b",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "ArATqioP",
+					"idShort": 19,
+					"name": "Create searchable stocks",
+					"id": "59eb9564331ec4f7c9d33e0a"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-10-21T18:43:48.794Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eb9536b6cebb514b6c5f5e",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "KOH5ZdQc",
+					"idShort": 17,
+					"id": "59df8ab04da297af3736b255"
+				}
+			},
+			"type": "deleteCard",
+			"date": "2017-10-21T18:43:02.010Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eb952733cdcdf371dbcfd4",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "PZGvu3S5",
+					"idShort": 16,
+					"name": "Create stock portfolio",
+					"id": "59df8aa0fe6a036f44e5c14c"
+				},
+				"text": "Create testcase that displays user's stocks in a table format. Along with quantity of stocks owned and price difference from when first bought. And a sell button to let users sell their stocks with quantity."
+			},
+			"type": "commentCard",
+			"date": "2017-10-21T18:42:47.388Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eb9498a5729050fb7c52b8",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "PZGvu3S5",
+					"idShort": 16,
+					"id": "59df8aa0fe6a036f44e5c14c",
+					"name": "Create stock portfolio"
+				},
+				"old": {
+					"name": "Create"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-21T18:40:24.794Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eb9463eb3bbfc774d107bf",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "PZGvu3S5",
+					"idShort": 16,
+					"id": "59df8aa0fe6a036f44e5c14c",
+					"name": "Create"
+				},
+				"old": {
+					"name": "Work on page layouts"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-21T18:39:31.850Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eb945cabcfcc37aa022bed",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "xIUWSRnX",
+					"idShort": 7,
+					"id": "59cd127010c54d9aeb2bfb07"
+				}
+			},
+			"type": "deleteCard",
+			"date": "2017-10-21T18:39:24.045Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eb9433bdbd12c6d368b09d",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "Dg2qwLpl",
+					"idShort": 15,
+					"name": "Create backend functions for buy/sell stocks.",
+					"id": "59dce90768868d6f5b5e393b"
+				},
+				"text": "Functional test cases between stockProc.php and stock.php.inc."
+			},
+			"type": "commentCard",
+			"date": "2017-10-21T18:38:43.294Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59eb92dd9f7b8e1f1b3ca620",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "Dg2qwLpl",
+					"idShort": 15,
+					"id": "59dce90768868d6f5b5e393b",
+					"name": "Create backend functions for buy/sell stocks."
+				},
+				"old": {
+					"name": "Create backend functions for storing stocks that user owns"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-21T18:33:01.757Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59e7f00affeac83c91c5fd4a",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "Finished & Pushed",
+					"id": "59cd116ef873dbae0787d9d0"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "lTDREGL2",
+					"idShort": 8,
+					"name": "Pulling 3rd Party Data",
+					"id": "59cd12a7c4d350a1a5637204"
+				},
+				"text": "Converted Julio's script to php. Parsed the return array to output what we need and made it take parameters."
+			},
+			"type": "commentCard",
+			"date": "2017-10-19T00:21:30.788Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59e7ef0dd6d8500ea8f6a8c5",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "lTDREGL2",
+					"idShort": 8,
+					"name": "Pulling 3rd Party Data",
+					"id": "59cd12a7c4d350a1a5637204"
+				},
+				"idMember": "59b1598f09ad03facc0122e5"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-19T00:17:17.849Z",
+			"member": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59e0f3abf265b3978d804854",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "Ffeh0RXy",
+					"idShort": 18,
+					"name": "User Sessions: Login, logout, page redirects.",
+					"id": "59e0f3a10dfcf887c8123dc1"
+				},
+				"idMember": "59b1598f09ad03facc0122e5"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-13T17:11:07.337Z",
+			"member": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59e0f3a52de7aee49bb37c7b",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "Ffeh0RXy",
+					"idShort": 18,
+					"name": "User Sessions: Login, logout, page redirects.",
+					"id": "59e0f3a10dfcf887c8123dc1"
+				},
+				"deactivated": false,
+				"idMember": "59b1598f09ad03facc0122e5"
+			},
+			"type": "removeMemberFromCard",
+			"date": "2017-10-13T17:11:01.530Z",
+			"member": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59e0f3a478562d884f152304",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "Ffeh0RXy",
+					"idShort": 18,
+					"name": "User Sessions: Login, logout, page redirects.",
+					"id": "59e0f3a10dfcf887c8123dc1"
+				},
+				"idMember": "59b1598f09ad03facc0122e5"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-13T17:11:00.649Z",
+			"member": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59e0f3a10dfcf887c8123dc2",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "Finished & Pushed",
+					"id": "59cd116ef873dbae0787d9d0"
+				},
+				"card": {
+					"shortLink": "Ffeh0RXy",
+					"idShort": 18,
+					"name": "User Sessions: Login, logout, page redirects.",
+					"id": "59e0f3a10dfcf887c8123dc1"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-10-13T17:10:57.140Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59e00dbbdf7ff4b74b94c80b",
+			"idMemberCreator": "59b159d41d455e95587f9213",
+			"data": {
+				"checklist": {
+					"name": "Checklist",
+					"id": "59dce3814c97ef49d997217a"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "tNVhrZ9m",
+					"idShort": 4,
+					"name": "Database Layout and Design",
+					"id": "59cd11fe625cf5ae11ae57ab"
+				}
+			},
+			"type": "removeChecklistFromCard",
+			"date": "2017-10-13T00:50:03.627Z",
+			"memberCreator": {
+				"id": "59b159d41d455e95587f9213",
+				"avatarHash": null,
+				"fullName": "John Paulo Laggui",
+				"initials": "JL",
+				"username": "enter_name_here"
+			}
+		},
+		{
+			"id": "59df8abac85ee7af4ad82a34",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "PZGvu3S5",
+					"idShort": 16,
+					"name": "Work on page layouts",
+					"id": "59df8aa0fe6a036f44e5c14c"
+				},
+				"idMember": "59aeb99e9d4f3157970ea37b"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-12T15:31:06.994Z",
+			"member": {
+				"id": "59aeb99e9d4f3157970ea37b",
+				"avatarHash": null,
+				"fullName": "Amanbir Singh",
+				"initials": "AS",
+				"username": "amanbirsingh1"
+			},
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59df8aa0fe6a036f44e5c14d",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "PZGvu3S5",
+					"idShort": 16,
+					"name": "Work on page layouts",
+					"id": "59df8aa0fe6a036f44e5c14c"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-10-12T15:30:40.618Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59dec968aa12f94e8bb35219",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"list": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "J5Mj8pqe",
+					"idShort": 14,
+					"name": "Create functions for different uses for retrieving 3rd party data.",
+					"id": "59dce549ed6cd19c4de4cf80",
+					"pos": 655359
+				},
+				"old": {
+					"pos": 458751
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-12T01:46:16.743Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59dec968aa12f94e8bb35218",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"listAfter": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				},
+				"listBefore": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "J5Mj8pqe",
+					"idShort": 14,
+					"name": "Create functions for different uses for retrieving 3rd party data.",
+					"id": "59dce549ed6cd19c4de4cf80",
+					"idList": "59cd1156b7daa00caedfc144"
+				},
+				"old": {
+					"idList": "59b1618aa08ccd69482180a7"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-12T01:46:16.724Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59dce90fe9f57962ab86327b",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "Dg2qwLpl",
+					"idShort": 15,
+					"name": "Create backend functions for storing stocks that user owns",
+					"id": "59dce90768868d6f5b5e393b"
+				},
+				"idMember": "59b159d41d455e95587f9213"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-10T15:36:47.860Z",
+			"member": {
+				"id": "59b159d41d455e95587f9213",
+				"avatarHash": null,
+				"fullName": "John Paulo Laggui",
+				"initials": "JL",
+				"username": "enter_name_here"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dce90768868d6f5b5e393c",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "Dg2qwLpl",
+					"idShort": 15,
+					"name": "Create backend functions for storing stocks that user owns",
+					"id": "59dce90768868d6f5b5e393b"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-10-10T15:36:39.276Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dce5759f062a49aa7c6800",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "J5Mj8pqe",
+					"idShort": 14,
+					"name": "Create functions for different uses for retrieving 3rd party data.",
+					"id": "59dce549ed6cd19c4de4cf80"
+				},
+				"idMember": "57d837147f9a3e864436c1d8"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-10T15:21:25.866Z",
+			"member": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dce573b57418fb6c9b8356",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "J5Mj8pqe",
+					"idShort": 14,
+					"id": "59dce549ed6cd19c4de4cf80",
+					"name": "Create functions for different uses for retrieving 3rd party data."
+				},
+				"old": {
+					"name": "Create functions for different uses for 3rd party data."
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-10T15:21:23.400Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dce549ed6cd19c4de4cf81",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "J5Mj8pqe",
+					"idShort": 14,
+					"name": "Create functions for different uses for 3rd party data.",
+					"id": "59dce549ed6cd19c4de4cf80"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-10-10T15:20:41.619Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dce52a4544b15caa68bd7b",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"listAfter": {
+					"name": "Finished & Pushed",
+					"id": "59cd116ef873dbae0787d9d0"
+				},
+				"listBefore": {
+					"name": "Testing",
+					"id": "59cd115ebb508431dc74ebf0"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "zizLOArA",
+					"idShort": 12,
+					"name": "Central Error Logging",
+					"id": "59d92763d7c81d608039cc5b",
+					"idList": "59cd116ef873dbae0787d9d0"
+				},
+				"old": {
+					"idList": "59cd115ebb508431dc74ebf0"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-10T15:20:10.032Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dce5281903463b3bc1b8b1",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"listAfter": {
+					"name": "Finished & Pushed",
+					"id": "59cd116ef873dbae0787d9d0"
+				},
+				"listBefore": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "lTDREGL2",
+					"idShort": 8,
+					"name": "Pulling 3rd Party Data",
+					"id": "59cd12a7c4d350a1a5637204",
+					"idList": "59cd116ef873dbae0787d9d0"
+				},
+				"old": {
+					"idList": "59cd1156b7daa00caedfc144"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-10T15:20:08.272Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dce50c6412e1e618d1a179",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "The Work Load",
+					"id": "59d3125e01b5f62625904194"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "SecXPdRF",
+					"idShort": 13,
+					"name": "Deliverables",
+					"id": "59dce4e427537a401c40d8fd",
+					"desc": "User Maintain Portfolio\nBuy/Sell intraday\nstock search feature\nportfolio value overtime - graph"
+				},
+				"old": {
+					"desc": ""
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-10T15:19:40.668Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dce4e427537a401c40d8fe",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "The Work Load",
+					"id": "59d3125e01b5f62625904194"
+				},
+				"card": {
+					"shortLink": "SecXPdRF",
+					"idShort": 13,
+					"name": "Deliverables",
+					"id": "59dce4e427537a401c40d8fd"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-10-10T15:19:00.902Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dce3814c97ef49d997217b",
+			"idMemberCreator": "59b159d41d455e95587f9213",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"checklist": {
+					"name": "Checklist",
+					"id": "59dce3814c97ef49d997217a"
+				},
+				"card": {
+					"shortLink": "tNVhrZ9m",
+					"idShort": 4,
+					"name": "Database Layout and Design",
+					"id": "59cd11fe625cf5ae11ae57ab"
+				}
+			},
+			"type": "addChecklistToCard",
+			"date": "2017-10-10T15:13:05.587Z",
+			"memberCreator": {
+				"id": "59b159d41d455e95587f9213",
+				"avatarHash": null,
+				"fullName": "John Paulo Laggui",
+				"initials": "JL",
+				"username": "enter_name_here"
+			}
+		},
+		{
+			"id": "59dcda5dcf91a547dde1a2b0",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "tNVhrZ9m",
+					"idShort": 4,
+					"name": "Database Layout and Design",
+					"id": "59cd11fe625cf5ae11ae57ab",
+					"pos": 589823
+				},
+				"old": {
+					"pos": 196607
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-10T14:34:05.849Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dcda5dcf91a547dde1a2af",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"listAfter": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				},
+				"listBefore": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "tNVhrZ9m",
+					"idShort": 4,
+					"name": "Database Layout and Design",
+					"id": "59cd11fe625cf5ae11ae57ab",
+					"idList": "59cd1156b7daa00caedfc144"
+				},
+				"old": {
+					"idList": "59b1618aa08ccd69482180a7"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-10T14:34:05.833Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dcda5c7e746a57218bbe49",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "ttJBDq8y",
+					"idShort": 2,
+					"name": "Layout and Design",
+					"id": "59cd11b38edede030520778a",
+					"pos": 524287
+				},
+				"old": {
+					"pos": 163839
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-10T14:34:04.526Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dcda5c7e746a57218bbe48",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"listAfter": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				},
+				"listBefore": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "ttJBDq8y",
+					"idShort": 2,
+					"name": "Layout and Design",
+					"id": "59cd11b38edede030520778a",
+					"idList": "59cd1156b7daa00caedfc144"
+				},
+				"old": {
+					"idList": "59b1618aa08ccd69482180a7"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-10T14:34:04.400Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59dcda574687036a794bc0d8",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"listAfter": {
+					"name": "Testing",
+					"id": "59cd115ebb508431dc74ebf0"
+				},
+				"listBefore": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "zizLOArA",
+					"idShort": 12,
+					"name": "Central Error Logging",
+					"id": "59d92763d7c81d608039cc5b",
+					"idList": "59cd115ebb508431dc74ebf0"
+				},
+				"old": {
+					"idList": "59b1618aa08ccd69482180a7"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-10T14:33:59.261Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59daac06c05f61c29903864e",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"listAfter": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				},
+				"listBefore": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "lTDREGL2",
+					"idShort": 8,
+					"name": "Pulling 3rd Party Data",
+					"id": "59cd12a7c4d350a1a5637204",
+					"idList": "59cd1156b7daa00caedfc144"
+				},
+				"old": {
+					"idList": "59b1618aa08ccd69482180a7"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-08T22:51:50.160Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d9284d50e7e0ad65b9d33b",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "Testing",
+					"id": "59cd115ebb508431dc74ebf0"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "PgqHnT0o",
+					"idShort": 6,
+					"name": "Sending Parse-able Code through RabbitMQ",
+					"id": "59cd125527781ca1801c9b4d",
+					"closed": true
+				},
+				"old": {
+					"closed": false
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-07T19:17:33.656Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d928278bd6dcec0de311b5",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "Finished & Pushed",
+					"id": "59cd116ef873dbae0787d9d0"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "8YKKfxaG",
+					"idShort": 3,
+					"name": "User Authentication",
+					"id": "59cd11d0de8b9f4be4852ca6",
+					"closed": true
+				},
+				"old": {
+					"closed": false
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-07T19:16:55.690Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d9281b5cf2d267dac979d8",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"listAfter": {
+					"name": "Finished & Pushed",
+					"id": "59cd116ef873dbae0787d9d0"
+				},
+				"listBefore": {
+					"name": "Review",
+					"id": "59cd11628c63689763e56d15"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "FE9j21Ax",
+					"idShort": 5,
+					"name": "Back-end Functionality with logging/registering user.",
+					"id": "59cd122b41a45321d0f9e89d",
+					"idList": "59cd116ef873dbae0787d9d0"
+				},
+				"old": {
+					"idList": "59cd11628c63689763e56d15"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-07T19:16:43.357Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d927dd01a405e1f029b2a5",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "zizLOArA",
+					"idShort": 12,
+					"name": "Central Error Logging",
+					"id": "59d92763d7c81d608039cc5b",
+					"desc": "Log function that will take strings and send them to RabbitMQ and append them to appropriate log files in central server."
+				},
+				"old": {
+					"desc": ""
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-07T19:15:41.937Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d927d99355bad1bb78834a",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "zizLOArA",
+					"idShort": 12,
+					"name": "Central Error Logging",
+					"id": "59d92763d7c81d608039cc5b"
+				},
+				"idMember": "59b1598f09ad03facc0122e5"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-07T19:15:37.733Z",
+			"member": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d92763d7c81d608039cc5c",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "zizLOArA",
+					"idShort": 12,
+					"name": "Central Error Logging",
+					"id": "59d92763d7c81d608039cc5b"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-10-07T19:13:39.879Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d9272cbf5628973c0ad199",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "Review",
+					"id": "59cd11628c63689763e56d15"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "FE9j21Ax",
+					"idShort": 5,
+					"id": "59cd122b41a45321d0f9e89d",
+					"name": "Back-end Functionality with logging/registering user."
+				},
+				"old": {
+					"name": "Back-end Functionality with logging into the database"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-07T19:12:44.046Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d926eb37368f3e0ce12442",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "tNVhrZ9m",
+					"idShort": 4,
+					"name": "Database Layout and Design",
+					"id": "59cd11fe625cf5ae11ae57ab",
+					"desc": "Research and create mockup tables for storing stock data.\n\n- Create scripts to insert and select stock data. Select queries should be categorized for different situations such as display all stock data or display data for users.\n\n- Save sql scripts to a file for later modification and so we can create tables on our systems."
+				},
+				"old": {
+					"desc": "Research and create mockup tables for storing stock data.\n* Create scripts to insert and select stock data. Select queries should be categorized for different situations such as display all stock data or display data for users.\n* Save sql scripts to a file for later modification and so we can create tables on our systems."
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-07T19:11:39.070Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d926ce2f7415997cdd9fea",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "tNVhrZ9m",
+					"idShort": 4,
+					"name": "Database Layout and Design",
+					"id": "59cd11fe625cf5ae11ae57ab",
+					"desc": "Research and create mockup tables for storing stock data.\n* Create scripts to insert and select stock data. Select queries should be categorized for different situations such as display all stock data or display data for users.\n* Save sql scripts to a file for later modification and so we can create tables on our systems."
+				},
+				"old": {
+					"desc": "Research and create mockup tables for storing stock data.\n- Create scripts to insert and select stock data. Select queries should be categorized for different situations such as display all stock data or display data for users.\n- Save sql scripts to a file for later modification and so we can create tables on our systems."
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-07T19:11:10.226Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d926a2728da8d1af5e1dd1",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "tNVhrZ9m",
+					"idShort": 4,
+					"name": "Database Layout and Design",
+					"id": "59cd11fe625cf5ae11ae57ab",
+					"desc": "Research and create mockup tables for storing stock data.\n- Create scripts to insert and select stock data. Select queries should be categorized for different situations such as display all stock data or display data for users.\n- Save sql scripts to a file for later modification and so we can create tables on our systems."
+				},
+				"old": {
+					"desc": ""
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-07T19:10:26.535Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d924ccc72237d278e9cc0a",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "tNVhrZ9m",
+					"idShort": 4,
+					"name": "Database Layout and Design",
+					"id": "59cd11fe625cf5ae11ae57ab"
+				},
+				"idMember": "59b159d41d455e95587f9213"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-07T19:02:36.809Z",
+			"member": {
+				"id": "59b159d41d455e95587f9213",
+				"avatarHash": null,
+				"fullName": "John Paulo Laggui",
+				"initials": "JL",
+				"username": "enter_name_here"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d922699355bad1bb784f54",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "lTDREGL2",
+					"idShort": 8,
+					"name": "Pulling 3rd Party Data",
+					"id": "59cd12a7c4d350a1a5637204",
+					"desc": "#Research how to pull data from stock api.\nCreate sample script with api functions to test functionality. Parse json output and set to arrays or individual variables. "
+				},
+				"old": {
+					"desc": ""
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-07T18:52:25.156Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d920daf5f41fad8ed579a1",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "lTDREGL2",
+					"idShort": 8,
+					"name": "Pulling 3rd Party Data",
+					"id": "59cd12a7c4d350a1a5637204"
+				},
+				"text": "API Key = N7B9EMN3F2CHEW75"
+			},
+			"type": "commentCard",
+			"date": "2017-10-07T18:45:46.898Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d920a526fb6be293aada3c",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "lTDREGL2",
+					"idShort": 8,
+					"name": "Pulling 3rd Party Data",
+					"id": "59cd12a7c4d350a1a5637204"
+				},
+				"idMember": "57d837147f9a3e864436c1d8"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-07T18:44:53.638Z",
+			"member": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d920a454a6858b26755bdc",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "lTDREGL2",
+					"idShort": 8,
+					"name": "Pulling 3rd Party Data",
+					"id": "59cd12a7c4d350a1a5637204"
+				},
+				"deactivated": false,
+				"idMember": "57d837147f9a3e864436c1d8"
+			},
+			"type": "removeMemberFromCard",
+			"date": "2017-10-07T18:44:52.147Z",
+			"member": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d9209e90108010a70f6479",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "lTDREGL2",
+					"idShort": 8,
+					"name": "Pulling 3rd Party Data",
+					"id": "59cd12a7c4d350a1a5637204"
+				},
+				"idMember": "57d837147f9a3e864436c1d8"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-07T18:44:46.770Z",
+			"member": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d9192dbefc456065a726ce",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "ttJBDq8y",
+					"idShort": 2,
+					"name": "Layout and Design",
+					"id": "59cd11b38edede030520778a",
+					"desc": "#Prototype frontend design\nCreate a header to be able to navigate to other pages.\nCreate a few different pages based on deliverables.\nOne page with a graph, for the user's owned stocks.\nOne page with a portfolio probably a table, for the user's owned stocks.\nOne page with another table to list all the available stocks and some fields that we will use to search with and some buttons to buy/etc stocks."
+				},
+				"old": {
+					"desc": ""
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-07T18:13:01.301Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d9172620e6e63e727468fe",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "ttJBDq8y",
+					"idShort": 2,
+					"name": "Layout and Design",
+					"id": "59cd11b38edede030520778a"
+				},
+				"idMember": "59aeb99e9d4f3157970ea37b"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-07T18:04:22.837Z",
+			"member": {
+				"id": "59aeb99e9d4f3157970ea37b",
+				"avatarHash": null,
+				"fullName": "Amanbir Singh",
+				"initials": "AS",
+				"username": "amanbirsingh1"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d59708c70ebe9d9f692222",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"listAfter": {
+					"name": "Finished & Pushed",
+					"id": "59cd116ef873dbae0787d9d0"
+				},
+				"listBefore": {
+					"name": "Testing",
+					"id": "59cd115ebb508431dc74ebf0"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "8YKKfxaG",
+					"idShort": 3,
+					"name": "User Authentication",
+					"id": "59cd11d0de8b9f4be4852ca6",
+					"idList": "59cd116ef873dbae0787d9d0"
+				},
+				"old": {
+					"idList": "59cd115ebb508431dc74ebf0"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-05T02:20:56.407Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d596ecf4fd0c7bbdd841bd",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"list": {
+					"name": "Review",
+					"id": "59cd11628c63689763e56d15"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "FE9j21Ax",
+					"idShort": 5,
+					"name": "Back-end Functionality with logging into the database",
+					"id": "59cd122b41a45321d0f9e89d"
+				},
+				"text": "Adding Gabe to this since he made it work"
+			},
+			"type": "commentCard",
+			"date": "2017-10-05T02:20:28.346Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d596dc54bcce7bddafa987",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "FE9j21Ax",
+					"idShort": 5,
+					"name": "Back-end Functionality with logging into the database",
+					"id": "59cd122b41a45321d0f9e89d"
+				},
+				"idMember": "59b1598f09ad03facc0122e5"
+			},
+			"type": "addMemberToCard",
+			"date": "2017-10-05T02:20:12.122Z",
+			"member": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			},
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d596d20deaf6890e37bb40",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"listAfter": {
+					"name": "Review",
+					"id": "59cd11628c63689763e56d15"
+				},
+				"listBefore": {
+					"name": "Testing",
+					"id": "59cd115ebb508431dc74ebf0"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "FE9j21Ax",
+					"idShort": 5,
+					"name": "Back-end Functionality with logging into the database",
+					"id": "59cd122b41a45321d0f9e89d",
+					"idList": "59cd11628c63689763e56d15"
+				},
+				"old": {
+					"idList": "59cd115ebb508431dc74ebf0"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-05T02:20:02.801Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d596bf6e031a97eccdaef0",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"list": {
+					"name": "Testing",
+					"id": "59cd115ebb508431dc74ebf0"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "PgqHnT0o",
+					"idShort": 6,
+					"name": "Sending Parse-able Code through RabbitMQ",
+					"id": "59cd125527781ca1801c9b4d",
+					"pos": 196607
+				},
+				"old": {
+					"pos": 327679
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-05T02:19:43.075Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d596bf6e031a97eccdaeef",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"listAfter": {
+					"name": "Testing",
+					"id": "59cd115ebb508431dc74ebf0"
+				},
+				"listBefore": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "PgqHnT0o",
+					"idShort": 6,
+					"name": "Sending Parse-able Code through RabbitMQ",
+					"id": "59cd125527781ca1801c9b4d",
+					"idList": "59cd115ebb508431dc74ebf0"
+				},
+				"old": {
+					"idList": "59b1618aa08ccd69482180a7"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-05T02:19:43.022Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d596b6d22d40ff5b526457",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"listAfter": {
+					"name": "Testing",
+					"id": "59cd115ebb508431dc74ebf0"
+				},
+				"listBefore": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "8YKKfxaG",
+					"idShort": 3,
+					"name": "User Authentication",
+					"id": "59cd11d0de8b9f4be4852ca6",
+					"idList": "59cd115ebb508431dc74ebf0"
+				},
+				"old": {
+					"idList": "59b1618aa08ccd69482180a7"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-05T02:19:34.798Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d596b1e64bb09dd8ab43a6",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"listAfter": {
+					"name": "Testing",
+					"id": "59cd115ebb508431dc74ebf0"
+				},
+				"listBefore": {
+					"name": "Review",
+					"id": "59cd11628c63689763e56d15"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "FE9j21Ax",
+					"idShort": 5,
+					"name": "Back-end Functionality with logging into the database",
+					"id": "59cd122b41a45321d0f9e89d",
+					"idList": "59cd115ebb508431dc74ebf0"
+				},
+				"old": {
+					"idList": "59cd11628c63689763e56d15"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-05T02:19:29.892Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d596aef014341259c25367",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"listAfter": {
+					"name": "Review",
+					"id": "59cd11628c63689763e56d15"
+				},
+				"listBefore": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "FE9j21Ax",
+					"idShort": 5,
+					"name": "Back-end Functionality with logging into the database",
+					"id": "59cd122b41a45321d0f9e89d",
+					"idList": "59cd11628c63689763e56d15"
+				},
+				"old": {
+					"idList": "59b1618aa08ccd69482180a7"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-05T02:19:26.897Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d312e28a9e69f1b46b3170",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "The Work Load",
+					"id": "59d3125e01b5f62625904194"
+				},
+				"card": {
+					"shortLink": "CQWx9hgn",
+					"idShort": 11,
+					"name": "Back End/Data Base: John Paulo Laggui",
+					"id": "59d312e28a9e69f1b46b316f"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-10-03T04:32:34.252Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d312cf495fa2993753b0a4",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "The Work Load",
+					"id": "59d3125e01b5f62625904194"
+				},
+				"card": {
+					"shortLink": "XeGO4vcb",
+					"idShort": 10,
+					"name": "Back End: Julio Torres, Gabriel Plewa",
+					"id": "59d312cf495fa2993753b0a3"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-10-03T04:32:15.735Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d312b103b1412b80eb5525",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"list": {
+					"name": "The Work Load",
+					"id": "59d3125e01b5f62625904194"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "zy7U4HnU",
+					"idShort": 9,
+					"id": "59d31283884d8366b0ae8ec8",
+					"name": "Front End/Back End: Amanbir Singh"
+				},
+				"old": {
+					"name": "Front End/Back End:"
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-03T04:31:45.647Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d31283884d8366b0ae8ec9",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "The Work Load",
+					"id": "59d3125e01b5f62625904194"
+				},
+				"card": {
+					"shortLink": "zy7U4HnU",
+					"idShort": 9,
+					"name": "Front End/Back End:",
+					"id": "59d31283884d8366b0ae8ec8"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-10-03T04:30:59.978Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d312615a1427f1f0ddacf9",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "The Work Load",
+					"id": "59d3125e01b5f62625904194",
+					"pos": 32767.5
+				},
+				"old": {
+					"pos": 393215
+				}
+			},
+			"type": "updateList",
+			"date": "2017-10-03T04:30:25.369Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d3125e01b5f62625904195",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "The Work Load",
+					"id": "59d3125e01b5f62625904194"
+				}
+			},
+			"type": "createList",
+			"date": "2017-10-03T04:30:22.789Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59d2eeb7415b436641d6cf1f",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"checklist": {
+					"name": "Checklist",
+					"id": "59d2eeb7415b436641d6cf1e"
+				},
+				"card": {
+					"shortLink": "8YKKfxaG",
+					"idShort": 3,
+					"name": "User Authentication",
+					"id": "59cd11d0de8b9f4be4852ca6"
+				}
+			},
+			"type": "addChecklistToCard",
+			"date": "2017-10-03T01:58:15.269Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59d2eea36754777088ca9ad6",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"card": {
+					"shortLink": "ttJBDq8y",
+					"idShort": 2,
+					"name": "Layout and Design",
+					"id": "59cd11b38edede030520778a",
+					"pos": 163839
+				},
+				"old": {
+					"pos": 65535
+				}
+			},
+			"type": "updateCard",
+			"date": "2017-10-03T01:57:55.809Z",
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59cd12a7c4d350a1a5637205",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "lTDREGL2",
+					"idShort": 8,
+					"name": "Pulling 3rd Party Data",
+					"id": "59cd12a7c4d350a1a5637204"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-09-28T15:17:59.407Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59cd125527781ca1801c9b4e",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "PgqHnT0o",
+					"idShort": 6,
+					"name": "Sending Parse-able Code through RabbitMQ",
+					"id": "59cd125527781ca1801c9b4d"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-09-28T15:16:37.711Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59cd122b41a45321d0f9e89e",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "FE9j21Ax",
+					"idShort": 5,
+					"name": "Back-end Functionality with logging into the database",
+					"id": "59cd122b41a45321d0f9e89d"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-09-28T15:15:55.788Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59cd11fe625cf5ae11ae57ac",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "tNVhrZ9m",
+					"idShort": 4,
+					"name": "Database Layout and Design",
+					"id": "59cd11fe625cf5ae11ae57ab"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-09-28T15:15:10.589Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59cd11d0de8b9f4be4852ca7",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "8YKKfxaG",
+					"idShort": 3,
+					"name": "User Authentication",
+					"id": "59cd11d0de8b9f4be4852ca6"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-09-28T15:14:24.431Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59cd11b38edede030520778b",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "ttJBDq8y",
+					"idShort": 2,
+					"name": "Layout and Design",
+					"id": "59cd11b38edede030520778a"
+				}
+			},
+			"type": "createCard",
+			"date": "2017-09-28T15:13:55.539Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59cd11966996b8a4076baa9b",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "To Do",
+					"id": "59b1618aa08ccd69482180a7"
+				},
+				"card": {
+					"shortLink": "EcP1BQr3",
+					"idShort": 1,
+					"id": "59b1619b9b0895b1f8bf4951"
+				}
+			},
+			"type": "deleteCard",
+			"date": "2017-09-28T15:13:26.568Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59cd116ef873dbae0787d9d1",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "Finished & Pushed",
+					"id": "59cd116ef873dbae0787d9d0"
+				}
+			},
+			"type": "createList",
+			"date": "2017-09-28T15:12:46.129Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59cd11628c63689763e56d16",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "Review",
+					"id": "59cd11628c63689763e56d15"
+				}
+			},
+			"type": "createList",
+			"date": "2017-09-28T15:12:34.754Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59cd115ebb508431dc74ebf1",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "Testing",
+					"id": "59cd115ebb508431dc74ebf0"
+				}
+			},
+			"type": "createList",
+			"date": "2017-09-28T15:12:30.127Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59cd1156b7daa00caedfc145",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "In Progress",
+					"id": "59cd1156b7daa00caedfc144"
+				}
+			},
+			"type": "createList",
+			"date": "2017-09-28T15:12:22.890Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59cd114b4e2d479b0b4fe2dc",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"id": "59b1618aa08ccd69482180a7",
+					"name": "To Do"
+				},
+				"old": {
+					"name": "Figure out something for out project"
+				}
+			},
+			"type": "updateList",
+			"date": "2017-09-28T15:12:11.833Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59cd113210136deb2861bf41",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"idMemberAdded": "59aeb99e9d4f3157970ea37b",
+				"memberType": "normal"
+			},
+			"type": "addMemberToBoard",
+			"date": "2017-09-28T15:11:46.010Z",
+			"member": {
+				"id": "59aeb99e9d4f3157970ea37b",
+				"avatarHash": null,
+				"fullName": "Amanbir Singh",
+				"initials": "AS",
+				"username": "amanbirsingh1"
+			},
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59c00ed40cb5c98c42f87405",
+			"idMemberCreator": "59b1598f09ad03facc0122e5",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"idMemberAdded": "59b1598f09ad03facc0122e5",
+				"memberType": "normal"
+			},
+			"type": "addMemberToBoard",
+			"date": "2017-09-18T18:22:12.198Z",
+			"member": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			},
+			"memberCreator": {
+				"id": "59b1598f09ad03facc0122e5",
+				"avatarHash": null,
+				"fullName": "Gabriel",
+				"initials": "G",
+				"username": "gabrielplewa"
+			}
+		},
+		{
+			"id": "59bb3fb5d6170717f7704b76",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3",
+					"prefs": {
+						"background": "grey"
+					}
+				},
+				"old": {
+					"prefs": {
+						"background": "blue"
+					}
+				}
+			},
+			"type": "updateBoard",
+			"date": "2017-09-15T02:49:25.088Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59b1618aa08ccd69482180a8",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"list": {
+					"name": "Figure out something for out project",
+					"id": "59b1618aa08ccd69482180a7"
+				}
+			},
+			"type": "createList",
+			"date": "2017-09-07T15:11:06.557Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59b15c60600873a9dab3acf9",
+			"idMemberCreator": "59b159d41d455e95587f9213",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				},
+				"idMemberAdded": "59b159d41d455e95587f9213",
+				"memberType": "normal"
+			},
+			"type": "addMemberToBoard",
+			"date": "2017-09-07T14:49:04.759Z",
+			"member": {
+				"id": "59b159d41d455e95587f9213",
+				"avatarHash": null,
+				"fullName": "John Paulo Laggui",
+				"initials": "JL",
+				"username": "enter_name_here"
+			},
+			"memberCreator": {
+				"id": "59b159d41d455e95587f9213",
+				"avatarHash": null,
+				"fullName": "John Paulo Laggui",
+				"initials": "JL",
+				"username": "enter_name_here"
+			}
+		},
+		{
+			"id": "59b157f14dae94acc5428db6",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"organization": {
+					"name": "Team IDC",
+					"id": "59b157cd07accc560e4a1cd1"
+				},
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				}
+			},
+			"type": "addToOrganizationBoard",
+			"date": "2017-09-07T14:30:09.966Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		},
+		{
+			"id": "59b157f14dae94acc5428db5",
+			"idMemberCreator": "57d837147f9a3e864436c1d8",
+			"data": {
+				"board": {
+					"shortLink": "ccSWaByx",
+					"name": "Our Main Project Deliverables",
+					"id": "59b157f14dae94acc5428db3"
+				}
+			},
+			"type": "createBoard",
+			"date": "2017-09-07T14:30:09.961Z",
+			"memberCreator": {
+				"id": "57d837147f9a3e864436c1d8",
+				"avatarHash": null,
+				"fullName": "Julio Torres",
+				"initials": "JT",
+				"username": "juliotorres23"
+			}
+		}
+	],
+	"cards": [
+		{
+			"id": "59d31283884d8366b0ae8ec8",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-03T04:31:45.644Z",
+			"desc": "",
+			"descData": null,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59d3125e01b5f62625904194",
+			"idMembersVoted": [],
+			"idShort": 9,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Front End/Back End: Amanbir Singh",
+			"pos": 65535,
+			"shortLink": "zy7U4HnU",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": false,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p0ysl2s4hkvb448hjc+1cb2xc9fso@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/zy7U4HnU",
+			"subscribed": false,
+			"url": "https://trello.com/c/zy7U4HnU/9-front-end-back-end-amanbir-singh",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59d312cf495fa2993753b0a3",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-03T04:32:15.719Z",
+			"desc": "",
+			"descData": null,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59d3125e01b5f62625904194",
+			"idMembersVoted": [],
+			"idShort": 10,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Back End: Julio Torres, Gabriel Plewa",
+			"pos": 131071,
+			"shortLink": "XeGO4vcb",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": false,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p0yst9p1uz8j1bs0ir+0cwcpfptpy@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/XeGO4vcb",
+			"subscribed": false,
+			"url": "https://trello.com/c/XeGO4vcb/10-back-end-julio-torres-gabriel-plewa",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59d312e28a9e69f1b46b316f",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-03T04:32:34.238Z",
+			"desc": "",
+			"descData": null,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59d3125e01b5f62625904194",
+			"idMembersVoted": [],
+			"idShort": 11,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Back End/Data Base: John Paulo Laggui",
+			"pos": 196607,
+			"shortLink": "CQWx9hgn",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": false,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p0ysvcnm5j1zjcz627+28gf57rlo9@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/CQWx9hgn",
+			"subscribed": false,
+			"url": "https://trello.com/c/CQWx9hgn/11-back-end-data-base-john-paulo-laggui",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59dce4e427537a401c40d8fd",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-10T15:19:40.666Z",
+			"desc": "User Maintain Portfolio\nBuy/Sell intraday\nstock search feature\nportfolio value overtime - graph",
+			"descData": {
+				"emoji": {}
+			},
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59d3125e01b5f62625904194",
+			"idMembersVoted": [],
+			"idShort": 13,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Deliverables",
+			"pos": 262143,
+			"shortLink": "SecXPdRF",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": true,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p2gi4u2pwh97h0o9a5+1t9fsxkwuz@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/SecXPdRF",
+			"subscribed": false,
+			"url": "https://trello.com/c/SecXPdRF/13-deliverables",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59df8aa0fe6a036f44e5c14c",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-21T18:42:47.386Z",
+			"desc": "",
+			"descData": null,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59b1618aa08ccd69482180a7",
+			"idMembersVoted": [],
+			"idShort": 16,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Create stock portfolio",
+			"pos": 655359,
+			"shortLink": "PZGvu3S5",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 1,
+				"attachments": 0,
+				"description": false,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p2uzb93r0j3efz6c0c+21ct85x0ll@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [
+				"59aeb99e9d4f3157970ea37b"
+			],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/PZGvu3S5",
+			"subscribed": false,
+			"url": "https://trello.com/c/PZGvu3S5/16-create-stock-portfolio",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59cd11b38edede030520778a",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-10T14:34:04.523Z",
+			"desc": "#Prototype frontend design\nCreate a header to be able to navigate to other pages.\nCreate a few different pages based on deliverables.\nOne page with a graph, for the user's owned stocks.\nOne page with a portfolio probably a table, for the user's owned stocks.\nOne page with another table to list all the available stocks and some fields that we will use to search with and some buttons to buy/etc stocks.",
+			"descData": {
+				"emoji": {}
+			},
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59cd1156b7daa00caedfc144",
+			"idMembersVoted": [],
+			"idShort": 2,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Layout and Design",
+			"pos": 524287,
+			"shortLink": "ttJBDq8y",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": true,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p01ys4iv75wqf1vr0q+1453g6pe1u@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [
+				"59aeb99e9d4f3157970ea37b"
+			],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/ttJBDq8y",
+			"subscribed": false,
+			"url": "https://trello.com/c/ttJBDq8y/2-layout-and-design",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59cd11fe625cf5ae11ae57ab",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-13T00:50:03.636Z",
+			"desc": "Research and create mockup tables for storing stock data.\n\n- Create scripts to insert and select stock data. Select queries should be categorized for different situations such as display all stock data or display data for users.\n\n- Save sql scripts to a file for later modification and so we can create tables on our systems.",
+			"descData": {
+				"emoji": {}
+			},
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59cd1156b7daa00caedfc144",
+			"idMembersVoted": [],
+			"idShort": 4,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Database Layout and Design",
+			"pos": 589823,
+			"shortLink": "tNVhrZ9m",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": true,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p01z07tq8x3kdt5ay3+27573dclg8@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [
+				"59b159d41d455e95587f9213"
+			],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/tNVhrZ9m",
+			"subscribed": false,
+			"url": "https://trello.com/c/tNVhrZ9m/4-database-layout-and-design",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59dce549ed6cd19c4de4cf80",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-12T01:46:16.738Z",
+			"desc": "",
+			"descData": null,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59cd1156b7daa00caedfc144",
+			"idMembersVoted": [],
+			"idShort": 14,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Create functions for different uses for retrieving 3rd party data.",
+			"pos": 655359,
+			"shortLink": "J5Mj8pqe",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": true,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": false,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p2gifuaai64jf000ow+19wiwn9jrv@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [
+				"57d837147f9a3e864436c1d8"
+			],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/J5Mj8pqe",
+			"subscribed": true,
+			"url": "https://trello.com/c/J5Mj8pqe/14-create-functions-for-different-uses-for-retrieving-3rd-party-data",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59eb964be3eece731c167bdf",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-21T18:50:37.752Z",
+			"desc": "Creating backend functionality for retrieving user stocks, for use in portfolio and graph. Calls to api to get most updated data which can then be used in other cases. ",
+			"descData": {
+				"emoji": {}
+			},
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59cd1156b7daa00caedfc144",
+			"idMembersVoted": [],
+			"idShort": 20,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Check User stocks",
+			"pos": 720895,
+			"shortLink": "zO1mCeNB",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": true,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p4oun6fvg02myojahr+1c8zmfuf22@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [
+				"59b1598f09ad03facc0122e5"
+			],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/zO1mCeNB",
+			"subscribed": false,
+			"url": "https://trello.com/c/zO1mCeNB/20-check-user-stocks",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59eb9564331ec4f7c9d33e0a",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-23T04:43:59.430Z",
+			"desc": "Create a page to display all available stocks, price, quantity available.And a button to buy stocks with quantity. Only needs to be a a testcase of a small subset of made up stocks.",
+			"descData": {
+				"emoji": {}
+			},
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59cd1156b7daa00caedfc144",
+			"idMembersVoted": [],
+			"idShort": 19,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Create searchable stocks",
+			"pos": 786431,
+			"shortLink": "ArATqioP",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": true,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": true,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p4oty4ghpf9cobp7nu+21o19ervcc@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [
+				"57d837147f9a3e864436c1d8"
+			],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/ArATqioP",
+			"subscribed": true,
+			"url": "https://trello.com/c/ArATqioP/19-create-searchable-stocks",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59cd125527781ca1801c9b4d",
+			"checkItemStates": null,
+			"closed": true,
+			"dateLastActivity": "2017-10-07T19:17:33.654Z",
+			"desc": "",
+			"descData": null,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59cd115ebb508431dc74ebf0",
+			"idMembersVoted": [],
+			"idShort": 6,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Sending Parse-able Code through RabbitMQ",
+			"pos": 196607,
+			"shortLink": "PgqHnT0o",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": false,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p01z9lmifox9s017bh+0vbx4blh08@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/PgqHnT0o",
+			"subscribed": false,
+			"url": "https://trello.com/c/PgqHnT0o/6-sending-parse-able-code-through-rabbitmq",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59cd11d0de8b9f4be4852ca6",
+			"checkItemStates": null,
+			"closed": true,
+			"dateLastActivity": "2017-10-07T19:16:55.688Z",
+			"desc": "",
+			"descData": null,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59cd116ef873dbae0787d9d0",
+			"idMembersVoted": [],
+			"idShort": 3,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "User Authentication",
+			"pos": 131071,
+			"shortLink": "8YKKfxaG",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": false,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p01yvamtrwur8ck3vq+1tg84st84t@boards.trello.com",
+			"idChecklists": [
+				"59d2eeb7415b436641d6cf1e"
+			],
+			"idMembers": [],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/8YKKfxaG",
+			"subscribed": false,
+			"url": "https://trello.com/c/8YKKfxaG/3-user-authentication",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59cd122b41a45321d0f9e89d",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-07T19:16:43.355Z",
+			"desc": "",
+			"descData": null,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59cd116ef873dbae0787d9d0",
+			"idMembersVoted": [],
+			"idShort": 5,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Back-end Functionality with logging/registering user.",
+			"pos": 262143,
+			"shortLink": "FE9j21Ax",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 1,
+				"attachments": 0,
+				"description": false,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p01z52ijw8fc7ph50d+0orzh8b6ud@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [
+				"59b1598f09ad03facc0122e5"
+			],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/FE9j21Ax",
+			"subscribed": false,
+			"url": "https://trello.com/c/FE9j21Ax/5-back-end-functionality-with-logging-registering-user",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59dce90768868d6f5b5e393b",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-24T14:21:10.617Z",
+			"desc": "",
+			"descData": null,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59cd116ef873dbae0787d9d0",
+			"idMembersVoted": [],
+			"idShort": 15,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Create backend functions for buy/sell stocks.",
+			"pos": 360447,
+			"shortLink": "Dg2qwLpl",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 2,
+				"attachments": 0,
+				"description": false,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p2glbdsykbyu7ezwhn+2l65e32n8e@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [
+				"59b159d41d455e95587f9213",
+				"59b1598f09ad03facc0122e5"
+			],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/Dg2qwLpl",
+			"subscribed": false,
+			"url": "https://trello.com/c/Dg2qwLpl/15-create-backend-functions-for-buy-sell-stocks",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59cd12a7c4d350a1a5637204",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-19T00:21:30.784Z",
+			"desc": "#Research how to pull data from stock api.\nCreate sample script with api functions to test functionality. Parse json output and set to arrays or individual variables. ",
+			"descData": {
+				"emoji": {}
+			},
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59cd116ef873dbae0787d9d0",
+			"idMembersVoted": [],
+			"idShort": 8,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Pulling 3rd Party Data",
+			"pos": 458751,
+			"shortLink": "lTDREGL2",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": true,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 2,
+				"attachments": 0,
+				"description": true,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p01zij8xnjvlybf090+1k35ub9s7a@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [
+				"57d837147f9a3e864436c1d8",
+				"59b1598f09ad03facc0122e5"
+			],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/lTDREGL2",
+			"subscribed": true,
+			"url": "https://trello.com/c/lTDREGL2/8-pulling-3rd-party-data",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59d92763d7c81d608039cc5b",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-10T15:20:10.030Z",
+			"desc": "Log function that will take strings and send them to RabbitMQ and append them to appropriate log files in central server.",
+			"descData": {
+				"emoji": {}
+			},
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59cd116ef873dbae0787d9d0",
+			"idMembersVoted": [],
+			"idShort": 12,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "Central Error Logging",
+			"pos": 524287,
+			"shortLink": "zizLOArA",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": true,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p1w1th1f1oh6rck4m3+1yhochzb9k@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [
+				"59b1598f09ad03facc0122e5"
+			],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/zizLOArA",
+			"subscribed": false,
+			"url": "https://trello.com/c/zizLOArA/12-central-error-logging",
+			"attachments": [],
+			"pluginData": []
+		},
+		{
+			"id": "59e0f3a10dfcf887c8123dc1",
+			"checkItemStates": null,
+			"closed": false,
+			"dateLastActivity": "2017-10-13T17:11:07.334Z",
+			"desc": "",
+			"descData": null,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idList": "59cd116ef873dbae0787d9d0",
+			"idMembersVoted": [],
+			"idShort": 18,
+			"idAttachmentCover": null,
+			"limits": {
+				"attachments": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 950,
+						"warnAt": 900
+					}
+				},
+				"checklists": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 475,
+						"warnAt": 450
+					}
+				},
+				"stickers": {
+					"perCard": {
+						"status": "ok",
+						"disableAt": 67,
+						"warnAt": 63
+					}
+				}
+			},
+			"idLabels": [],
+			"manualCoverAttachment": false,
+			"name": "User Sessions: Login, logout, page redirects.",
+			"pos": 589823,
+			"shortLink": "Ffeh0RXy",
+			"badges": {
+				"votes": 0,
+				"attachmentsByType": {
+					"trello": {
+						"board": 0,
+						"card": 0
+					}
+				},
+				"viewingMemberVoted": false,
+				"subscribed": false,
+				"fogbugz": "",
+				"checkItems": 0,
+				"checkItemsChecked": 0,
+				"comments": 0,
+				"attachments": 0,
+				"description": false,
+				"due": null,
+				"dueComplete": false
+			},
+			"dueComplete": false,
+			"due": null,
+			"email": "juliotorres23+2mvz31ei25fuvwfn0m0+2p32ox586x5uxztnwld+0mybjixxuu@boards.trello.com",
+			"idChecklists": [],
+			"idMembers": [
+				"59b1598f09ad03facc0122e5"
+			],
+			"labels": [],
+			"shortUrl": "https://trello.com/c/Ffeh0RXy",
+			"subscribed": false,
+			"url": "https://trello.com/c/Ffeh0RXy/18-user-sessions-login-logout-page-redirects",
+			"attachments": [],
+			"pluginData": []
+		}
+	],
+	"labels": [
+		{
+			"id": "59b157f11314a33999792d0f",
+			"idBoard": "59b157f14dae94acc5428db3",
+			"name": "",
+			"color": "green",
+			"uses": 0
+		},
+		{
+			"id": "59b157f11314a33999792d13",
+			"idBoard": "59b157f14dae94acc5428db3",
+			"name": "",
+			"color": "purple",
+			"uses": 0
+		},
+		{
+			"id": "59b157f11314a33999792d11",
+			"idBoard": "59b157f14dae94acc5428db3",
+			"name": "",
+			"color": "orange",
+			"uses": 0
+		},
+		{
+			"id": "59b157f11314a33999792d12",
+			"idBoard": "59b157f14dae94acc5428db3",
+			"name": "",
+			"color": "red",
+			"uses": 0
+		},
+		{
+			"id": "59b157f11314a33999792d10",
+			"idBoard": "59b157f14dae94acc5428db3",
+			"name": "",
+			"color": "yellow",
+			"uses": 0
+		},
+		{
+			"id": "59b157f11314a33999792d14",
+			"idBoard": "59b157f14dae94acc5428db3",
+			"name": "",
+			"color": "blue",
+			"uses": 0
+		}
+	],
+	"lists": [
+		{
+			"id": "59d3125e01b5f62625904194",
+			"name": "The Work Load",
+			"closed": false,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"pos": 32767.5,
+			"subscribed": false,
+			"limits": {
+				"cards": {
+					"openPerList": {
+						"status": "ok",
+						"disableAt": 4750,
+						"warnAt": 4500
+					},
+					"totalPerList": {
+						"status": "ok",
+						"disableAt": 950000,
+						"warnAt": 900000
+					}
+				}
+			}
+		},
+		{
+			"id": "59b1618aa08ccd69482180a7",
+			"name": "To Do",
+			"closed": false,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"pos": 65535,
+			"subscribed": false,
+			"limits": {
+				"cards": {
+					"openPerList": {
+						"status": "ok",
+						"disableAt": 4750,
+						"warnAt": 4500
+					},
+					"totalPerList": {
+						"status": "ok",
+						"disableAt": 950000,
+						"warnAt": 900000
+					}
+				}
+			}
+		},
+		{
+			"id": "59cd1156b7daa00caedfc144",
+			"name": "In Progress",
+			"closed": false,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"pos": 131071,
+			"subscribed": false,
+			"limits": {
+				"cards": {
+					"openPerList": {
+						"status": "ok",
+						"disableAt": 4750,
+						"warnAt": 4500
+					},
+					"totalPerList": {
+						"status": "ok",
+						"disableAt": 950000,
+						"warnAt": 900000
+					}
+				}
+			}
+		},
+		{
+			"id": "59cd115ebb508431dc74ebf0",
+			"name": "Testing",
+			"closed": false,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"pos": 196607,
+			"subscribed": false,
+			"limits": {
+				"cards": {
+					"openPerList": {
+						"status": "ok",
+						"disableAt": 4750,
+						"warnAt": 4500
+					},
+					"totalPerList": {
+						"status": "ok",
+						"disableAt": 950000,
+						"warnAt": 900000
+					}
+				}
+			}
+		},
+		{
+			"id": "59cd11628c63689763e56d15",
+			"name": "Review",
+			"closed": false,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"pos": 262143,
+			"subscribed": false,
+			"limits": {
+				"cards": {
+					"openPerList": {
+						"status": "ok",
+						"disableAt": 4750,
+						"warnAt": 4500
+					},
+					"totalPerList": {
+						"status": "ok",
+						"disableAt": 950000,
+						"warnAt": 900000
+					}
+				}
+			}
+		},
+		{
+			"id": "59cd116ef873dbae0787d9d0",
+			"name": "Finished & Pushed",
+			"closed": false,
+			"idBoard": "59b157f14dae94acc5428db3",
+			"pos": 327679,
+			"subscribed": false,
+			"limits": {
+				"cards": {
+					"openPerList": {
+						"status": "ok",
+						"disableAt": 4750,
+						"warnAt": 4500
+					},
+					"totalPerList": {
+						"status": "ok",
+						"disableAt": 950000,
+						"warnAt": 900000
+					}
+				}
+			}
+		}
+	],
+	"members": [
+		{
+			"id": "59aeb99e9d4f3157970ea37b",
+			"avatarHash": null,
+			"bio": "",
+			"bioData": null,
+			"confirmed": true,
+			"fullName": "Amanbir Singh",
+			"idPremOrgsAdmin": [],
+			"initials": "AS",
+			"memberType": "normal",
+			"products": [],
+			"status": "disconnected",
+			"url": "https://trello.com/amanbirsingh1",
+			"username": "amanbirsingh1"
+		},
+		{
+			"id": "59b1598f09ad03facc0122e5",
+			"avatarHash": null,
+			"bio": "",
+			"bioData": {
+				"emoji": {}
+			},
+			"confirmed": true,
+			"fullName": "Gabriel",
+			"idPremOrgsAdmin": [],
+			"initials": "G",
+			"memberType": "normal",
+			"products": [],
+			"status": "disconnected",
+			"url": "https://trello.com/gabrielplewa",
+			"username": "gabrielplewa"
+		},
+		{
+			"id": "59b159d41d455e95587f9213",
+			"avatarHash": null,
+			"bio": "",
+			"bioData": {
+				"emoji": {}
+			},
+			"confirmed": true,
+			"fullName": "John Paulo Laggui",
+			"idPremOrgsAdmin": [],
+			"initials": "JL",
+			"memberType": "normal",
+			"products": [],
+			"status": "disconnected",
+			"url": "https://trello.com/enter_name_here",
+			"username": "enter_name_here"
+		},
+		{
+			"id": "57d837147f9a3e864436c1d8",
+			"avatarHash": null,
+			"bio": "",
+			"bioData": null,
+			"confirmed": true,
+			"fullName": "Julio Torres",
+			"idPremOrgsAdmin": [],
+			"initials": "JT",
+			"memberType": "normal",
+			"products": [],
+			"status": "disconnected",
+			"url": "https://trello.com/juliotorres23",
+			"username": "juliotorres23"
+		}
+	],
+	"checklists": [
+		{
+			"id": "59d2eeb7415b436641d6cf1e",
+			"name": "Checklist",
+			"idBoard": "59b157f14dae94acc5428db3",
+			"idCard": "59cd11d0de8b9f4be4852ca6",
+			"pos": 16384,
+			"limits": {
+				"checkItems": {
+					"perChecklist": {
+						"status": "ok",
+						"disableAt": 190,
+						"warnAt": 180
+					}
+				}
+			},
+			"checkItems": []
+		}
+	],
+	"memberships": [
+		{
+			"id": "59b157f14dae94acc5428db4",
+			"idMember": "57d837147f9a3e864436c1d8",
+			"memberType": "admin",
+			"unconfirmed": false,
+			"deactivated": false
+		},
+		{
+			"id": "59b15c60600873a9dab3acf8",
+			"idMember": "59b159d41d455e95587f9213",
+			"memberType": "normal",
+			"unconfirmed": false,
+			"deactivated": false
+		},
+		{
+			"id": "59c00ed40cb5c98c42f87404",
+			"idMember": "59b1598f09ad03facc0122e5",
+			"memberType": "normal",
+			"unconfirmed": false,
+			"deactivated": false
+		},
+		{
+			"id": "59cd113110136deb2861bf40",
+			"idMember": "59aeb99e9d4f3157970ea37b",
+			"memberType": "normal",
+			"unconfirmed": false,
+			"deactivated": false
+		}
+	],
+	"pluginData": []
+}
