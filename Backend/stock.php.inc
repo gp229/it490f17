@@ -124,6 +124,14 @@ class stocksDB
 			exit(1);
 		}
 	}
+	public function listStocks()
+	{
+			$query = "select distinct(symbol) from stockInfo;";
+			$response = $this->logindb->query($query);
+			$result = $response->fetchAll();
+			return $result;
+		
+	}
 	public function graphData($symbol,$type)
 	{
 		try

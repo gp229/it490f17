@@ -27,10 +27,10 @@ function checkUserStock($username)
 	echo $response.PHP_EOL;
 	return $response;
 }
-function checkStocks()
+function listStocks()
 {
 	$dbConn = new stocksDB();
-	$response = $dbConn->checkStocks();
+	$response = $dbConn->listStocks();
 	var_dump($response);
 	return $response;
 }
@@ -82,7 +82,7 @@ function requestProcessor($request)
 				}
 				return checkUserStock($request['username']);
 			case "list":
-				return checkStocks();
+				return listStocks();
 			case "search":
 				if(empty($request['stockName']))
 				{

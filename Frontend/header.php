@@ -19,7 +19,9 @@ if(!isset($_SESSION['loginUser']))
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+ <link href="main.css" rel="stylesheet">
   </head>
+<script src="js/ie10-viewport-bug-workaround.js"></script>
 
 <body>
 
