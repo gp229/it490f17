@@ -8,14 +8,14 @@ require_once('loggerClient.php.inc');
 
 function buyStock($symbol,$quantity,$username)
 {
-	$dbConn = new loginDB();
+	$dbConn = new stocksDB();
 	$response = $dbConn->buyStock($symbol,$quantity,$username);
 	echo $response.PHP_EOL;
 	return $response;
 }
 function sellStock($symbol,$quantity,$username)
 {
-	$dbConn = new loginDB();
+	$dbConn = new stocksDB();
 	$response = $dbConn->sellStock($symbol,$quantity,$username);
 	echo $response.PHP_EOL;
 	return $response;
@@ -73,7 +73,7 @@ function requestProcessor($request)
 					echo "Stock symbol or Quantity not given.".PHP_EOL;
 					return "Stock symbol or Quantity not given.";
 				}
-				return sellStocks($request['symbol'],$request['quantity'],$request['username']);
+				return sellStock($request['symbol'],$request['quantity'],$request['username']);
 			case "getUserStocks":
 				if(empty($request['username']))
 				{

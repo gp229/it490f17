@@ -27,6 +27,9 @@ class stocksDB
 	public function buyStock($symbol,$quantity,$username)
 	{
 		try{
+			$response = $this->updateStocks();
+			if($response != "Error getting data from API")
+			{
 			$sym = $this->logindb->real_escape_string($symbol);
 			$un = $this->logindb->real_escape_string($username);
 			$q1 = "select close, timestamp from stockInfo where symbol = '$sym' and timestamp = (select max(timestamp) from stockInfo where symbol = '$sym');";
@@ -48,7 +51,9 @@ class stocksDB
 			$q4 = "update userInfo set balance = balance - '$totalPrice' where username = '$un';";
 			$r3 = $this->logindb->query($q3);
 			$r4 = $this->logindb->query($q4);
-			return "BuySuccessful";
+			$response = "You have bought ".$quantity." stocks of ".$symbol;
+			}
+			return $response;
 		}
 		catch(Error $e)
 		{
@@ -59,6 +64,9 @@ class stocksDB
 	public function sellStock($symbol,$quantity,$username)
 	{
 		try{
+			$response = $this->updateStocks();
+			if($response != "Error getting data from API")
+			{
 			$un = $this->logindb->real_escape_string($username);
 			$sym = $this->logindb->real_escape_string($symbol);
 			$q1 = "select sum(quantity) from userStocks where symbol = '$symbol' and username = '$un';";
@@ -81,7 +89,7 @@ class stocksDB
 				$q4= "delete from userStocks where symbol = '$sym' and username = '$un';";
 				$r4 = $this->logindb->query($q4);
 				echo "Successfully sold all stocks of ".$symbol;
-				return "SellSuccessful";
+				echo "Successfully sold all stocks of ".$symbol;
 			}
 			else
 			{
@@ -106,7 +114,9 @@ class stocksDB
 					echo $quantity;			
 				}
 			}
-			return "SellSuccessful";
+			$response = "Successfully sold ".$myQuantity." shares of ".$sym;
+			}
+			return $response;
 		}
 		catch(Error $e)
 		{

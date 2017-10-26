@@ -19,7 +19,7 @@ if(isset($_SESSION['loginUser']))
     <title>Signin Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
 
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
@@ -63,7 +63,7 @@ function HandleLoginResponse(response)
 {
 	var text = JSON.parse(response);
 	document.getElementById("output").innerHTML = "response: "+text+"<p>";
-	if(text === "User Registered")
+	if(text == "User Registered")
 	{
 		window.location = "main.php";
 	}	

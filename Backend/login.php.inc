@@ -76,7 +76,7 @@ class loginDB
 					$balanceresponse = $this->logindb->query($statement);
 					$response = $balanceresponse->fetch_assoc();
 					$response['balance'] = 	$response['balance'];
-					$response['login'] = "LoginSuccess";
+					$response['login'] = "User Registered";
 					return $response;// password match
 				}
 			}

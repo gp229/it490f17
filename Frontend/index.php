@@ -18,11 +18,7 @@ if(isset($_SESSION['loginUser']))
     <link rel="icon" href="favicon.ico">
 
     <title>Signin Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link href="signin.css" rel="stylesheet">
   </head>
 

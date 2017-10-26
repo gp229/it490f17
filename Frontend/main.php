@@ -1,11 +1,10 @@
+<!DOCTYPE html>
 <?php
 //include('getUserStocks.php');
 session_start();
 
 include('header.php');
-$username = $_SESSION['loginUser'];
 ?>
-
 <div class="container">
   <div class="jumbotron">
     <h1>Welcome!</h1>      
@@ -15,35 +14,28 @@ $username = $_SESSION['loginUser'];
   <form class="navbar-form navbar" style="margin-top: -20px; margin-left: -10px; width: 100%;">
     <button type="button" class="btn btn-default" onclick="submitBuy()">Buy</button>
     <button type="button" class="btn btn-default" onclick="submitSell()">Sell</button>
-    <input type="num" id="inputNum" class="form-control" placeholder="Amount">
+    <input type="quantity" id="inputNum" class="form-control" placeholder="Amount">
       <div class="form-group">
-        <input type="text" id="inputSymbol" class="form-control" placeholder="Search For Stocks">
+        <input type="symbol" id="inputSymbol" class="form-control" placeholder="Search For Stocks">
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>    
-    </form>
 
-    <div class="buysell_output"></div>    
-<script = type="text/javascript">
+    <div id="output">status<p></div>    
+</div>    
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+
+<script>
 //This is the code that stores the usernames from the session
-<?php echo "var user = '" .$username. "'"; ?>
-
+<?php echo "var user = '" .$_SESSION['loginUser']. "';"; ?>
 function HandleResponse(response)
 {
 	var text = JSON.parse(response);
-	//document.getElementById("buysell_output").innerHTML = "response: "+text+"<p>";
+	document.getElementById("output").innerHTML = text;
 	if(text === "SearchSuccessful")
 	{
 		location.href = "main.php";
 	}
-  else if (text === "BuySuccessful")
-  {
-    document.getElementById("buysell_output").innerHTML = "<p>Purchase Complete";
-  }
-  else if (text === "SellSuccessful")
-  {
-    document.getElementById("buysell_output").innerHTML = "<p>Sale Complete";
-  }
 }
 function sendSearchRequest(text)
 {
@@ -64,7 +56,7 @@ function submitBuy()
 {
   var symbol = document.getElementById("inputSymbol").value;
   var num = document.getElementById("inputNum").value;
-  //document.getElementById("buysell_output").innerHTML = "Buying<p>stock: " + symbol + "<p>amount: " + num + "<p>";
+  document.getElementById("output").innerHTML = "Buying stock: " + symbol + "<p>amount: " + num + "<p>";
   sendBuyRequest(symbol,num);
   return 0;
 }
@@ -87,7 +79,7 @@ function submitSell()
 {
   var symbol = document.getElementById("inputSymbol").value;
   var num = document.getElementById("inputNum").value;
-  document.getElementById("buysell_output").innerHTML = "Selling<p>stock: " + symbol + "<p>amount: " + num + "<p>";
+  document.getElementById("output").innerHTML = "Selling<p>stock: " + symbol + "<p>amount: " + num + "<p>";
   sendSellRequest(symbol,num);
   return 0;
 }
@@ -103,7 +95,7 @@ function sendSellRequest(symbol,num)
       HandleResponse(this.responseText);
     }   
   }
-  request.send("type=sell&symbol="+text+"&quantity="+num+"&username="+user);
+  request.send("type=sell&symbol="+symbol+"&quantity="+num+"&username="+user);
 }
 
 
