@@ -126,10 +126,17 @@ class stocksDB
 	}
 	public function listStocks()
 	{
-			$query = "select distinct(symbol) from stockInfo;";
+			$query = "select * from stockInfo where timestamp = (select max(timestamp) from stockInfo);";
 			$response = $this->logindb->query($query);
-			$result = $response->fetchAll();
-			return $result;
+			$i = 0;
+			while ($row = $response->fetch_assoc())
+			{
+				$myArray[$i] = $row;
+				$i++;
+				
+			}
+			$response = $myArray;
+			return $response;
 		
 	}
 	public function graphData($symbol,$type)

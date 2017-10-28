@@ -2150,7 +2150,6 @@ pre code {
 
 .form-control::-webkit-input-placeholder {
   color: #636c72;
-  opacity: 1;
 }
 
 .form-control::-moz-placeholder {
