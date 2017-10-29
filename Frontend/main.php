@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-//include('getUserStocks.php');
 session_start();
 include('header.php');
 require_once('path.inc');
@@ -23,7 +22,6 @@ catch(Error $e)
 
 
 ?>
-<link rel="stylesheet" href="css/main.css">
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="js/dropdown.js"></script>
 <div class="container">
@@ -53,6 +51,24 @@ catch(Error $e)
         </div>   
 	</form>   
 	<h1>Stock timestamp: <?php echo $response['0']['timestamp']; ?> </h1> 
+  <form class="navbar-form navbar" style="margin-top: -20px; margin-left: -10px; width: 100%;">
+    <button type="button" class="btn btn-default" onclick="submitSearch()">Search</button>
+	<div class="dropdown">            
+<a class="btn btn-default btn-select btn-select-light">
+                <input type="hidden" class="btn-select-input" id="dropdownStock2" name="" value="" />
+                <span class="btn-select-value">Select an Item</span>
+                <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+                <ul>
+			<?php
+			foreach($response as $data)
+			{
+				echo '<li>'.$data['symbol'].'</li>';
+			} 
+			?>
+		</ul>
+            </a>
+        </div>   
+	</form>   
     <div id="table_div"></div>
 
     <div id="output">status<p></div>    
@@ -66,7 +82,7 @@ catch(Error $e)
 
 google.charts.load('current', {'packages':['table']});
       google.charts.setOnLoadCallback(drawTable);
-
+	
       function drawTable() {
         var data = new google.visualization.DataTable();	
         data.addColumn('string', 'symbol');
@@ -89,7 +105,7 @@ google.charts.load('current', {'packages':['table']});
 	formatter.format(data,4);
         var table = new google.visualization.Table(document.getElementById('table_div'));
 
-        table.draw(data, {showRowNumber: true, width: '100%', height: '100%', legend:'left'});
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
 
 
@@ -125,7 +141,7 @@ function submitBuy()
   var num = document.getElementById("inputNum").value;
   var symbol = document.getElementById("dropdownStock").value;
   document.getElementById("output").innerHTML = "Buying stock: " + symbol + "<p>amount: " + num + "<p>";
- // sendBuyRequest(symbol,num);
+ sendBuyRequest(symbol,num);
   return 0;
 }
 function sendBuyRequest(symbol,num)
@@ -145,10 +161,10 @@ function sendBuyRequest(symbol,num)
 
 function submitSell()
 {
-  //var symbol = document.getElementById("inputSymbol").value;
   var num = document.getElementById("inputNum").value;
-  //document.getElementById("output").innerHTML = "Selling<p>stock: " + symbol + "<p>amount: " + num + "<p>";
-  //sendSellRequest(symbol,num);
+  var symbol = document.getElementById("dropdownStock").value;
+  document.getElementById("output").innerHTML = "Selling stock: " + symbol + "<p>amount: " + num + "<p>";
+  sendSellRequest(symbol,num);
   return 0;
 }
 function sendSellRequest(symbol,num)

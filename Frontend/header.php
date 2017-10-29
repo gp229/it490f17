@@ -16,7 +16,8 @@ if(!isset($_SESSION['loginUser']))
     <meta name="author" content="">
     <title>Stocks-R-Us</title>
     <link rel="icon" href="favicon.ico">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 <script src="js/ie10-viewport-bug-workaround.js"></script>
@@ -29,7 +30,7 @@ if(!isset($_SESSION['loginUser']))
       <a class="navbar-brand" href="#">Stocks-R-Us</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="main.php">Home</a></li>
       <li><a href="portfolio.php">Account</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">

@@ -111,11 +111,10 @@ class stocksDB
 					}
 					$r5 = $this->logindb->query($q5);
 					$quantity -= $currentQuantity;	
-					echo $quantity;			
 				}
 			}
 			$response = "Successfully sold ".$myQuantity." shares of ".$sym;
-			}
+		}
 			return $response;
 		}
 		catch(Error $e)
@@ -138,24 +137,6 @@ class stocksDB
 			$response = $myArray;
 			return $response;
 		
-	}
-	public function graphData($symbol,$type)
-	{
-		try
-		{
-			$sym = $this->logindb->real_escape_string($symbol);
-			$typ = $this->logindb->real_escape_string($symbol);
-			$query = "select '$typ' from stockInfo where symbol = '$sym' order by timeStamp DESC;";
-			$response = $this->logindb->query($query);
-			$result = $response->fetchAll();
-			return var_dump($result);
-		}
-		catch(Error $e)
-		{
-			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
-			exit(1);
-		}
-
 	}
 
 	public function searchStock($stockName)
@@ -186,25 +167,20 @@ class stocksDB
 			exit(1);
 		}
 	}
-	public function checkStocks()
+	public function myStockStats($username)
 	{
 		try
 		{
-			$response = $this->updateStocks();
-			if($response != "Error getting data from API")
-			{
-				$statement = "select * from stockInfo where timestamp = (select max(timestamp) from stockInfo);";
-				$response = $this->logindb->query($statement);
-				
-				$i = 0;
-				while ($row = $response->fetch_assoc())
-				{
-					$myArray[$i] = $row;
-					$i++;
-				}
-				$response = $myArray;
+			$un = $this->logindb->real_escape_string($username);
+			$statement = "SELECT symbol, min(timestamp), sum(quantity) FROM userStocks s1 where username = '$un' group by symbol;";
+			$response = $this->logindb->query($statement);	
+			$myArray = array();
+			while ($row = $response->fetch_assoc())
+                        {
+				$symbol = $row['symbol'];
+				$myArray[$symbol] = $row;
 			}
-			
+			$response = $myArray;	
 			return $response;
 		}
 		catch(Error $e)
@@ -221,9 +197,23 @@ class stocksDB
 			$response = $this->updateStocks();
 			if($response != "Error getting data from API")
 			{
-				$statement = "select * from userStocks where username = '$un';";
+				$statement = "SELECT timestamp, symbol FROM userStocks s1 WHERE ID in (select MIN(ID) from userStocks where username = '$un' group by symbol);";
 				$response = $this->logindb->query($statement);	
-
+				$myArray = array();
+				while ($row = $response->fetch_assoc())
+                        	{
+					$timestamp = $row['timestamp'];
+					$symbol = $row['symbol'];
+					$statement = "select timestamp, open, close, high, low, volume from stockInfo where timestamp >= '$timestamp' and symbol = '$symbol';";
+	                                $stocklist = $this->logindb->query($statement);
+					while ($stock = $stocklist->fetch_assoc())
+                        		{
+						$timestamp = $stock['timestamp'];
+						unset($stock['timestamp']);
+						$myArray[$symbol][$timestamp] = $stock;
+					}
+				}
+				$response = $myArray;
 			}
 			
 			return $response;
@@ -260,7 +250,6 @@ class stocksDB
 			}		
 			else
 			{		
-				var_dump($response);
 				$statement = $this->logindb->prepare('insert into stockInfo (`symbol`, `timestamp`, `open`, `close`, `high`, `low`, `volume`) values(?, ?, ?, ?, ?, ?, ?);');
 				$statement->bind_param("ssddddi",$symbol, $timestamp,$open,$close,$high,$low,$volume);
 				foreach($response as $mySymbol => $data)
