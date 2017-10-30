@@ -51,11 +51,11 @@ catch(Error $e)
         </div>   
 	</form>   
 	<h1>Stock timestamp: <?php echo $response['0']['timestamp']; ?> </h1> 
-  <form class="navbar-form navbar" style="margin-top: -20px; margin-left: -10px; width: 100%;">
+  <form class="navbar-form navbar" style="width: 100%;">
     <button type="button" class="btn btn-default" onclick="submitSearch()">Search</button>
 	<div class="dropdown">            
 <a class="btn btn-default btn-select btn-select-light">
-                <input type="hidden" class="btn-select-input" id="dropdownStock2" name="" value="" />
+                <input type="hidden" class="btn-select-input" id="dropdownSearch" name="" value="" />
                 <span class="btn-select-value">Select an Item</span>
                 <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
                 <ul>
@@ -70,6 +70,7 @@ catch(Error $e)
         </div>   
 	</form>   
     <div id="table_div"></div>
+    <div id="linechart_div"></div>
 
     <div id="output">status<p></div>    
 </div>    
@@ -79,7 +80,8 @@ catch(Error $e)
 
 //This is the code that stores the usernames from the session
 <?php echo "var user = '" .$_SESSION['loginUser']. "';"; ?>
-
+var datachart;
+var chartoptions;
 google.charts.load('current', {'packages':['table']});
       google.charts.setOnLoadCallback(drawTable);
 	
@@ -108,32 +110,73 @@ google.charts.load('current', {'packages':['table']});
         table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
 
+	google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+     	datachart = new google.visualization.DataTable();
+      datachart.addColumn('datetime', 'Time');
+	datachart.addColumn('number', 'Stock');
+	var dateformat = new google.visualization.DateFormat({pattern: 'yyyy-MM-d H:mm:ss'});
+	dateformat.format(datachart,0);
+      chartoptions = {
+        chart: {
+          title: 'Stock over time'
+        },
+        height: window.innerHeight/1.5,
+	width: window.innerWidth/1.5,
+	interpolateNulls: true,
+    explorer: {
+        maxZoomOut:2,
+        keepInBounds: true
+    }
+      };
 
 
+    }
+
+
+function CreateChart(response)
+{
+	var response = JSON.parse(response);
+	datachart.removeRows(0, datachart.getNumberOfRows());
+	for (var key in response) {
+		datachart.addRow([new Date(response[key].timestamp), parseInt(response[key].close)]);
+	}
+	var formatter = new google.visualization.NumberFormat({fractionDigits: 4});
+	formatter.format(datachart,1);
+	 var chart = new google.charts.Line(document.getElementById('linechart_div'));
+      	chart.draw(datachart, google.charts.Line.convertOptions(chartoptions));
+}
 
 
 function HandleResponse(response)
 {
 	var text = JSON.parse(response);
 	document.getElementById("output").innerHTML = text;
-	if(text === "SearchSuccessful")
-	{
-		location.href = "main.php";
-	}
 }
-function sendSearchRequest(text)
+function sendSearchRequest(symbol)
 {
 	var request = new XMLHttpRequest();
-	request.open("POST","search.php",true);
+	request.open("POST","stock.php",true);
 	request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	request.onreadystatechange= function ()
 	{
 		if ((this.readyState == 4)&&(this.status == 200))
 		{
-			HandleResponse(this.responseText);
+			CreateChart(this.responseText);
 		}		
 	}
-	request.send("type=search&symbol="+text);
+	request.send("type=search&symbol="+symbol);
+}
+
+function submitSearch()
+{
+  var symbol = document.getElementById("dropdownSearch").value;
+  document.getElementById("output").innerHTML = "Searching stock: " + symbol + "<p>";
+ sendSearchRequest(symbol);
+  return 0;
 }
 
 function submitBuy()

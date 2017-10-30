@@ -9,7 +9,7 @@ class stocksDB
 	private $logindb;
 	private $myloggerClient;
 	private $requestClient;
-	private $listofsymbols = array('GOOG', 'AMZN');
+	private $listofsymbols = array('GOOG', 'AMZN', 'AAPL', 'INTC', 'MSFT', 'CERN', 'AET', 'AXTA','NFLX');
 	public function __construct()
 	{
 		$this->myLoggerClient = new loggerClient();
@@ -125,6 +125,9 @@ class stocksDB
 	}
 	public function listStocks()
 	{
+		$response = $this->updateStocks();
+		if($response != "Error getting data from API")
+		{
 			$query = "select * from stockInfo where timestamp = (select max(timestamp) from stockInfo);";
 			$response = $this->logindb->query($query);
 			$i = 0;
@@ -132,41 +135,35 @@ class stocksDB
 			{
 				$myArray[$i] = $row;
 				$i++;
-				
+
 			}
 			$response = $myArray;
-			return $response;
+		}
+		return $response;
+		
+	}
+	public function searchStock($stockname)
+	{
+		$stock = $this->logindb->real_escape_string($stockname);
+		$response = $this->updateStocks();
+		if($response != "Error getting data from API")
+		{
+			$statement = "select timestamp, close from stockInfo where symbol = '$stock';";
+			$response = $this->logindb->query($statement);	
+			$myArray = array();
+			$i = 0;
+			while ($row = $response->fetch_assoc())
+			{
+				$myArray[$i] = $row;
+				$i++;
+			}
+			$response = $myArray;
+		}
+		return $response;
 		
 	}
 
-	public function searchStock($stockName)
-	{
-		try
-		{
-			$row = array();
-			$sn = $this->logindb->real_escape_string($stockName);
-			$q1 = "select * from stockInfo where stockName = '$sn';";
-			$r1 = $this->logindb->query($q1);
-			while($row = $r1->fetch_assoc())
-			{
-				echo $row['stockName'];
-			}
-			if(!$r1)
-			{
-				return 0;
-			}
-			$result = $r1->fetch_assoc();
-			if(isset($result['stockName']))
-			{
-				return $result;
-			}
-		}
-		catch(Error $e)
-		{
-			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
-			exit(1);
-		}
-	}
+	
 	public function myStockStats($username)
 	{
 		try

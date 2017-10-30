@@ -38,7 +38,7 @@ function searchStock($stock)
 {
 	$dbConn = new stocksDB();
 	$response = $dbConn->searchStock($stock);
-	echo "Returning array of searched stocks".PHP_EOL;
+	echo $response.PHP_EOl;
 	return $response;
 }
 function myStockStats($username)

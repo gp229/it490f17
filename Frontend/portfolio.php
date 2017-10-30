@@ -109,8 +109,14 @@ google.charts.load('current', {'packages':['line']});
 	}
 	?>
 	var formatter = new google.visualization.NumberFormat({fractionDigits: 4});
-	formatter.format(data,1);
-        formatter.format(data,2);
+	<?php 
+		$i = 1;
+		foreach($keys as $key)
+		{
+			echo "formatter.format(data,".$i.");";
+			$i++;
+		}
+	?>
 	var dateformat = new google.visualization.DateFormat({pattern: 'yyyy-MM-d H:mm:ss'});
 	dateformat.format(data,0);
       var options = {
