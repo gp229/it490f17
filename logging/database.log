@@ -188,3 +188,14 @@ Stack trace:
 #4 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
 #5 /home/gabriel/git/it490f17/Backend/loginProc.php(70): rabbitMQServer->process_requests('requestProcesso...')
 #6 {main} in /home/gabriel/git/it490f17/Backend/login.php.inc on line 48
+[2017-11-07 10:00:59] ==SEVERE== Backend - 127.0.1.1
+Fatal Error connecting to database: Error: Call to a member function fetch_assoc() on boolean in /home/gabriel/git/it490f17/Backend/stock.php.inc:233
+Stack trace:
+#0 /home/gabriel/git/it490f17/Backend/stock.php.inc(128): stocksDB->updateStocks()
+#1 /home/gabriel/git/it490f17/Backend/stockProc.php(33): stocksDB->listStocks()
+#2 /home/gabriel/git/it490f17/Backend/stockProc.php(85): listStocks()
+#3 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(58): requestProcessor(Array)
+#4 [internal function]: rabbitMQServer->process_message(Object(AMQPEnvelope), Object(AMQPQueue))
+#5 /home/gabriel/git/it490f17/libraries/rabbitMQLib.inc(122): AMQPQueue->consume(Array)
+#6 /home/gabriel/git/it490f17/Backend/stockProc.php(115): rabbitMQServer->process_requests('requestProcesso...')
+#7 {main} in /home/gabriel/git/it490f17/Backend/stock.php.inc on line 273

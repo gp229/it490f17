@@ -99,13 +99,13 @@ elseif(date('Hi',strtoTime($tempTime)) < '0930')
 	}
 }
 
-for($i = 0; $i <= 5; $i++)
+for($i = 0; $i <= 10; $i++)
 {
 if(!isset($data['Time Series (1min)'][$tempTime]))
 {
-	if($i == 5)
+	if($i == 10)
 	{
-		echo "Error getting data from API when checking minutes";
+		echo "Error getting data from API when checking minutes ".$tempTime.PHP_EOL;
 		return "Error getting data from API";
 	}
 	
