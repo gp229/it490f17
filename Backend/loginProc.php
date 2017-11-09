@@ -5,7 +5,10 @@ require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 require_once('login.php.inc');
 require_once('loggerClient.php.inc');
-
+$username = 'lmao1';
+$password = 'lmao1';
+$test1 = doRegister($username,$password);
+$test2 = doLogin($username,$password);
 function doLogin($username,$password)
 {
 	$dbConn = new loginDB();

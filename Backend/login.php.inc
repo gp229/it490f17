@@ -30,7 +30,7 @@ class loginDB
 			while ($row = $response->fetch_assoc())
 			{
 				echo "checking password for $username".PHP_EOL;
-				if ($row["password"] == $pw)
+				if (password_verify($pw,$row["password"]))
 				{
 					echo "passwords match for $username".PHP_EOL;
 					
@@ -57,6 +57,7 @@ class loginDB
 		try{
 			$un = $this->logindb->real_escape_string($username);
 			$pw = $this->logindb->real_escape_string($password);
+			$pw = password_hash($pw, PASSWORD_BCRYPT);
 			$statement = "select * from userlogin where username = '$un';";
 			$response = $this->logindb->query($statement);
 			$row = $response->fetch_assoc();
