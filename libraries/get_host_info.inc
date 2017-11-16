@@ -6,6 +6,7 @@
 
     @return parsed ini machine information
 */
+
 function getHostInfo(array $extra = NULL)
 {
     $machine;
