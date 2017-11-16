@@ -20,16 +20,65 @@ class loginDB
 		echo "correctly connected to database".PHP_EOL;
 	}
 
-	public function deployCommand($command)
+	public function deployNew($command)
 	{
-		try{
+		try
+		{
 			$com = $this->logindb->real_escape_string($command);
+			return "Deploy I-c conf.ini";
 		}
 		catch(Error $e)
 		{
-			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
-			exit(1);
+			$this->myLoggerClient->sendLog("database.log",4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
 		}
+
+
 	}
-}
-?>
+	
+	public function deployInstall($cluster,$machine)
+	{
+		try
+		{
+			$clu = $this->logindb->real_escape_string($cluster);
+			$mac = $this->logindb->real_escape_string($machine);
+			return "Deploy install $clu $machine";
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log",4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+		}
+
+
+	}
+
+	public function deployRollback($cluster,$machine,$package)
+	{
+		try
+		{
+			$clu = $this->logindb->real_escape_string($cluster);
+			$mac = $this->logindb->real_escape_string($machine);
+			$pac = $this->logindb->real_escape_string($package);
+			return "Deploy rollback $clu $machine $package";
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log",4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+		}
+
+
+	}
+	public function deployDepreciate($package)
+	{
+		try
+		{
+			$pac = $this->logindb->real_escape_string($package);
+			return "Deploy depreciate $pac";
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log",4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+		}
+
+
+	}
+}?>
