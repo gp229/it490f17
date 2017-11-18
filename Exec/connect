@@ -1,0 +1,68 @@
+#!/bin/bash
+
+	#saving the data types
+path=$1
+serverName= awk -F "=" '/serverName/ {print $2}' host.ini
+echo $serverName
+temp="~/git/it490f17/temp"
+home="~/git/it490f17/"$serverName
+base="~/git/it490f17/"
+
+	#function to run all the processes
+run_Procs () {
+  past= pwd 
+  cd $home 
+  count=0
+  
+  for i in *Proc.php; do
+  [ -f "$i" ] || break
+  
+  gnome-terminal -e $home"/"$i
+  count= $(($count+1))
+done
+cd $past
+return $count     
+}
+
+	#`copying the old version to temp`
+cp -R $home $temp
+
+if [ $? -ne 0  ];
+then
+  echo "Error copying origin to temp"
+  exit
+fi
+
+	#`killing the processes`
+kill $(ps aux | grep [P]roc.php | awk '{print $2}')
+
+
+	#`grabbing the new version`
+scp $home $path
+
+if [ $? -ne 0 ];
+then
+  echo "SCP Error: check connect path"
+  exit
+fi
+
+run_Procs
+runNum= $count
+countNum= ps aux | grep -c [P]roc.php
+
+if [ $countNum -ne $runNum ];
+then
+  echo "Processes not running : Rolling Back to previos version"
+  kill $(ps aux | grep [P]roc.php | awk '{print $2}')
+  
+  rm -Rf $home
+  cp -R $temp"/"$serverName $base
+
+  run_Procs
+
+
+  exit
+fi
+echo "Installation Successful" 
+
+
