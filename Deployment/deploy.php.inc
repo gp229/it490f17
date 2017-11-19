@@ -7,9 +7,11 @@ class deployDB
 {
 	private $logindb;
 	private $myloggerClient;
+	private $requestClient;
 	public function __construct()
 	{
 		$this->myLoggerClient = new loggerClient();
+		$this->requestClient = new rabbitClient("testRabbitMQ.ini", 'deployServer');
 		$this->logindb = new mysqli("127.0.0.1","root","password","stocksdb");
 		if ($this->logindb->connect_errno != 0)
 		{
@@ -20,30 +22,117 @@ class deployDB
 		echo "correctly connected to database".PHP_EOL;
 	}
 
-	public function newBundle($path, $serverType, $ip)
+	public function newBundle($path, $serverType)
 	{
 		try{
 			$serverType = $this->logindb->real_escape_string($serverType);
-			$statement = "select version from deployment where version = max and not deprecated;";
+			$statement = "select max(version) from deployVersionControl where serverType = '$serverType';";
 			$response = $this->logindb->query($statement);
-			echo "checking version for $serverType".PHP_EOL;
-			while ($row = $response->fetch_assoc();
+			echo "checking version for ".$serverType.PHP_EOL;
+			if (mysql_num_rows($response)==0)
 			{
-				if (password_verify($pw,$row["password"]))
-				{
-					echo "passwords match for $username".PHP_EOL;
-					
-					$statement = "select balance from userInfo where username = '$un';";
-					$balanceresponse = $this->logindb->query($statement);
-					$response = $balanceresponse->fetch_assoc();
-
-					$response['balance'] = 	$response['balance'];
-					$response['login'] = "LoginSuccess";
-					return $response;// password match
-				}
-				echo "passwords did not match for $username".PHP_EOL;
+				$version = 1;
 			}
-			return "LoginFailed";//no users matched username
+			else
+			{
+				$row = $response->fetch_assoc();
+				$version = $row['version'] + 1;
+			}
+			
+			$statement = "insert into deployVersionControl(serverType, version) Values('$serverType', '$version');";
+			$this->logindb->query($statement);
+			if($this->logindb->affected_rows == 1)
+			{
+				//success
+			}
+			return error;
+			
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+			exit(1);
+		}
+	}
+	
+	public function installBundle($cluster, $server, $version)
+	{
+		try{
+			$server = $this->logindb->real_escape_string($server);
+			$statement = "select * from deployVersionControl where serverType = '$server' and version = '$version';";
+			if (mysql_num_rows($response)==0)
+			{
+				return "Cannot install because ".$version." is not found for ".$server;
+			}
+			$row = $response->fetch_assoc();
+			if($row['deprecated'] == 1)
+			{
+				return "Cannot install because ".$version." is deprecated for ".$server;
+			}
+			$localip = getHostByName(getHostName());
+			$path = "~/git/it490f17/Deployment/packages/".$server.$server."_v".$version;
+			$request['path'] = $localip.":".$path;
+			$request['type'] = "install";
+			$response = $this->requestClient->make_request($request);	
+			return $response;	
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+			exit(1);
+		}
+	}
+	
+	public function deprecateVersion($server, $version)
+	{
+		try{
+			$version = $this->logindb->real_escape_string($version);
+			$server = $this->logindb->real_escape_string($server);
+			$statement = "select * from deployVersionControl where serverType = '$server' and version = '$version';";
+			if (mysql_num_rows($response)==0)
+			{
+				return "Cannot deprecate because ".$version." is not found for ".$server;
+			}
+			$row = $response->fetch_assoc();
+			if($row['deprecated'] == 1)
+			{
+				return "Cannot deprecate because ".$version." is already deprecated for ".$server;
+			}
+			$statement = "update deployVersionControl set deprecated = 1 where serverType = '$server' and version = '$version';";			
+			if (mysql_num_rows($response)==0)
+			{
+				return "Deprecate failed for Version: ".$version.", Server type:  ".$server;
+			}
+			return "Successfully deprecated package ".$server."_v".$version;	
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+			exit(1);
+		}
+	}
+	
+	public function rollbackServer($server, $version)
+	{
+		try{
+			$version = $this->logindb->real_escape_string($version);
+			$server = $this->logindb->real_escape_string($server);
+			$statement = "select * from deployVersionControl where serverType = '$server' and version = '$version';";
+			if (mysql_num_rows($response)==0)
+			{
+				return "Cannot deprecate because ".$version." is not found for ".$server;
+			}
+			$row = $response->fetch_assoc();
+			if($row['deprecated'] == 1)
+			{
+				return "Cannot deprecate because ".$version." is already deprecated for ".$server;
+			}
+			$statement = "update deployVersionControl set deprecated = 1 where serverType = '$server' and version = '$version';";			
+			if (mysql_num_rows($response)==0)
+			{
+				return "Deprecate failed for Version: ".$version.", Server type:  ".$server;
+			}
+			return "Successfully deprecated package ".$server."_v".$version;	
 		}
 		catch(Error $e)
 		{
