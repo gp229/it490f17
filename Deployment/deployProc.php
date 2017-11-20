@@ -39,7 +39,7 @@ function requestProcessor($request)
   }
    switch ($request['type'])
   {
-    case "new":
+    case "make":
 	if(empty($request['path']) || empty($request['server']))
 	{
 		echo "Path or serverType not set for new package.".PHP_EOL;
