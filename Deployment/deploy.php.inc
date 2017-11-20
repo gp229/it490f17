@@ -25,6 +25,10 @@ class deployDB
 	public function newBundle($path, $serverType)
 	{
 		try{
+			if(!file_exists($path))
+			{
+				return "New package was not copied to deploy server";
+			}
 			$serverType = $this->logindb->real_escape_string($serverType);
 			$statement = "select max(version) from deployVersionControl where serverType = '$serverType';";
 			$response = $this->logindb->query($statement);
@@ -38,15 +42,14 @@ class deployDB
 				$row = $response->fetch_assoc();
 				$version = $row['version'] + 1;
 			}
-			
+			rename($path, $file = substr($path, 0, -19));
 			$statement = "insert into deployVersionControl(serverType, version) Values('$serverType', '$version');";
 			$this->logindb->query($statement);
 			if($this->logindb->affected_rows == 1)
 			{
-				//success
+				return "Added new package for ".$serverType.", version ".$version;
 			}
-			return error;
-			
+			return "Failed to add package to database for ".serverType.", version ".$version;
 		}
 		catch(Error $e)
 		{
@@ -69,8 +72,13 @@ class deployDB
 			{
 				return "Cannot install because ".$version." is deprecated for ".$server;
 			}
+			
 			$localip = getHostByName(getHostName());
 			$path = "~/git/it490f17/Deployment/packages/".$server.$server."_v".$version;
+			if(!file_exists($path))
+			{
+				return "Package was not found on deploy server";
+			}
 			$request['path'] = $localip.":".$path;
 			$request['type'] = "install";
 			$response = $this->requestClient->make_request($request);	

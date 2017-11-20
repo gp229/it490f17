@@ -5,10 +5,10 @@ require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 require_once('deploy.php.inc');
 
-function doMakeBundle($path,$serverType,$ip)
+function doNewBundle($path,$serverType)
 {
 	$deployConn = new deployDB();
-	$response = $deployConn->newBundle($path,$serverType,$ip);
+	$response = $deployConn->newBundle($path,$serverType);
 	echo $response.PHP_EOL;
 	return $response;	
 }
@@ -20,6 +20,15 @@ function doInstallBundle($cluster,$server,$version)
 	echo $response.PHP_EOL;
 	return $response;	
 }
+
+function doDeprecateVersion($server,$version)
+{
+	$deployConn = new deployDB();
+	$response = $deployConn->deprecateVersion($server,$version);
+	echo $response.PHP_EOL;
+	return $response;	
+}
+
 function requestProcessor($request)
 {
   echo "received request".PHP_EOL;
@@ -31,11 +40,11 @@ function requestProcessor($request)
    switch ($request['type'])
   {
     case "new":
-	if(empty($request['path']) || empty($request['serverType']) || empty($request['ip']))
+	if(empty($request['path']) || empty($request['server']))
 	{
-		echo "Path, serverType, or ip not set for new package.".PHP_EOL;
+		echo "Path or serverType not set for new package.".PHP_EOL;
 	}
-	doMakeBundle($request['path'],$request['serverType'],$request['ip']);
+	doNewBundle($request['path'],$request['server']);
     case "install":
 	if(empty($request['cluster']) || empty($request['server']) || empty($request['version']))
 	{
@@ -49,11 +58,11 @@ function requestProcessor($request)
 	}
 	doLog($request['logfile'],$request['level'],$request['machine'],$request['ip'],$request['message']);
     case "deprecate":
-	if(empty($request['logfile']) || empty($request['level']) || empty($request['machine']) || empty($request['ip']) || empty($request['message']))
+	if(empty($request['server']) || empty($request['version']))
 	{
-		echo "Logfile, level, machine, ip, or message not set for log.".PHP_EOL;
+		echo "Server or version not set for deprecate.".PHP_EOL;
 	}
-	doLog($request['logfile'],$request['level'],$request['machine'],$request['ip'],$request['message']);
+	doDeprecateVersion($request['server'],$request['version']);
   }
   return array("returnCode" => '0', 'message'=>"Server received request and processed");
 }
