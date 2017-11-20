@@ -26,25 +26,29 @@ switch ($request['type']) {
         }
 	$filename = $server."_".$now.".tar.gz"; 
 	$localpath = $rootpath.$filename;	
-	$destinationPath = $rootpath."Deployment/packages/".$server."/".$filename;
-
+	$destinationPath = $rootpath."Deployment/packages/".$server."/";
+	$shellpath = $destinationPath;
+	$destinationPath .= $filename;
 	echo "Getting IP address for deployment Server".PHP_EOL;
 	$request['type'] = "getIP";
 	$response = $requestClient->make_request($request);
 	echo $response.PHP_EOL;
 
-	echo "Executing tar command for".$filename.PHP_EOL;
-        $server = escapeshellarg($server);
+	echo "Executing tar command for ".$filename.PHP_EOL;
         $now = escapeshellarg($now);
         $filename = escapeshellarg($filename);
 	shell_exec("tar -czf ../'$filename' -C ../ '$server' libraries");
 	
 	echo "Executing scp".PHP_EOL;
-        $shellpath = escapeshellarg($destinationPath);
+	//$shellpath = escapeshellarg($destinationPath);
         $response = escapeshellarg($response);
-        $localpath = escapeshellarg($localpath);
-	shell_exec("scp '$localpath' '$response':~/git/it490f17/temp/.");
+	shell_exec("scp $localpath $response:$shellpath");
+	echo "File should be here, $destinationPath, on the Deployment Server".PHP_EOL;
 	$request['type'] = "make";
+	$request['path'] = $destinationPath;
+	$request['server'] = $server;
+	$response = $requestClient->make_request($request);
+	echo $response.PHP_EOL;
 	break;
     case "install":
         echo "Sending";
