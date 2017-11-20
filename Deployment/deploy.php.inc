@@ -2,6 +2,7 @@
 require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('loggerClient.php.inc');
+require_once('requestClient.php.inc');
 
 class deployDB
 {
@@ -11,7 +12,7 @@ class deployDB
 	public function __construct()
 	{
 		$this->myLoggerClient = new loggerClient();
-		$this->requestClient = new rabbitClient("testRabbitMQ.ini", 'deployServer');
+		$this->requestClient = new rabbitClient("testRabbitMQ.ini", 'execServer');
 		$this->logindb = new mysqli("127.0.0.1","root","password","stocksdb");
 		if ($this->logindb->connect_errno != 0)
 		{
@@ -58,6 +59,18 @@ class deployDB
 		}
 	}
 	
+	public function getIP()
+	{
+		try{
+			$localip = shell_exec("/sbin/ifconfig enp0s3 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'");
+			return $localip;	
+		}
+		catch(Error $e)
+		{
+			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
+			exit(1);
+		}
+	}
 	public function installBundle($cluster, $server, $version)
 	{
 		try{
@@ -73,7 +86,8 @@ class deployDB
 				return "Cannot install because ".$version." is deprecated for ".$server;
 			}
 			
-			$localip = getHostByName(getHostName());
+			$localip = shell_exec("/sbin/ifconfig enp0s3 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'");
+
 			$path = "~/git/it490f17/Deployment/packages/".$server.$server."_v".$version;
 			if(!file_exists($path))
 			{

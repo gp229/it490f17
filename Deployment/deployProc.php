@@ -13,6 +13,14 @@ function doNewBundle($path,$serverType)
 	return $response;	
 }
 
+function dogetIP()
+{
+	$deployConn = new deployDB();
+	$response = $deployConn->getIP();
+	echo $response.PHP_EOL;
+	return $response;	
+}
+
 function doInstallBundle($cluster,$server,$version)
 {
 	$deployConn = new deployDB();
@@ -43,26 +51,32 @@ function requestProcessor($request)
 	if(empty($request['path']) || empty($request['server']))
 	{
 		echo "Path or serverType not set for new package.".PHP_EOL;
+		return "Path or serverType not set for new package.";
 	}
-	doNewBundle($request['path'],$request['server']);
+	return doNewBundle($request['path'],$request['server']);
+    case "getIP":
+	return dogetIP();
     case "install":
 	if(empty($request['cluster']) || empty($request['server']) || empty($request['version']))
 	{
 		echo "Cluster, server, or version not set for install.".PHP_EOL;
+		return "Cluster, server, or version not set for install.";
 	}
-	doInstallBundle($request['cluster'],$request['server'],$request['version']);
+	return doInstallBundle($request['cluster'],$request['server'],$request['version']);
     case "rollback":
 	if(empty($request['logfile']) || empty($request['level']) || empty($request['machine']) || empty($request['ip']) || empty($request['message']))
 	{
 		echo "Logfile, level, machine, ip, or message not set for log.".PHP_EOL;
+		return "Logfile, level, machine, ip, or message not set for log.";
 	}
-	doLog($request['logfile'],$request['level'],$request['machine'],$request['ip'],$request['message']);
+	return doLog($request['logfile'],$request['level'],$request['machine'],$request['ip'],$request['message']);
     case "deprecate":
 	if(empty($request['server']) || empty($request['version']))
 	{
 		echo "Server or version not set for deprecate.".PHP_EOL;
+		return "Server or version not set for deprecate.";
 	}
-	doDeprecateVersion($request['server'],$request['version']);
+	return doDeprecateVersion($request['server'],$request['version']);
   }
   return array("returnCode" => '0', 'message'=>"Server received request and processed");
 }
