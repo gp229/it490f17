@@ -26,6 +26,10 @@ class deployDB
 	public function newBundle($path, $serverType)
 	{
 		try{
+			$username = exec('whoami');
+			$path = substr($path, 1);
+			$path = "/home/".$username.$path;
+			echo $path.PHP_EOL;
 			if(!file_exists($path))
 			{
 				return "New package was not copied to deploy server";

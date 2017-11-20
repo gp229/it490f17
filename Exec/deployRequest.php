@@ -40,7 +40,6 @@ switch ($request['type']) {
 	shell_exec("tar -czf ../'$filename' -C ../ '$server' libraries");
 	
 	echo "Executing scp".PHP_EOL;
-	//$shellpath = escapeshellarg($destinationPath);
         $response = escapeshellarg($response);
 	shell_exec("scp $localpath $response:$shellpath");
 	echo "File should be here, $destinationPath, on the Deployment Server".PHP_EOL;
