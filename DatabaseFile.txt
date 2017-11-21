@@ -1,6 +1,0 @@
-CREATE TABLE `schema` (
-`ID` int(11) NOT NULL AUTO_INCREMENT,
-`Name` varchar(255) NOT NULL,
-`versionType` varchar(255),
-PRIMARY KEY (`ID`));
-

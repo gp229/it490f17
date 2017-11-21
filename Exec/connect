@@ -2,11 +2,17 @@
 
 	#saving the data types
 path=$1
-serverName= awk -F "=" '/serverName/ {print $2}' host.ini
-echo $serverName
-temp="~/git/it490f17/temp"
-home="~/git/it490f17/"$serverName
-base="~/git/it490f17/"
+serverName=$(awk -F "=" '/serverName/ {print $2}' host.ini | tr -d ' ')
+
+
+prehome=$(pwd)
+cd ..
+prehome=$(pwd)
+tt="/temp"
+temp=$prehome$tt
+echo $temp
+home=$prehome"/"$serverName
+echo $home
 
 	#function to run all the processes
 run_Procs () {
@@ -26,25 +32,28 @@ return $count
 
 	#`copying the old version to temp`
 cp -R $home $temp
-
 if [ $? -ne 0  ];
 then
   echo "Error copying origin to temp"
   exit
 fi
-
+echo 1
 	#`killing the processes`
-kill $(ps aux | grep [P]roc.php | awk '{print $2}')
 
+for j in  $(ps aux | grep [P]roc.php | awk '{print $2}'); do
+  kill $j
+done
+echo 2
 
 	#`grabbing the new version`
-scp $home $path
+scp -r $path $home
 
 if [ $? -ne 0 ];
 then
   echo "SCP Error: check connect path"
   exit
 fi
+echo 3
 
 run_Procs
 runNum= $count
@@ -53,10 +62,14 @@ countNum= ps aux | grep -c [P]roc.php
 if [ $countNum -ne $runNum ];
 then
   echo "Processes not running : Rolling Back to previos version"
-  kill $(ps aux | grep [P]roc.php | awk '{print $2}')
-  
+
+for j in  $(ps aux | grep [P]roc.php | awk '{print $2}'); do
+  kill $j
+done
+ 
+ 
   rm -Rf $home
-  cp -R $temp"/"$serverName $base
+  cp -R $temp"/"$serverName $prehome
 
   run_Procs
 
