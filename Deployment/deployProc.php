@@ -28,6 +28,13 @@ function doInstallBundle($cluster,$server,$version)
 	echo $response.PHP_EOL;
 	return $response;	
 }
+function doRollbackBundle($cluster,$server,$version)
+{
+	$deployConn = new deployDB();
+	$response = $deployConn->rollbackBundle($cluster,$server,$version);
+	echo $response.PHP_EOL;
+	return $response;	
+}
 
 function doDeprecateVersion($server,$version)
 {
@@ -64,12 +71,12 @@ function requestProcessor($request)
 	}
 	return doInstallBundle($request['cluster'],$request['server'],$request['version']);
     case "rollback":
-	if(empty($request['logfile']) || empty($request['level']) || empty($request['machine']) || empty($request['ip']) || empty($request['message']))
+	if(empty($request['cluster']) || empty($request['server']) || empty($request['version']))
 	{
-		echo "Logfile, level, machine, ip, or message not set for log.".PHP_EOL;
-		return "Logfile, level, machine, ip, or message not set for log.";
+		echo "Cluster, server, or version not set for install.".PHP_EOL;
+		return "Cluster, server, or version not set for install.";
 	}
-	return doLog($request['logfile'],$request['level'],$request['machine'],$request['ip'],$request['message']);
+	return doRollbackBundle($request['cluster'],$request['server'],$request['version']);
     case "deprecate":
 	if(empty($request['server']) || empty($request['version']))
 	{

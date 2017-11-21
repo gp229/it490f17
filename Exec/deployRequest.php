@@ -69,7 +69,15 @@ switch ($request['type']) {
 	$request['version'] = trim($request['version']);
         break;
     case "rollback":
-        echo "Your favorite color is green!";
+        echo "Which cluster do you want to rollback? ";
+	$request['cluster'] = fgets($handle);
+	$request['cluster'] = trim($request['cluster']);
+        echo "Which server do you want to rollback? ";
+	$request['server'] = fgets($handle);
+	$request['server'] = trim($request['server']);
+        echo "What version do you want to rollback to? ";
+	$request['version'] = fgets($handle);
+	$request['version'] = trim($request['version']);
         break;
     default:
         echo "Not a valid command".PHP_EOL;

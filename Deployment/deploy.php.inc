@@ -149,28 +149,40 @@ class deployDB
 			exit(1);
 		}
 	}
-	
-	public function rollbackServer($server, $version)
+	public function rollbackBundle($cluster, $server, $version)
 	{
 		try{
-			$version = $this->logindb->real_escape_string($version);
 			$server = $this->logindb->real_escape_string($server);
 			$statement = "select * from deployVersionControl where serverType = '$server' and version = '$version';";
-			if (mysql_num_rows($response)==0)
-			{
-				return "Cannot deprecate because ".$version." is not found for ".$server;
-			}
+			$response = $this->logindb->query($statement);
 			$row = $response->fetch_assoc();
+			if ($row == 0)
+			{
+				return "Cannot install because ".$version." is not found for ".$server;
+			}
 			if($row['deprecated'] == 1)
 			{
-				return "Cannot deprecate because ".$version." is already deprecated for ".$server;
+				return "Cannot install because ".$version." is deprecated for ".$server;
 			}
-			$statement = "update deployVersionControl set deprecated = 1 where serverType = '$server' and version = '$version';";			
-			if (mysql_num_rows($response)==0)
+			
+			$localip = shell_exec("/sbin/ifconfig enp0s3 | grep 'inet addr:' | cut -d: -f2 | awk '{ printf $1}'");
+
+			$path = "~/git/it490f17/Deployment/packages/".$server."/".$server."_v".$version.".tar.gz";
+			$username = exec('whoami');
+			$localpath = substr($path, 1);
+			$localpath = "/home/".$username.$localpath;
+			echo "Filepath: ".$localpath.PHP_EOL;
+			if(!file_exists($localpath))
 			{
-				return "Deprecate failed for Version: ".$version.", Server type:  ".$server;
+				return "Package was not found on deploy server";
 			}
-			return "Successfully deprecated package ".$server."_v".$version;	
+			$request['path'] = $localip.":".$path;
+			$request['type'] = "rollback";
+			$request['server'] = $server;
+			$request['cluster'] = $cluster;
+			
+			$response = $this->requestClient->make_request($request);	
+			return $response;	
 		}
 		catch(Error $e)
 		{
@@ -178,5 +190,6 @@ class deployDB
 			exit(1);
 		}
 	}
+	
 }
 ?>
