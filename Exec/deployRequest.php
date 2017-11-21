@@ -46,7 +46,7 @@ switch ($request['type']) {
 	$request['type'] = "make";
 	$request['path'] = $destinationPath;
 	$request['server'] = $server;
-	echo "Sending request to track new package";
+	echo "Sending request to track new package".PHP_EOL;
 	$requestClient = new rabbitClient("testRabbitMQ.ini", 'deploymentServer');
 	break;
     case "install":

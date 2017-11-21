@@ -54,7 +54,7 @@ class deployDB
 			$this->logindb->query($statement);
 			if($this->logindb->affected_rows == 1)
 			{
-				return "Added new package ".$serverType."_v".$version."tar.gz";
+				return "Added new package ".$serverType."_v".$version;
 			}
 			return "Failed to add package to database for ".$serverType.", version ".$version;
 		}
@@ -82,7 +82,8 @@ class deployDB
 		try{
 			$server = $this->logindb->real_escape_string($server);
 			$statement = "select * from deployVersionControl where serverType = '$server' and version = '$version';";
-			if (mysql_num_rows($response)==0)
+			$response = $this->logindb->query($statement);
+			if ($row == 0)
 			{
 				return "Cannot install because ".$version." is not found for ".$server;
 			}
@@ -117,19 +118,21 @@ class deployDB
 			$version = $this->logindb->real_escape_string($version);
 			$server = $this->logindb->real_escape_string($server);
 			$statement = "select * from deployVersionControl where serverType = '$server' and version = '$version';";
-			if (mysql_num_rows($response)==0)
+			$response = $this->logindb->query($statement);
+			$row = $response->fetch_assoc();
+			if ($row == 0)
 			{
 				return "Cannot deprecate because ".$version." is not found for ".$server;
 			}
-			$row = $response->fetch_assoc();
 			if($row['deprecated'] == 1)
 			{
 				return "Cannot deprecate because ".$version." is already deprecated for ".$server;
 			}
 			$statement = "update deployVersionControl set deprecated = 1 where serverType = '$server' and version = '$version';";			
-			if (mysql_num_rows($response)==0)
+			$this->logindb->query($statement);
+			if($this->logindb->affected_rows == 0)
 			{
-				return "Deprecate failed for Version: ".$version.", Server type:  ".$server;
+				return "Deprecate failed for Version: ".$version.", Server type: ".$server;
 			}
 			return "Successfully deprecated package ".$server."_v".$version;	
 		}
