@@ -6,10 +6,6 @@ require_once('rabbitMQLib.inc');
 require_once('loggerClient.php.inc');
 
  
-  $home = getHostInfo();
-  echo $home['server']['cluster'];
-  $clus = $home['server']['cluster'];
-  $servName =  $home['server']['serverName'];
 function execInstall($path)
 {
 	$response = exec("./connect $path");
@@ -19,6 +15,9 @@ function execInstall($path)
 
 function requestProcessor($request)
 {
+  	$home = getHostInfo();
+  	$clus = $home['server']['cluster'];
+  	$servName =  $home['server']['serverName'];
 	echo "received request".PHP_EOL;
 	var_dump($request);
 	if(!isset($request['type']))
@@ -28,9 +27,9 @@ function requestProcessor($request)
 
   	if($request['cluster'] != $clus && $request['serverType'] != $servName)
   	{
-		return "Passing By: Not the cluster and/or server for use";
-  	}
-
+		echo "Passing By: Not the cluster and/or server for use";
+	}
+	else{
    	switch ($request['type'])
   	{
     		case "install":
@@ -48,7 +47,7 @@ function requestProcessor($request)
 			}
 			return execInstall($request['path']);
   	}
-
+	}
   	return array("returnCode" => '0', 'message' => "Server recieved request and process");
 }
 
