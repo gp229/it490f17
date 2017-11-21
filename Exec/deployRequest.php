@@ -36,24 +36,37 @@ switch ($request['type']) {
 
 	echo "Executing tar command for ".$filename.PHP_EOL;
         $now = escapeshellarg($now);
-        $filename = escapeshellarg($filename);
+        //$filename = escapeshellarg($filename);
 	shell_exec("tar -czf ../'$filename' -C ../ '$server' libraries");
 	
 	echo "Executing scp".PHP_EOL;
         $response = escapeshellarg($response);
 	shell_exec("scp $localpath $response:$shellpath");
-	echo "File should be here, $destinationPath, on the Deployment Server".PHP_EOL;
+	unlink("../".$filename);
 	$request['type'] = "make";
 	$request['path'] = $destinationPath;
 	$request['server'] = $server;
-	$response = $requestClient->make_request($request);
-	echo $response.PHP_EOL;
+	echo "Sending request to track new package";
+	$requestClient = new rabbitClient("testRabbitMQ.ini", 'deploymentServer');
 	break;
     case "install":
-        echo "Sending";
+        echo "Which cluster do you want to update? ";
+	$request['cluster'] = fgets($handle);
+	$request['cluster'] = trim($request['cluster']);
+        echo "Which server do you want to update? ";
+	$request['server'] = fgets($handle);
+	$request['server'] = trim($request['server']);
+        echo "What version do you want to install? ";
+	$request['version'] = fgets($handle);
+	$request['version'] = trim($request['version']);
         break;
     case "deprecate":
-        echo "Your favorite color is green!";
+        echo "Which server type do you want to deprecate? ";
+	$request['server'] = fgets($handle);
+	$request['server'] = trim($request['server']);
+        echo "What version do you want to deprecate? ";
+	$request['version'] = fgets($handle);
+	$request['version'] = trim($request['version']);
         break;
     case "rollback":
         echo "Your favorite color is green!";
@@ -63,5 +76,7 @@ switch ($request['type']) {
         exit();
 }
 
+$response = $requestClient->make_request($request);
+echo $response.PHP_EOL;
 ?>
 

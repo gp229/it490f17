@@ -38,23 +38,25 @@ class deployDB
 			$statement = "select max(version) from deployVersionControl where serverType = '$serverType';";
 			$response = $this->logindb->query($statement);
 			echo "checking version for ".$serverType.PHP_EOL;
-			if (mysql_num_rows($response)==0)
+			$row = $response->fetch_assoc();
+			if ($row == 0)
 			{
 				$version = 1;
 			}
 			else
 			{
-				$row = $response->fetch_assoc();
-				$version = $row['version'] + 1;
+				$version = $row['max(version)'] + 1;
 			}
-			rename($path, $file = substr($path, 0, -19));
+			$file = substr($path, 0, -26);
+			$file .= "v".$version.".tar.gz";
+			rename($path, $file);
 			$statement = "insert into deployVersionControl(serverType, version) Values('$serverType', '$version');";
 			$this->logindb->query($statement);
 			if($this->logindb->affected_rows == 1)
 			{
-				return "Added new package for ".$serverType.", version ".$version;
+				return "Added new package ".$serverType."_v".$version."tar.gz";
 			}
-			return "Failed to add package to database for ".serverType.", version ".$version;
+			return "Failed to add package to database for ".$serverType.", version ".$version;
 		}
 		catch(Error $e)
 		{
