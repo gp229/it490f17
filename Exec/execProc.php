@@ -1,4 +1,4 @@
-#!usr/bin/php
+#!/usr/bin/php
 <?php
 require_once('path.inc');
 require_once('get_host_info.inc');
@@ -7,9 +7,10 @@ require_once('loggerClient.php.inc');
 
  
   $home = getHostInfo();
+  echo $home['server']['cluster'];
   $clus = $home['server']['cluster'];
+  echo $clus;
   $servName =  $home['server']['serverName'];
-
 function execInstall($path)
 {
 	$response = exec("./connect $path");
@@ -33,14 +34,19 @@ function requestProcessor($request)
    	switch ($request['type'])
   	{
     		case "install":
-			if(empty($request['path'])
+			if(empty($request['path']))
 			{
 				echo "Version number not set".PHP_EOL;
 				return "Version number not set";
 			}
 			execInstall($request['path']);
    		case "rollback":
-			execRollback();
+			if(empty($request['path']))
+			{
+				echo "Version number not set".PHP_EOL;
+				return "Version number not set";
+			}
+			execInstall($request['path']);
   	}
 
   	return array("returnCode" => '0', 'message' => "Server recieved request and process");
