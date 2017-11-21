@@ -83,25 +83,32 @@ class deployDB
 			$server = $this->logindb->real_escape_string($server);
 			$statement = "select * from deployVersionControl where serverType = '$server' and version = '$version';";
 			$response = $this->logindb->query($statement);
+			$row = $response->fetch_assoc();
 			if ($row == 0)
 			{
 				return "Cannot install because ".$version." is not found for ".$server;
 			}
-			$row = $response->fetch_assoc();
 			if($row['deprecated'] == 1)
 			{
 				return "Cannot install because ".$version." is deprecated for ".$server;
 			}
 			
-			$localip = shell_exec("/sbin/ifconfig enp0s3 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'");
+			$localip = shell_exec("/sbin/ifconfig enp0s3 | grep 'inet addr:' | cut -d: -f2 | awk '{ printf $1}'");
 
-			$path = "~/git/it490f17/Deployment/packages/".$server.$server."_v".$version;
-			if(!file_exists($path))
+			$path = "~/git/it490f17/Deployment/packages/".$server."/".$server."_v".$version.".tar.gz";
+			$username = exec('whoami');
+			$localpath = substr($path, 1);
+			$localpath = "/home/".$username.$localpath;
+			echo "Filepath: ".$localpath.PHP_EOL;
+			if(!file_exists($localpath))
 			{
 				return "Package was not found on deploy server";
 			}
 			$request['path'] = $localip.":".$path;
 			$request['type'] = "install";
+			$request['server'] = $server;
+			$request['cluster'] = $cluster;
+			
 			$response = $this->requestClient->make_request($request);	
 			return $response;	
 		}
