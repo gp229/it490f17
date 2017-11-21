@@ -2,7 +2,7 @@
 
 	#saving the data types
 path=$1
-serverName=$(awk -F "=" '/serverName/ {print $2}' host.ini | tr -d ' ')
+serverName=$(awk -F "=" '/serverName/ {print $2}' ../host.ini | tr -d ' ')
 
 
 prehome=$(pwd)
@@ -10,9 +10,9 @@ cd ..
 prehome=$(pwd)
 tt="/temp"
 temp=$prehome$tt
-echo $temp
-home=$prehome"/"$serverName
-echo $home
+echo "temp: "$temp
+home=$prehome"/"$serverName"/"
+echo "home: "$home
 
 	#function to run all the processes
 run_Procs () {
@@ -23,59 +23,64 @@ run_Procs () {
   for i in *Proc.php; do
   [ -f "$i" ] || break
   
-  gnome-terminal -e $home"/"$i
-  count= $(($count+1))
+  gnome-terminal -e $home$i
+  count=$(($count+1))
 done
 cd $past
-return $count     
 }
 
+
 	#`copying the old version to temp`
+if [ -d $temp ]; 
+then
+	rm -R $temp
+fi
+mkdir $temp
 cp -R $home $temp
 if [ $? -ne 0  ];
 then
   echo "Error copying origin to temp"
   exit
 fi
-echo 1
 	#`killing the processes`
 
-for j in  $(ps aux | grep [P]roc.php | awk '{print $2}'); do
+for j in  $(ps aux | grep [P]roc.php | grep -v execProc.php | awk '{print $2}'); do
   kill $j
 done
-echo 2
-
+rm -R $home"*"
 	#`grabbing the new version`
-scp -r $path $home
-
+scp $path $home
 if [ $? -ne 0 ];
 then
   echo "SCP Error: check connect path"
   exit
 fi
-echo 3
+filename=$(basename $path)
+echo $home$filename
+tar -xzf $home$filename 
 
 run_Procs
-runNum= $count
-countNum= ps aux | grep -c [P]roc.php
+runNum=$count
+countNum=$(ps aux | grep [P]roc.php | grep -vc execProc.php)
+echo "Procs to run: "$runNum
+echo "Procs running: "$countNum
 
 if [ $countNum -ne $runNum ];
 then
-  echo "Processes not running : Rolling Back to previos version"
+  	echo "Processes not running : Rolling Back to previous version"
 
-for j in  $(ps aux | grep [P]roc.php | awk '{print $2}'); do
-  kill $j
-done
+	for j in  $(ps aux | grep [P]roc.php | awk '{print $2}'); do
+  		kill $j
+	done
  
- 
-  rm -Rf $home
-  cp -R $temp"/"$serverName $prehome
-
-  run_Procs
-
-
-  exit
+ 	 rm -Rf $home
+  	cp -R $temp"/"$serverName $prehome
+	rm -R $temp
+	 run_Procs
+  	exit
 fi
+rm -R $temp
+rm $home$filename
 echo "Installation Successful" 
 
 

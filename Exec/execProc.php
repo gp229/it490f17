@@ -6,19 +6,18 @@ require_once('rabbitMQLib.inc');
 require_once('loggerClient.php.inc');
 
  
-  $home = getHostInfo();
-  echo $home['server']['cluster'];
-  $clus = $home['server']['cluster'];
-  echo $clus;
-  $servName =  $home['server']['serverName'];
 function execInstall($path)
 {
 	$response = exec("./connect $path");
+	echo $response.PHP_EOL;
 	return $response;	
 }
 
 function requestProcessor($request)
 {
+  	$home = getHostInfo();
+  	$clus = $home['server']['cluster'];
+  	$servName =  $home['server']['serverName'];
 	echo "received request".PHP_EOL;
 	var_dump($request);
 	if(!isset($request['type']))
@@ -28,27 +27,27 @@ function requestProcessor($request)
 
   	if($request['cluster'] != $clus && $request['serverType'] != $servName)
   	{
-		return "Passing By: Not the cluster and/or server for use";
-  	}
-
+		echo "Passing By: Not the cluster and/or server for use";
+	}
+	else{
    	switch ($request['type'])
   	{
     		case "install":
 			if(empty($request['path']))
 			{
-				echo "Version number not set".PHP_EOL;
-				return "Version number not set";
+				echo "Path not set".PHP_EOL;
+				return "Path not set";
 			}
-			execInstall($request['path']);
+			return execInstall($request['path']);
    		case "rollback":
 			if(empty($request['path']))
 			{
-				echo "Version number not set".PHP_EOL;
-				return "Version number not set";
+				echo "Path not set".PHP_EOL;
+				return "Path not set";
 			}
-			execInstall($request['path']);
+			return execInstall($request['path']);
   	}
-
+	}
   	return array("returnCode" => '0', 'message' => "Server recieved request and process");
 }
 
