@@ -48,6 +48,20 @@ function myStockStats($username)
 	var_dump($response);
 	return $response;
 }
+function transUpdateHistory($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat)
+{
+	$dbConn = new stocksDB();
+	$response = $dbConn->transUpdateHistory($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat);
+	echo $response.PHP_EOL;
+	return $response;
+}
+function updateBalance($username,$paymentAmount)
+{
+	$dbConn = new stockDB();
+	$response = $dbConn->updateBalance($username,$paymentAmount);
+	echo $response.PHP_EOL;
+	return $response;
+}
 function requestProcessor($request)
 {
 	try
