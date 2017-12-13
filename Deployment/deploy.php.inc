@@ -4,6 +4,9 @@ require_once('get_host_info.inc');
 require_once('loggerClient.php.inc');
 require_once('requestClient.php.inc');
 
+$test = new deployDB();
+var_dump($test->installBundle("Dev","Backend", 2));
+
 class deployDB
 {
 	private $logindb;
@@ -108,7 +111,6 @@ class deployDB
 			$request['type'] = "install";
 			$request['server'] = $server;
 			$request['cluster'] = $cluster;
-			
 			$response = $this->requestClient->make_request($request);	
 			return $response;	
 		}

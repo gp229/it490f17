@@ -1,8 +1,8 @@
 <?php
 
 require_once('get_host_info.inc');
-/*
 
+/*
 function requestProcessor($request)
 {
 return array("returnCode" => '0', 'message' => "Server recieved request and process");
@@ -15,6 +15,7 @@ return array("returnCode" => '0', 'message' => "Server recieved request and proc
 $test = new rabbitMQServer("testRabbitMQ.ini","execServer");
 $test->process_requests('requestProcessor');
 */
+
 class rabbitMQServer
 {
 	private $machine = "";
@@ -47,6 +48,10 @@ class rabbitMQServer
 		}
 		$this->exchange = $this->machine[$server]["EXCHANGE"];
 		$this->queue = $this->machine[$server]["QUEUE"];
+		if($server == "execServer")
+		{
+			$this->queue = $this->machine["server"]["cluster"].$this->machine["server"]["serverName"];
+		}
 	}
 
 	function process_message($msg)
@@ -88,6 +93,8 @@ class rabbitMQServer
 				$conn_queue = new AMQPQueue($channel);
 				$conn_queue->setName($msg->getReplyTo());
 				$replykey = $this->routing_key.".response";
+				var_dump($this->routing_key);
+				var_dump($replykey);
 				$conn_queue->bind($exchange->getName(),$replykey);
 				$exchange->publish(json_encode($response),$replykey,AMQP_NOPARAM,array('correlation_id'=>$msg->getCorrelationId()));
 
@@ -179,7 +186,10 @@ class rabbitMQClient
 			$this->auto_delete = $this->machine[$server]["AUTO_DELETE"];
 		}
 		$this->exchange = $this->machine[$server]["EXCHANGE"];
-		$this->queue = $this->machine[$server]["QUEUE"];
+		if($this->exchange != "execExchange")
+		{
+			$this->queue = $this->machine[$server]["QUEUE"];
+		}
 	}
 
 	function process_response($response)
@@ -204,7 +214,10 @@ class rabbitMQClient
 	function send_request($message)
 	{
 		$uid = uniqid();
-
+		if($this->exchange == "execExchange")
+		{
+			$this->queue = $message["cluster"].$message["server"]."Queue";
+		}
 		$json_message = json_encode($message);
 		try
 		{
@@ -228,7 +241,6 @@ class rabbitMQClient
 			$callback_queue->setName($this->queue."_response");
 			$callback_queue->declare();
 			$callback_queue->bind($exchange->getName(),$this->routing_key.".response");
-
 			$this->conn_queue = new AMQPQueue($channel);
 			$this->conn_queue->setName($this->queue);
 			$this->conn_queue->bind($exchange->getName(),$this->routing_key);
