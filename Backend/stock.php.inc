@@ -125,9 +125,9 @@ class stocksDB
 	}
 	public function listStocks()
 	{
-		$response = $this->updateStocks();
-		if($response != "Error getting data from API")
-		{
+		//$response = $this->updateStocks();
+		//if($response != "Error getting data from API")
+		//{
 			$query = "select * from stockInfo where timestamp = (select max(timestamp) from stockInfo);";
 			$response = $this->logindb->query($query);
 			$i = 0;
@@ -138,7 +138,7 @@ class stocksDB
 
 			}
 			$response = $myArray;
-		}
+		//}
 		return $response;
 		
 	}
