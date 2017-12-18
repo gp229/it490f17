@@ -31,8 +31,8 @@ catch(Error $e)
   </div>
 
   <form class="navbar-form navbar" style="margin-top: -20px; margin-left: -10px; width: 100%;">
-    <button type="button" class="btn btn-default" onclick="submitBuy()">Buy</button>
-    <button type="button" class="btn btn-default" onclick="submitSell()">Sell</button>
+    <button type="button" class="btn btn-default" onclick="submitBuy();window.location.reload()">Buy</button>
+    <button type="button" class="btn btn-default" onclick="submitSell();window.location.reload()">Sell</button>
     <input type="quantity" id="inputNum" class="form-control" placeholder="Amount">
 	<div class="dropdown">            
 <a class="btn btn-default btn-select btn-select-light">
@@ -224,7 +224,6 @@ function sendSellRequest(symbol,num)
   }
   request.send("type=sell&symbol="+symbol+"&quantity="+num+"&username="+user);
 }
-
 
 </script>
 
