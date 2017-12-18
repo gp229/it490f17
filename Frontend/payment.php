@@ -13,6 +13,20 @@ require_once('loggerClient.php.inc');
 	<title>test payment</title>
 </head>
 <body>
+
+<div class="payment-container">
+	<h2 class="header">Add to Balance</h2>
+	<form action="checkout.php" method="post" autocomplete="off">
+		<label for="amount">
+		Amount
+		<input type="text" name="funds">
+		</label>
+		
+		<input type="submit" value="Pay">
+	</form>
+
+
+
 <!-- Forms for paypal buttons -->
 <h2>Add $100 to Balance</h2>
 <table>
@@ -58,6 +72,7 @@ require_once('loggerClient.php.inc');
 	</td>
 </tr>
 </table>
+
 
 
 
