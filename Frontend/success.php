@@ -17,7 +17,9 @@ catch(Error $e)
 	$mylogger->sendLog("userauth.log",2,"Error with user authentication: ".$e." in ".__FILE__." on line ".__LINE__;
 	$respone = "Sorry, something went wrong.";
 }
+?>
 
+<?php
 //Get transaction details from URL
 //item number 1 is $100 dollars, 2 is $1000, 3 is $10000
 $itemNumber = $_GET['item_number'];
@@ -26,7 +28,18 @@ $paymentAmount = $_GET['amt'];
 $currency = $_GET['cc'];
 $paymentStat = $_GET['st'];
 
+if ($paymentStat=="Completed")
+{
+echo "Payment successfully received";
+}
+
 ?>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+	<title>Payment received!</title>
+</head>
+
 <script>
 sendAddBalRequest(<?php$itemNumber?>,<?php$transactionId?>,<?php$paymentAmount?>,<?php$currency?>,<?php$paymentStat?>);
 
@@ -43,7 +56,8 @@ request.onreadystatechange=function ()
 	}
 
 }
-request.send("type=addBal&itemNumber)
+request.send("type=addBal&username="+user+"paymentAmount="+paymentAmount+"&itemNum="+itemNumber+"&transactionId="+transactionId+"&currency="+currency+"&paymentStat="+paymentStat);
 }
 </script>
+</body>
 </html>
