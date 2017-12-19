@@ -32,6 +32,7 @@ if(!isset($_SESSION['loginUser']))
     <ul class="nav navbar-nav">
       <li class="active"><a href="main.php">Home</a></li>
       <li><a href="portfolio.php">Account</a></li>
+      <li><a href="payment.php">Add Funds</></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="" id="username"><?php echo $_SESSION['loginUser'];?></a></li>
