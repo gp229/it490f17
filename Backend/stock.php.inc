@@ -275,7 +275,7 @@ class stocksDB
 		}
 	}
 	
-	public function transUpdateHistory($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat)
+	public function addBal($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat)
 	{
 		try{
 			$un = $this->logindb->real_escape_string($username);
@@ -285,27 +285,13 @@ class stocksDB
 			$payStat = $this->logindb->real_escape_string($paymentStat);
 			$query = "insert into paymentHistory(username,itemNumber,transactionId,paymentAmount,paymentStatus) values('$un','$itemNum','$transId','$paymentAmt','$payStat');";
 			$req = $this->logindb->query($query);
-			$response = "Transaction history updated.";
+			$query = "update userInfo set balance = balance + '$paymentAmt where username = '$un';";
+			$response = "Added to balance.";
 			return $response;
 		}
 		catch(Error $e)
 		{
 			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e." in ".__FILE__." on line ".__LINE__);
-			exit(1);
-		}
-	}
-	public function updateBalance($paymentAmount,$username)
-	{
-		try{
-			$paymentAmt = $this->logindb->real_escape_string($paymentAmount);
-			$un = $this->logindb->real_escape_string($uesername);
-			$query = "update userInfo set balance = balance + '$paymentAmt' where username = '$un';";
-			$response = "Added to balance";
-			return $response;
-		}
-		catch(Error $e)
-		{
-			$this->myLoggerClient->sendLog("database.log", 4,"Fatal Error connecting to database: ".$e" in ".__FILE__." on line ".__LINE__);
 			exit(1);
 		}
 	}
