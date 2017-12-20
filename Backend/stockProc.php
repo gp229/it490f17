@@ -106,7 +106,7 @@ function requestProcessor($request)
 				}
 				return myStockStats($request['username']);
 			case "addBal":
-				if(empty($request['username']) || empty($request['paymentAmount']) || empty($request['itemNum']) || empty($request['transactionId']) || empty($request['currency']) || empty($request['paymentStat']));
+				if(empty($request['username']) || empty($request['itemNum']) || empty($request['transactionId']) || empty($request['paymentAmount']) || empty($request['currency']) || empty($request['paymentStat']));
 				{
 					echo "At least 1 payment paramater not given.".PHP_EOL;
 					return "At least 1 payment parameter not given.";
