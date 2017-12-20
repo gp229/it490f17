@@ -48,7 +48,7 @@ function myStockStats($username)
 	var_dump($response);
 	return $response;
 }
-function addBal($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat)
+function addBal($username,$itemNumber,$transactionId,$paymentAmount,$currency,$paymentStat)
 {
 	$dbConn = new stocksDB();
 	$response = $dbConn->addBal($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat);

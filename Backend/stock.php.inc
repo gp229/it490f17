@@ -275,7 +275,7 @@ class stocksDB
 		}
 	}
 	
-	public function addBal($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat)
+	public function addBal($username,$itemNumber,$transactionId,$paymentAmount,$currency,$paymentStat)
 	{
 		try{
 			$un = $this->logindb->real_escape_string($username);
@@ -283,9 +283,11 @@ class stocksDB
 			$transId = $this->logindb->real_escape_string($transactionId);
 			$paymentAmt = $this->logindb->real_escape_string($paymentAmount);
 			$payStat = $this->logindb->real_escape_string($paymentStat);
-			$query = "insert into paymentHistory(username,itemNumber,transactionId,paymentAmount,paymentStatus) values('$un','$itemNum','$transId','$paymentAmt','$payStat');";
-			$req = $this->logindb->query($query);
-			$query = "update userInfo set balance = balance + '$paymentAmt where username = '$un';";
+			$cur = $this->logindb->real_escape_string($currency);
+			$q1 = "insert into paymentHistory(username,itemNumber,transactionId,paymentAmount,currency,paymentStatus) values('$un','$itemNum','$transId','$paymentAmt','$cur','$payStat');";
+			$r1 = $this->logindb->query($query);
+			$q2 = "update userInfo set balance = balance + '$paymentAmt' where username = '$un';";
+			$r2
 			$response = "Added to balance.";
 			return $response;
 		}
