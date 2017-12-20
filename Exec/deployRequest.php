@@ -6,7 +6,7 @@ require_once('rabbitMQLib.inc');
 require_once('loggerClient.php.inc');
 require_once('requestClient.php.inc');
 
-echo "Do you want to make, install, deprecate, or rollback package? ";
+echo "Do you want to make, install, or deprecate package? ";
 $handle = fopen ("php://stdin","r");
 $request['type'] = fgets($handle);
 $request['type'] = trim($request['type']);
@@ -65,17 +65,6 @@ switch ($request['type']) {
 	$request['server'] = fgets($handle);
 	$request['server'] = trim($request['server']);
         echo "What version do you want to deprecate? ";
-	$request['version'] = fgets($handle);
-	$request['version'] = trim($request['version']);
-        break;
-    case "rollback":
-        echo "Which cluster do you want to rollback? ";
-	$request['cluster'] = fgets($handle);
-	$request['cluster'] = trim($request['cluster']);
-        echo "Which server do you want to rollback? ";
-	$request['server'] = fgets($handle);
-	$request['server'] = trim($request['server']);
-        echo "What version do you want to rollback to? ";
 	$request['version'] = fgets($handle);
 	$request['version'] = trim($request['version']);
         break;

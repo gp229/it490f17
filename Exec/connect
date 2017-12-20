@@ -47,7 +47,7 @@ fi
 for j in  $(ps aux | grep [P]roc.php | grep -v execProc.php | awk '{print $2}'); do
   kill $j
 done
-rm -R $home"*"
+rm -R "$home"*
 	#`grabbing the new version`
 scp $path $home
 if [ $? -ne 0 ];
@@ -69,7 +69,7 @@ if [ $countNum -ne $runNum ];
 then
   	echo "Processes not running : Rolling Back to previous version"
 
-	for j in  $(ps aux | grep [P]roc.php | awk '{print $2}'); do
+	for j in  $(ps aux | grep [P]roc.php | grep -v execProc.php | awk '{print $2}'); do
   		kill $j
 	done
  

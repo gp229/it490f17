@@ -31,6 +31,7 @@ function listStocks()
 {
 	$dbConn = new stocksDB();
 	$response = $dbConn->listStocks();
+	echo "Returning list of latest stock prices".PHP_EOL;
 	var_dump($response);
 	return $response;
 }
@@ -41,6 +42,7 @@ function searchStock($stock)
 	echo "Returning array of searched stocks".PHP_EOL;
 	return $response;
 }
+
 function myStockStats($username)
 {
 	$dbConn = new stocksDB();
@@ -48,7 +50,7 @@ function myStockStats($username)
 	var_dump($response);
 	return $response;
 }
-function addBal($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat)
+function addBal($username,$itemNumber,$transactionId,$paymentAmount,$currency,$paymentStat)
 {
 	$dbConn = new stocksDB();
 	$response = $dbConn->addBal($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat);

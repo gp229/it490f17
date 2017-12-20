@@ -50,7 +50,7 @@ catch(Error $e)
             </a>
         </div>   
 	</form>   
-	<h1>Stock timestamp: <?php echo $response['0']['timestamp']; ?> </h1> 
+<!--	<h1>Stock timestamp: <?php //echo $response['0']['timestamp']; ?> </h1> -->
   <form class="navbar-form navbar" style="width: 100%;">
     <button type="button" class="btn btn-default" onclick="submitSearch()">Search</button>
 	<div class="dropdown">            
@@ -82,6 +82,7 @@ catch(Error $e)
 <?php echo "var user = '" .$_SESSION['loginUser']. "';"; ?>
 var datachart;
 var chartoptions;
+
 google.charts.load('current', {'packages':['table']});
       google.charts.setOnLoadCallback(drawTable);
 	
@@ -110,27 +111,27 @@ google.charts.load('current', {'packages':['table']});
         table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
 
-	google.charts.load('current', {'packages':['line']});
+	google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
 
      	datachart = new google.visualization.DataTable();
-      datachart.addColumn('datetime', 'Time');
-	datachart.addColumn('number', 'Stock');
+      	datachart.addColumn('datetime', 'Time');
 	var dateformat = new google.visualization.DateFormat({pattern: 'yyyy-MM-d H:mm:ss'});
 	dateformat.format(datachart,0);
       chartoptions = {
         chart: {
           title: 'Stock over time'
         },
-        height: window.innerHeight/1.5,
-	width: window.innerWidth/1.5,
+        height: 800,
+	width: 1000,
 	interpolateNulls: true,
     explorer: {
         maxZoomOut:2,
         keepInBounds: true
     }
+	
       };
 
 
@@ -141,13 +142,38 @@ function CreateChart(response)
 {
 	var response = JSON.parse(response);
 	datachart.removeRows(0, datachart.getNumberOfRows());
-	for (var key in response) {
-		datachart.addRow([new Date(response[key].timestamp), parseInt(response[key].close)]);
+	while(datachart.getNumberOfColumns() != 1)
+	{
+		datachart.removeColumn(datachart.getNumberOfColumns() - 1);
 	}
+	for(var name in response)
+	{
+		datachart.addColumn('number', name);
+	}
+	console.log(response);
+	for (var name in response) 
+	{	
+		for (var value in response[name])
+		{
+			if(name.includes("Forecast"))
+			{
+				datachart.addRow([new Date(response[name][value].timestamp), null, parseInt(response[name][value].close)]);
+			}
+			else
+			{
+				datachart.addRow([new Date(response[name][value].timestamp), parseInt(response[name][value].close), null]);
+			}
+		}	
+	}
+	
 	var formatter = new google.visualization.NumberFormat({fractionDigits: 4});
-	formatter.format(datachart,1);
-	 var chart = new google.charts.Line(document.getElementById('linechart_div'));
-      	chart.draw(datachart, google.charts.Line.convertOptions(chartoptions));
+	for(var i = 1; i < datachart.getNumberOfColumns(); i++) 
+	{
+		console.log(i);
+		formatter.format(datachart,i);
+  	}
+	 var chart = new google.visualization.LineChart(document.getElementById('linechart_div'));
+      	chart.draw(datachart, chartoptions );
 }
 
 
