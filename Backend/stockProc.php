@@ -31,30 +31,16 @@ function listStocks()
 {
 	$dbConn = new stocksDB();
 	$response = $dbConn->listStocks();
+	echo "Returning list of latest stock prices".PHP_EOL;
 	var_dump($response);
 	return $response;
 }
 function searchStock($stock)
 {
-	//$dbConn = new stocksDB();
-	//$response = $dbConn->searchStock($stock);
-	$series = [3,10,12,13,12,10,12];	
-	$alpha=0.9;
-	$response['Original'] = $series;
-	$response['Single Exponential'] = exponential_smoothing($series, $alpha);
-	var_dump($response);
+	$dbConn = new stocksDB();
+	$response = $dbConn->searchStock($stock);
 	echo "Returning array of searched stocks".PHP_EOL;
 	return $response;
-}
-function exponential_smoothing($series, $alpha)
-{
-        $result[0] = $series[0]; # first value is same as series
-        echo $result[0].PHP_EOL;
-        for($i = 1; $i < count($series); $i++)
-        {
-                $result[$i] = $alpha * $series[$i] + (1 - $alpha) * $result[$i-1];
-        }
-        return $result;
 }
 
 function myStockStats($username)
