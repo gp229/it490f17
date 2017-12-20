@@ -28,13 +28,6 @@ function doInstallBundle($cluster,$server,$version)
 	echo $response.PHP_EOL;
 	return $response;	
 }
-function doRollbackBundle($cluster,$server,$version)
-{
-	$deployConn = new deployDB();
-	$response = $deployConn->rollbackBundle($cluster,$server,$version);
-	echo $response.PHP_EOL;
-	return $response;	
-}
 
 function doDeprecateVersion($server,$version)
 {
@@ -70,13 +63,6 @@ function requestProcessor($request)
 		return "Cluster, server, or version not set for install.";
 	}
 	return doInstallBundle($request['cluster'],$request['server'],$request['version']);
-    case "rollback":
-	if(empty($request['cluster']) || empty($request['server']) || empty($request['version']))
-	{
-		echo "Cluster, server, or version not set for install.".PHP_EOL;
-		return "Cluster, server, or version not set for install.";
-	}
-	return doRollbackBundle($request['cluster'],$request['server'],$request['version']);
     case "deprecate":
 	if(empty($request['server']) || empty($request['version']))
 	{
