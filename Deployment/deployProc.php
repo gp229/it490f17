@@ -9,7 +9,7 @@ function doNewBundle($path,$serverType)
 {
 	$deployConn = new deployDB();
 	$response = $deployConn->newBundle($path,$serverType);
-	echo $response.PHP_EOL;
+	var_dump($response).PHP_EOL;
 	return $response;	
 }
 
@@ -25,7 +25,7 @@ function doInstallBundle($cluster,$server,$version)
 {
 	$deployConn = new deployDB();
 	$response = $deployConn->installBundle($cluster,$server,$version);
-	echo $response.PHP_EOL;
+	var_dump($response).PHP_EOL;
 	return $response;	
 }
 

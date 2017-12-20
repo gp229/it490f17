@@ -25,7 +25,7 @@ function requestProcessor($request)
     		return "ERROR: unsupported message type";
   	} 
 
-  	if($request['cluster'] != $clus && $request['server'] != $servName)
+  	if($request['cluster'] != $clus || $request['server'] != $servName)
   	{
 		echo "Passing By: Not the cluster and/or server for use";
 	}
@@ -40,7 +40,8 @@ function requestProcessor($request)
 			}
 			return execInstall($request['path']);
 	}
-  	return array("returnCode" => '0', 'message' => "Server recieved request and process");
+  	}
+	return array("returnCode" => '0', 'message' => "Server recieved request and process");
 }
 
 $server = new rabbitMQServer("testRabbitMQ.ini","execServer");
