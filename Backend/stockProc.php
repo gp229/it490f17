@@ -50,20 +50,14 @@ function myStockStats($username)
 	var_dump($response);
 	return $response;
 }
-function transUpdateHistory($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat)
+function addBal($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat)
 {
 	$dbConn = new stocksDB();
-	$response = $dbConn->transUpdateHistory($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat);
+	$response = $dbConn->addBal($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat);
 	echo $response.PHP_EOL;
 	return $response;
 }
-function updateBalance($username,$paymentAmount)
-{
-	$dbConn = new stockDB();
-	$response = $dbConn->updateBalance($username,$paymentAmount);
-	echo $response.PHP_EOL;
-	return $response;
-}
+
 function requestProcessor($request)
 {
 	try
@@ -113,6 +107,13 @@ function requestProcessor($request)
 					return "Username not given.";
 				}
 				return myStockStats($request['username']);
+			case "addBal":
+				if(empty($request['username']) || empty($request['paymentAmount']) || empty($request['itemNum']) || empty($request['transactionId']) || empty($request['currency']) || empty($request['paymentStat']));
+				{
+					echo "At least 1 payment paramater not given.".PHP_EOL;
+					return "At least 1 payment parameter not given.";
+				}
+				return addBal($request['username'],$request['paymentAmount'],$request['itemNum'],$request['transactionId'],$request['currency'],$request['paymentStat']);
 		}
 	
 		return array("returnCode" => '0', 'message'=>"Server received request and processed");
