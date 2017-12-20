@@ -9,7 +9,7 @@ class stocksDB
 	private $logindb;
 	private $myloggerClient;
 	private $requestClient;
-	private $listofsymbols = array('GOOG', 'AMZN', 'AAPL', 'INTC', 'MSFT', 'CERN', 'AET', 'AXTA','NFLX');
+	private $listofsymbols = array('GOOG', 'AMZN');// 'AAPL', 'INTC', 'MSFT', 'CERN', 'AET', 'AXTA','NFLX');
 	public function __construct()
 	{
 		$this->myLoggerClient = new loggerClient();
@@ -142,6 +142,67 @@ class stocksDB
 		return $response;
 		
 	}
+	
+	private function triple_exponential_smoothing($series, $slen, $alpha, $beta, $gamma, $num_predictions)
+	{
+		$tempTime = end($series);
+		$tempTime = $tempTime['timestamp'];
+		$series = array_column($series, "close");
+		$num_seasons = count($series)/$slen;
+		for($j=0;$j < $num_seasons;$j++)
+		{
+			$season_averages[$j] = array_sum(array_slice($series, $slen*$j,$slen))/$slen;
+		}
+		for($i=0;$i < $slen;$i++)
+		{
+			$sum_of_vals_over_avg = 0.0;
+			for($j=0;$j < $num_seasons;$j++)
+			{
+				$sum_of_vals_over_avg += $series[$slen*$j+$i]-$season_averages[$j];
+			}
+			$seasonals[$i] = $sum_of_vals_over_avg/$num_seasons;
+		}
+		$sum = 0;
+		for($i=0;$i < $slen;$i++)
+		{
+			$sum += ($series[$i+$slen] - $series[$i]) / $slen;
+		}    
+		$trend = $sum / $slen;
+		$smooth = $series[0];
+		$result = array();
+		for($i=1;$i < count($series) + $num_predictions;$i++)
+		{
+			if($i >= count($series))
+			{
+				$m = $i - count($series) + 1;
+				$tempTime = date('Y-m-d H:i:00', strtotime($tempTime.'+1 minute'));
+				if(date('N',strtoTime($tempTime)) == '6')
+				{
+					$tempTime = date('Y-m-d 09:30:00', strtotime($tempTime.'+2 day'));
+				}
+				elseif(date('N',strtoTime($tempTime)) == '7')
+				{
+					$tempTime = date('Y-m-d 09:30:00', strtotime($tempTime.'+1 day'));
+				}
+				if(date('Hi',strtoTime($tempTime)) > '1600')
+				{
+					$tempTime = date('Y-m-d 09:30:00', strtotime($tempTime.'+1 day'));
+				}
+				$tempArray['timestamp'] = $tempTime;
+				$tempArray['close'] = ($smooth + $m*$trend) + $seasonals[$i%$slen];
+				array_push($result, $tempArray);
+			}
+			else
+			{
+				$val = $series[$i];
+				$last_smooth = $smooth;
+				$smooth = $alpha*($val-$seasonals[$i%$slen]) + (1-$alpha)*($smooth+$trend);
+				$trend = $beta * ($smooth-$last_smooth) + (1-$beta)*$trend;
+				$seasonals[$i%$slen] = $gamma*($val-$smooth) + (1-$gamma)*$seasonals[$i%$slen];
+			}
+		}
+		return $result;
+	}
 	public function searchStock($stockname)
 	{
 		$stock = $this->logindb->real_escape_string($stockname);
@@ -158,11 +219,18 @@ class stocksDB
 				$i++;
 			}
 			$response = $myArray;
+			if(count($myArray) > 100)
+			{
+				$slen = 7;
+				unset($response);
+				$response[$stock] = $myArray;
+				$response[$stock." Forecast"] = $this->triple_exponential_smoothing($myArray, $slen, 0.996970912, 0.00133329, .9, 500);
+			}
 		}
 		return $response;
 		
 	}
-
+	
 	
 	public function myStockStats($username)
 	{
