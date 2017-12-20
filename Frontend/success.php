@@ -42,7 +42,6 @@ $username = 'lmao1';
 
 <body>
 
-<h1> Payment successfully received</h1>
 
 <script>
 var itemNumber = <?php echo $itemNumber ?>;
