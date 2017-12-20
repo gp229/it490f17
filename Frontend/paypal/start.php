@@ -1,6 +1,6 @@
 <?php
 
-require 'PayPal-PHP-SDK';
+require 'PayPal-PHP-SDK/autoload.php';
 
 define('SITE_URL',//enter url here for main page)
 
