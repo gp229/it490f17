@@ -53,7 +53,7 @@ function myStockStats($username)
 function addBal($username,$itemNumber,$transactionId,$paymentAmount,$currency,$paymentStat)
 {
 	$dbConn = new stocksDB();
-	$response = $dbConn->addBal($username,$itemNumber,$transactionId,$paymentAmount,$paymentStat);
+	$response = $dbConn->addBal($username,$itemNumber,$transactionId,$paymentAmount,$currency,$paymentStat);
 	echo $response.PHP_EOL;
 	return $response;
 }

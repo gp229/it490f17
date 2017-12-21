@@ -353,7 +353,7 @@ class stocksDB
 			$payStat = $this->logindb->real_escape_string($paymentStat);
 			$cur = $this->logindb->real_escape_string($currency);
 			$q1 = "insert into paymentHistory(username,itemNumber,transactionId,paymentAmount,currency,paymentStatus) values('$un','$itemNum','$transId','$paymentAmt','$cur','$payStat');";
-			$r1 = $this->logindb->query($q2);
+			$r1 = $this->logindb->query($q1);
 			$q2 = "update userInfo set balance = balance + '$paymentAmt' where username = '$un';";
 			$r2 =$this->logindb->query($q2);
 			$response = "Added to balance.";
