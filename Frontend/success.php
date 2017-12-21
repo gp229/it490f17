@@ -5,7 +5,7 @@ include('header.php');
 require_once('path.inc');
 require_once('requestClient.php.inc');
 require_once('loggerClient.php.inc');
-
+session_start();
 try{
 	$request['type'] = "addBal";
 	$myClient = new rabbitClient("testRabbitMQ.ini","stockServer");
@@ -32,7 +32,6 @@ if ($paymentStat=="Completed")
 {
 echo "Payment successfully received";
 }
-$username = 'lmao1';
 ?>
 <html lang=en>
 <head>
@@ -44,12 +43,15 @@ $username = 'lmao1';
 
 
 <script>
-var itemNumber = <?php echo $itemNumber ?>;
+<?php echo "var username = '" .$_SESSION['loginUser']. "';"; ?>
+
+
+var itemNumber = "<?php echo $itemNumber ?>";
 var transactionId = "<?php echo $transactionId ?>";
 var paymentAmount = <?php echo $paymentAmount ?>;
 var currency = "<?php echo $currency ?>";
 var paymentStat = "<?php echo $paymentStat ?>";
-submitAddBal('lmao1',itemNumber,transactionId,paymentAmount,currency,paymentStat);
+submitAddBal(username,itemNumber,transactionId,paymentAmount,currency,paymentStat);
 
 
 function submitAddBal(username,itemNumber,transactionId,paymentAmount,currency,paymentStat)
