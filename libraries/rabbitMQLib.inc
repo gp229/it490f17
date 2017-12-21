@@ -50,7 +50,7 @@ class rabbitMQServer
 		$this->queue = $this->machine[$server]["QUEUE"];
 		if($server == "execServer")
 		{
-			$this->queue = $this->machine["server"]["cluster"].$this->machine["server"]["serverName"];
+			$this->queue = $this->machine["server"]["cluster"].$this->machine["server"]["serverName"]."Queue";
 		}
 	}
 

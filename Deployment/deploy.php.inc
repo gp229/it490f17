@@ -3,10 +3,10 @@ require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('loggerClient.php.inc');
 require_once('requestClient.php.inc');
-
+/*
 $test = new deployDB();
 var_dump($test->installBundle("Dev","Backend", 2));
-
+*/
 class deployDB
 {
 	private $logindb;
