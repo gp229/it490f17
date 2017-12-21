@@ -35,6 +35,58 @@ catch(Error $e)
     <div id="table_div"></div>
 </div>
 
+<form method="post">
+    <div class="form-group ">
+     <label class="control-label requiredField" for="email">
+      Email
+      <span class="asteriskField">
+       *
+      </span>
+     </label>
+     <input class="form-control" id="email" name="email" type="text"/>
+    </div>
+    <div class="form-group ">
+     <label class="control-label requiredField" for="number">
+      Buy/Sell Margin
+      <span class="asteriskField">
+       *
+      </span>
+     </label>
+     <input class="form-control" id="number" name="number" type="text"/>
+    </div>
+    <div class="form-group ">
+     <label class="control-label requiredField">
+      Automate Buy/Sell
+      <span class="asteriskField">
+       *
+      </span>
+     </label>
+     <div class="">
+      <div class="radio">
+       <label class="radio">
+        <input name="radio" type="radio" value="Yes"/>
+        Yes
+       </label>
+      </div>
+      <div class="radio">
+       <label class="radio">
+        <input name="radio" type="radio" value="No"/>
+        No
+       </label>
+      </div>
+     </div>
+    </div>
+    <div class="form-group">
+     <div>
+      <button class="btn btn-primary " name="submit" type="submit">
+       Submit
+      </button>
+     </div>
+    </div>
+   </form>
+</div>
+
+
 
 <script>
 google.charts.load('current', {'packages':['line']});
