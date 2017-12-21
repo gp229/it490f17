@@ -118,7 +118,7 @@ function requestProcessor($request)
 					echo "At least 1 payment paramater not given.".PHP_EOL;
 					return "At least 1 payment parameter not given.";
 				}
-				return addBal($request['username'],$request['paymentAmount'],$request['itemNum'],$request['transactionId'],$request['currency'],$request['paymentStat']);
+				return addBal($request['username'],$request['itemNum'],$request['transactionId'],$request['paymentAmount'],$request['currency'],$request['paymentStat']);
 		}
 	
 		return array("returnCode" => '0', 'message'=>"Server received request and processed");
