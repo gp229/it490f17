@@ -14,13 +14,18 @@ class stocksDB
 	{
 		$this->myLoggerClient = new loggerClient();
 		$this->requestClient = new rabbitClient("testRabbitMQ.ini", 'DMZServer');
-		$this->logindb = new mysqli("127.0.0.1","root","password","stocksdb");
-		if ($this->logindb->connect_errno != 0)
-		{
-			echo "Sending error message to logger".PHP_EOL;
-			$this->myLoggerClient->sendLog("database.log", 3,"Error connecting to database: ".$this->logindb->connect_error." in ".__FILE__." on line ".__LINE__);
-			exit(1);
-		}
+                $this->logindb = new mysqli("192.168.1.124","root","password","stocksdb");
+                if ($this->logindb->connect_errno != 0)
+                {
+                        $this->logindb = new mysqli("192.168.1.106","root","password","stocksdb");
+                        if ($this->logindb->connect_errno > 1)
+                        {
+                                echo "2nd server failed".PHP_EOL;
+                                echo "Sending error message to logger".PHP_EOL;
+                                $this->myLoggerClient->sendLog("database.log", 3,"Error connecting to database: ".$this->logindb->connect_error." in ".__FILE__." on line ".__LINE__);
+                                exit(1);
+                        }
+                }
 		echo "correctly connected to database".PHP_EOL;
 	}
 
