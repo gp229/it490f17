@@ -56,23 +56,18 @@ User session login, logout, page redirects
 Create user stock portfolio
 make buy, sell, search functions usable
 Having account balance update 
-Create table to show all information about stocks and having a drop down to show available stocks
 Creating a graph to show information on the searched stocks
-Having a banner that can navigate to different pages
 Create exchanges to rabbitMQ for messaging communication
 Set up distributed logging
 Having a payment system set
-Create user register functionality on the login page
 	Backend
 Pull data from 3rd party API
 Ability to register and log users
-Create the functionality to buy and sell to update information in the frontend
-Create database for all the stocks users buys or sells
-Making scripts to show total prices and quantity of the stocks bought
+payment system wip
+Create databases
 Hash passwords
+create procs
 	Databases
-Frontend and backend should have packages
-categorize and keep version numbers
 Create system that keeps version numbers of FE,BE,DMZ
 	Deployment
 Create table schema for deployement
